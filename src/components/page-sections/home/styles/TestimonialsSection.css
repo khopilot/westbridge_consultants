@@ -1,10 +1,10 @@
 /* Testimonials Enhancements */
 .testimonial-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(17, 45, 78, 0.05);
+  border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
 }
@@ -78,9 +78,9 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
-  background: var(--color-bg-light);
+  background: var(--color-surface);
   border-radius: 12px;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .trust-indicator__icon {
@@ -102,9 +102,20 @@
   text-align: center;
 }
 
+/* Dark theme stats banner */
+.dark .stats-banner {
+  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  color: #f0f6fc;
+}
+
 .stats-banner__content h4 {
   color: var(--color-bg-light);
   margin-bottom: 1.5rem;
+}
+
+/* Dark theme stats banner content */
+.dark .stats-banner__content h4 {
+  color: #f0f6fc;
 }
 
 .stats-banner__metrics {

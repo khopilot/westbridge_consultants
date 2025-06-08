@@ -14,6 +14,11 @@
   margin-bottom: 0;
 }
 
+/* Dark theme contact hero adjustments */
+.dark .contact-hero {
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d1b1f 100%);
+}
+
 .contact-hero__overlay {
   position: absolute;
   inset: 0;

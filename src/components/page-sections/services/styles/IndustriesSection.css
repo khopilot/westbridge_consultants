@@ -7,11 +7,11 @@
 }
 
 .industry-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -89,7 +89,7 @@
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .industry-card__highlight {
@@ -117,10 +117,21 @@
   text-align: center;
 }
 
+/* Dark theme industry insights */
+.dark .industry-insights {
+  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  color: #f0f6fc;
+}
+
 .industry-insights__content h3 {
   color: var(--color-bg-light);
   margin-bottom: 2rem;
   font-size: 1.5rem;
+}
+
+/* Dark theme industry insights content */
+.dark .industry-insights__content h3 {
+  color: #f0f6fc;
 }
 
 .insights-grid {
@@ -158,11 +169,11 @@
 }
 
 .sector-focus {
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, #ede1d0 100%);
+  background: var(--color-bg-light);
   border-radius: 16px;
   padding: 2.5rem;
   margin-top: 3rem;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .sector-focus__content {
@@ -196,11 +207,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: white;
+  background: var(--color-surface);
   padding: 1rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
+  border: 1px solid var(--color-border);
 }
 
 .focus-feature__icon {

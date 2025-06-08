@@ -1,12 +1,15 @@
 /* West Bridge Consultants - Design System Foundation */
 
 :root {
-  /* Color Palette */
+  /* Light Theme Colors */
   --color-primary: #112d4e;    /* Navy Profond – Confiance, sérieux */
   --color-secondary: #a47864;  /* Mocha Mousse – Chaleur, proximité */
   --color-accent: #cc5500;     /* Terracotta – Appels à l'action */
   --color-bg-light: #f7e8d3;   /* Crème Douce – Confort visuel */
   --color-text: #333333;       /* Textes sombres – Lisibilité optimale */
+  --color-bg-primary: #ffffff; /* White background */
+  --color-surface: #ffffff;    /* Surface elements */
+  --color-border: rgba(17, 45, 78, 0.1); /* Light borders */
   
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -21,6 +24,18 @@
   
   /* Transitions */
   --transition-standard: all 0.3s ease-in-out;
+}
+
+/* Dark Theme Colors */
+.dark {
+  --color-primary: #e8f1ff;    /* Light blue for dark theme - maintains readability */
+  --color-secondary: #d4b5a1;  /* Lighter mocha for dark theme */
+  --color-accent: #ff7733;     /* Brighter terracotta for dark theme */
+  --color-bg-light: #2a2a2a;   /* Dark surface for cards */
+  --color-text: #e0e0e0;       /* Light text for dark theme */
+  --color-bg-primary: #1a1a1a; /* Dark background */
+  --color-surface: #242424;    /* Dark surface elements */
+  --color-border: rgba(232, 241, 255, 0.1); /* Dark borders */
 }
 
 /* Reset & Base Styles */
@@ -39,7 +54,7 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text);
-  background-color: #ffffff;
+  background-color: var(--color-bg-primary);
   padding-top: 6rem;
 }
 
@@ -182,10 +197,11 @@ p {
 
 /* Card Components */
 .card {
-  background: var(--color-bg-light);
+  background: var(--color-surface);
   padding: var(--spacing-unit);
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-border);
   transition: var(--transition-standard);
 }
 
@@ -245,12 +261,21 @@ p {
   z-index: 1000;
   padding: 1rem 0;
   transition: all 0.25s ease-out;
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   box-shadow: 
     0 4px 20px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Dark theme navigation */
+.dark .nav {
+  background: rgba(26, 26, 26, 0.98);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(232, 241, 255, 0.1);
 }
 
 .nav--scrolled {
@@ -261,7 +286,15 @@ p {
     0 8px 32px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  border-color: rgba(17, 45, 78, 0.12);
+  border-color: var(--color-border);
+}
+
+.dark .nav--scrolled {
+  background: rgba(26, 26, 26, 0.99);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(232, 241, 255, 0.15);
 }
 
 .nav__container {
@@ -402,6 +435,13 @@ p {
   color: var(--color-accent);
 }
 
+/* Navigation Actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* Enhanced Hamburger */
 .nav__hamburger {
   display: none;
@@ -479,7 +519,11 @@ p {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  border-left: 1px solid rgba(17, 45, 78, 0.1);
+  border-left: 1px solid var(--color-border);
+}
+
+.dark .nav__mobile {
+  background: rgba(26, 26, 26, 0.98);
 }
 
 .nav__mobile--active {
@@ -625,8 +669,20 @@ p {
 
 .nav__mobile-footer {
   padding: 1.75rem 1.5rem;
-  border-top: 1px solid rgba(17, 45, 78, 0.1);
+  border-top: 1px solid var(--color-border);
   background: rgba(247, 232, 211, 0.3);
+}
+
+.dark .nav__mobile-footer {
+  background: rgba(42, 42, 42, 0.3);
+}
+
+.nav__mobile-theme {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav__mobile-contact {
@@ -760,6 +816,31 @@ p {
   padding-top: 6rem;
 }
 
+/* Dark theme hero adjustments with improved contrast */
+.dark .hero {
+  background: linear-gradient(180deg, #0a0e14 0%, #1a2332 50%, #2d1b1f 100%);
+}
+
+/* Enhanced hero text readability in dark mode */
+.dark .hero__content h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .hero__content h2 {
+  color: #f0f6fc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .hero__subtitle {
+  color: rgba(240, 246, 252, 0.9);
+}
+
+.dark .hero__stat-label {
+  color: #f0f6fc;
+  opacity: 0.8;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero {
     margin-top: -5.5rem;
@@ -778,11 +859,13 @@ p {
   color: #ffffff;
   line-height: 1.1;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero__content h2 {
   color: var(--color-bg-light);
   margin-bottom: 2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 /* Professional Footer */
@@ -793,6 +876,73 @@ p {
   overflow: hidden;
 }
 
+/* Dark theme footer adjustments */
+.dark .footer {
+  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  color: #f0f6fc;
+}
+
+/* Dark theme footer text improvements for better readability */
+.dark .footer__logo-main,
+.dark .footer__section-title,
+.dark .footer__newsletter-title {
+  color: #f0f6fc;
+}
+
+.dark .footer__logo-sub {
+  color: #d4b5a1;
+  opacity: 0.9;
+}
+
+.dark .footer__tagline,
+.dark .footer__newsletter-desc,
+.dark .footer__contact-text {
+  color: #e0e0e0;
+  opacity: 0.9;
+}
+
+.dark .footer__nav-link,
+.dark .footer__services-link,
+.dark .footer__contact-link {
+  color: #e0e0e0;
+  opacity: 0.8;
+}
+
+.dark .footer__nav-link:hover,
+.dark .footer__services-link:hover,
+.dark .footer__contact-link:hover {
+  color: #ff7733;
+  opacity: 1;
+}
+
+.dark .footer__contact-label {
+  color: #d4b5a1;
+  opacity: 0.9;
+}
+
+.dark .footer__social-title {
+  color: #f0f6fc;
+}
+
+.dark .footer__newsletter-input {
+  color: #f0f6fc;
+}
+
+.dark .footer__newsletter-input::placeholder {
+  color: rgba(240, 246, 252, 0.6);
+}
+
+.dark .footer__copyright,
+.dark .footer__bottom-link {
+  color: #e0e0e0;
+  opacity: 0.7;
+}
+
+.dark .footer__bottom-link:hover {
+  color: #ff7733;
+  opacity: 1;
+}
+
 .footer::before {
   content: '';
   position: absolute;
@@ -801,6 +951,11 @@ p {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(247, 232, 211, 0.3), transparent);
+}
+
+/* Dark theme footer border */
+.dark .footer::before {
+  background: linear-gradient(90deg, transparent, rgba(240, 246, 252, 0.2), transparent);
 }
 
 .footer__main {
@@ -1306,10 +1461,10 @@ p {
 .stat-card {
   text-align: center;
   padding: 1.5rem 1rem;
-  background: white;
+  background: var(--color-surface);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .stat-card__number {
@@ -1330,11 +1485,11 @@ p {
 
 /* Testimonials Enhancements */
 .testimonial-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(17, 45, 78, 0.05);
+  border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
 }
@@ -1775,11 +1930,11 @@ p {
 
 /* Service Cards */
 .service-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(17, 45, 78, 0.05);
+  border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1931,11 +2086,11 @@ p {
 }
 
 .process-step__content {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(17, 45, 78, 0.05);
+  border: 1px solid var(--color-border);
   width: 100%;
   max-width: 600px;
 }
@@ -2077,11 +2232,11 @@ p {
 }
 
 .industry-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(17, 45, 78, 0.05);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease-out;
 }
 
@@ -2245,10 +2400,10 @@ p {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: white;
+  background: var(--color-surface);
   padding: 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .focus-feature__icon {
@@ -2668,6 +2823,52 @@ p {
   outline-offset: 2px;
 }
 
+/* Theme Toggle Component */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: var(--transition-standard);
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: rgba(17, 45, 78, 0.1);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-standard);
+}
+
+.theme-toggle:hover .theme-toggle__icon {
+  transform: rotate(15deg);
+}
+
+.theme-toggle svg {
+  transition: var(--transition-standard);
+}
+
+/* Dark theme adjustments for toggle */
+.dark .theme-toggle:hover {
+  background: rgba(232, 241, 255, 0.1);
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
@@ -2702,10 +2903,11 @@ p {
 
 /* Project Cards */
 .project-card {
-  background: #ffffff;
+  background: var(--color-surface);
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-border);
   transition: var(--transition-standard);
 }
 

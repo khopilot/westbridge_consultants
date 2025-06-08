@@ -18,10 +18,11 @@
 }
 
 .case-study__challenge {
-  background: rgba(17, 45, 78, 0.05);
+  background: var(--color-bg-light);
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
 }
 
 .case-study__challenge h4 {
@@ -40,9 +41,9 @@
 .case-study__metric {
   text-align: center;
   padding: 1rem;
-  background: var(--color-bg-light);
+  background: var(--color-surface);
   border-radius: 8px;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .metric__number {
@@ -90,10 +91,10 @@
 .stat-card {
   text-align: center;
   padding: 1.5rem 1rem;
-  background: white;
+  background: var(--color-surface);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .stat-card__number {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -133,17 +134,20 @@ const Navigation: React.FC = () => {
               ))}
             </ul>
 
-            {/* Professional Hamburger Menu */}
-            <button 
-              className={`nav__hamburger ${isMobileMenuOpen ? 'nav__hamburger--active' : ''}`}
-              onClick={toggleMobileMenu}
-              aria-label="Toggle navigation menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span className="nav__hamburger-line"></span>
-              <span className="nav__hamburger-line"></span>
-              <span className="nav__hamburger-line"></span>
-            </button>
+            {/* Theme Toggle and Hamburger Menu */}
+            <div className="nav__actions">
+              <ThemeToggle />
+              <button 
+                className={`nav__hamburger ${isMobileMenuOpen ? 'nav__hamburger--active' : ''}`}
+                onClick={toggleMobileMenu}
+                aria-label="Toggle navigation menu"
+                aria-expanded={isMobileMenuOpen}
+              >
+                <span className="nav__hamburger-line"></span>
+                <span className="nav__hamburger-line"></span>
+                <span className="nav__hamburger-line"></span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -192,6 +196,9 @@ const Navigation: React.FC = () => {
         </nav>
 
         <div className="nav__mobile-footer">
+          <div className="nav__mobile-theme">
+            <ThemeToggle />
+          </div>
           <div className="nav__mobile-contact">
             <p className="nav__mobile-contact-title">Get in Touch</p>
             <a href="mailto:contact@westbridge.com" className="nav__mobile-contact-link">

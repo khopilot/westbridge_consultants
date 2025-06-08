@@ -14,14 +14,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: white;
+  background: var(--color-surface);
   color: var(--color-primary);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(17, 45, 78, 0.1);
+  border: 1px solid var(--color-border);
 }
 
 .map-badge svg {
@@ -56,11 +56,11 @@
 }
 
 .location-card {
-  background: white;
+  background: var(--color-surface);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
@@ -71,7 +71,7 @@
 
 .location-card--main {
   border-color: var(--color-accent);
-  background: linear-gradient(135deg, white 0%, rgba(204, 85, 0, 0.02) 100%);
+  background: var(--color-surface);
 }
 
 .location-card__header {
@@ -120,11 +120,11 @@
 }
 
 .map-placeholder {
-  background: white;
+  background: var(--color-surface);
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 1px solid rgba(17, 45, 78, 0.08);
+  border: 1px solid var(--color-border);
   height: fit-content;
 }
 
