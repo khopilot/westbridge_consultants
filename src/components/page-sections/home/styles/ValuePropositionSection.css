@@ -1,0 +1,57 @@
+/* Value Proposition Enhancements */
+.value-prop__banner {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b6b56 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  color: var(--color-bg-light);
+  text-align: center;
+}
+
+.value-prop__banner-content h3 {
+  color: var(--color-bg-light);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.value-prop__banner-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.value-prop__highlights {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.value-prop__highlights span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .value-prop__highlights {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .value-prop__banner {
+    padding: 2rem 1.5rem;
+  }
+  
+  .value-prop__highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+} 

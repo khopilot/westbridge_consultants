@@ -1,0 +1,125 @@
+/* CTA Section Enhancements */
+.cta-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.cta-benefit {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-benefit__icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.cta-benefit__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-bg-light);
+  margin-bottom: 0.5rem;
+}
+
+.cta-benefit__description {
+  font-size: 0.9rem;
+  color: rgba(247, 232, 211, 0.9);
+  line-height: 1.4;
+}
+
+.cta-contact-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-contact-info h4 {
+  color: var(--color-bg-light);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.cta-contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.cta-contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-bg-light);
+}
+
+.cta-contact-method__icon {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+}
+
+.cta-contact-method__details {
+  flex: 1;
+}
+
+.cta-contact-method__label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.cta-contact-method__value {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cta-trust-badges {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-trust-badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-bg-light);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .cta-benefits {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cta-contact-methods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta-benefit {
+    padding: 1rem;
+  }
+  
+  .cta-trust-badges {
+    gap: 1rem;
+  }
+} 
