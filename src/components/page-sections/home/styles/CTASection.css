@@ -5,7 +5,7 @@
 
 /* Dark theme CTA section */
 .dark .cta-section {
-  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  background: var(--dark-gradient-primary);
 }
 
 /* CTA Section Content */
@@ -23,8 +23,8 @@
 }
 
 .dark .cta-section__badge {
-  background: rgba(240, 246, 252, 0.15);
-  border: 1px solid rgba(240, 246, 252, 0.25);
+  background: var(--dark-overlay-prominent);
+  border: 1px solid var(--dark-overlay-prominent);
 }
 
 .cta-section__description {
@@ -79,7 +79,7 @@
 }
 
 .dark .cta-section__trust {
-  border-top: 1px solid rgba(240, 246, 252, 0.15);
+  border-top: 1px solid var(--dark-overlay-prominent);
 }
 
 .cta-trust__text {
@@ -106,8 +106,8 @@
 }
 
 .dark .cta-trust__badge {
-  background: rgba(240, 246, 252, 0.08);
-  border: 1px solid rgba(240, 246, 252, 0.12);
+  background: var(--dark-overlay-medium);
+  border: 1px solid var(--dark-overlay-strong);
 }
 
 .cta-benefits {
@@ -129,8 +129,8 @@
 
 /* Dark theme CTA benefit */
 .dark .cta-benefit {
-  background: rgba(240, 246, 252, 0.08);
-  border: 1px solid rgba(240, 246, 252, 0.12);
+  background: var(--dark-overlay-medium);
+  border: 1px solid var(--dark-overlay-strong);
 }
 
 .cta-benefit:hover {
@@ -139,7 +139,7 @@
 }
 
 .dark .cta-benefit:hover {
-  background: rgba(240, 246, 252, 0.12);
+  background: var(--dark-overlay-strong);
 }
 
 .cta-benefit__icon {
@@ -189,8 +189,8 @@
 
 /* Dark theme CTA contact info */
 .dark .cta-contact-info {
-  background: rgba(240, 246, 252, 0.05);
-  border: 1px solid rgba(240, 246, 252, 0.08);
+  background: var(--dark-overlay-subtle);
+  border: 1px solid var(--dark-overlay-medium);
 }
 
 .cta-contact-info h4 {
@@ -255,8 +255,8 @@
 
 /* Dark theme CTA trust badge */
 .dark .cta-trust-badge {
-  background: rgba(240, 246, 252, 0.08);
-  border: 1px solid rgba(240, 246, 252, 0.12);
+  background: var(--dark-overlay-medium);
+  border: 1px solid var(--dark-overlay-strong);
   color: #f0f6fc;
 }
 
@@ -266,7 +266,7 @@
 }
 
 .dark .cta-trust-badge:hover {
-  background: rgba(240, 246, 252, 0.12);
+  background: var(--dark-overlay-strong);
 }
 
 /* Responsive Design */

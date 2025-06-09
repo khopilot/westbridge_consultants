@@ -1,0 +1,337 @@
+/* Why Cambodia Section */
+.why-cambodia-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  color: #ffffff;
+}
+
+.dark .why-cambodia-section {
+  background: var(--dark-gradient-primary);
+}
+
+.why-cambodia-section__header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-cambodia-section__badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.why-cambodia-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.why-cambodia-section__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+.why-cambodia__content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Market Insights */
+.market-insights {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.market-insights__content h3 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.insight-item {
+  text-align: center;
+}
+
+.insight-item__stat {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.insight-item__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.insight-item__description {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Expertise Showcase */
+.expertise-showcase {
+  margin-bottom: 3rem;
+}
+
+.expertise-showcase__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.expertise-showcase__text h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.expertise-showcase__text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.expertise-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.expertise-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.expertise-highlight__icon {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.expertise-highlight__content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-highlight__content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+.expertise-showcase__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.stat-card__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card__label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Execution Track Record */
+.execution-track-record h3 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.track-record-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.track-record-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-out;
+}
+
+.track-record-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.track-record-item__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.track-record-item__icon {
+  font-size: 2rem;
+}
+
+.track-record-item__header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.track-record-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.track-record-item__results {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.track-record-item__results span {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Dark theme adjustments */
+.dark .why-cambodia-section h2,
+.dark .market-insights__content h3,
+.dark .expertise-showcase__text h3,
+.dark .execution-track-record h3 {
+  color: #f0f6fc;
+}
+
+.dark .why-cambodia-section__description,
+.dark .expertise-showcase__text p {
+  color: rgba(240, 246, 252, 0.9);
+}
+
+.dark .insight-item__label,
+.dark .expertise-highlight__content h4,
+.dark .track-record-item__header h4,
+.dark .stat-card__label {
+  color: #f0f6fc;
+}
+
+.dark .insight-item__description,
+.dark .expertise-highlight__content p,
+.dark .track-record-item p {
+  color: rgba(240, 246, 252, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .expertise-showcase__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .track-record-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .why-cambodia-section h2 {
+    font-size: 2rem;
+  }
+  
+  .market-insights {
+    padding: 2rem;
+  }
+  
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .expertise-showcase__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .expertise-highlight {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .expertise-highlight__icon {
+    margin-top: 0;
+  }
+  
+  .track-record-item {
+    padding: 1.5rem;
+  }
+  
+  .track-record-item__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}

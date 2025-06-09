@@ -1,0 +1,1385 @@
+/* Revolutionary Approach Section - Mind-Blowing Design */
+.approach-section {
+  position: relative;
+  background: linear-gradient(135deg, #f7e8d3 0%, #ffffff 25%, #f7e8d3 75%, #e8d4c0 100%);
+  color: var(--color-text);
+  overflow: hidden;
+  padding: 8rem 0;
+}
+
+.dark .approach-section {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #0f1419 75%, #1a1f2e 100%);
+}
+
+/* Animated Background Particles */
+.approach-section__bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(204, 85, 0, 0.1) 0%, transparent 70%);
+  animation: float-particle 8s ease-in-out infinite;
+}
+
+.bg-particle--1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.bg-particle--2 {
+  width: 150px;
+  height: 150px;
+  top: 70%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.bg-particle--3 {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+.bg-particle--4 {
+  width: 180px;
+  height: 180px;
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+.bg-particle--5 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-20px) rotate(90deg); 
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-10px) rotate(180deg); 
+    opacity: 0.4;
+  }
+  75% { 
+    transform: translateY(-30px) rotate(270deg); 
+    opacity: 0.5;
+  }
+}
+
+/* Section Visibility Animation */
+.approach-section__header,
+.methodology-showcase,
+.techniques-showcase,
+.success-guarantee {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.approach-section--visible .approach-section__header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.approach-section--visible .methodology-showcase {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.approach-section--visible .techniques-showcase {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.approach-section--visible .success-guarantee {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/* Header Styling */
+.approach-section__header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+}
+
+.approach-section__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(204, 85, 0, 0.1);
+  color: var(--color-accent);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(204, 85, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(204, 85, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.approach-section__badge:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(204, 85, 0, 0.25);
+}
+
+.approach-section__badge svg {
+  color: var(--color-accent);
+}
+
+.approach-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 50%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.approach-section__description {
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: 0;
+  opacity: 0.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.approach-section__description strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Methodology Showcase */
+.methodology-showcase {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto 8rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.1);
+}
+
+.dark .methodology-showcase {
+  background: rgba(15, 20, 25, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Tabs */
+.methodology-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  background: rgba(17, 45, 78, 0.05);
+  padding: 0.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(17, 45, 78, 0.1);
+}
+
+.dark .methodology-nav {
+  background: rgba(240, 246, 252, 0.05);
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.methodology-nav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.methodology-nav__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--phase-color, var(--color-accent)) 0%, transparent 100%);
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+}
+
+.methodology-nav__item:hover::before,
+.methodology-nav__item--active::before {
+  opacity: 0.1;
+}
+
+.methodology-nav__item--active {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.dark .methodology-nav__item--active {
+  background: rgba(15, 20, 25, 0.9);
+  color: #f0f6fc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.methodology-nav__icon {
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.methodology-nav__item--active .methodology-nav__icon {
+  transform: scale(1.2);
+}
+
+.methodology-nav__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.methodology-nav__progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.methodology-nav__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--phase-color, var(--color-accent)), transparent);
+  border-radius: 2px;
+  width: 0;
+  transition: width 4s ease-in-out;
+}
+
+.methodology-nav__item--active .methodology-nav__progress-bar {
+  width: 100%;
+}
+
+/* Methodology Content */
+.methodology-content {
+  position: relative;
+  min-height: 600px;
+}
+
+.methodology-phase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.methodology-phase--active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.methodology-phase__header {
+  margin-bottom: 3rem;
+}
+
+.methodology-phase__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.methodology-phase__number {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  background: rgba(204, 85, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(204, 85, 0, 0.2);
+}
+
+.methodology-phase__timeline {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: rgba(164, 120, 100, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(164, 120, 100, 0.2);
+}
+
+.methodology-phase__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.dark .methodology-phase__title {
+  color: #f0f6fc;
+}
+
+.methodology-phase__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.methodology-phase__subtitle strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Phase Features */
+.phase-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.phase-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.dark .phase-feature {
+  background: rgba(15, 20, 25, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.phase-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.phase-feature__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+  border-radius: 16px;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(204, 85, 0, 0.3);
+}
+
+.phase-feature__content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.dark .phase-feature__content h4 {
+  color: #f0f6fc;
+}
+
+.phase-feature__content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Phase Metrics */
+.phase-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.phase-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.phase-metric__number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.phase-metric__label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Techniques Showcase */
+.techniques-showcase {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto 6rem;
+}
+
+.techniques-showcase__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.techniques-showcase__header h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.dark .techniques-showcase__header h3 {
+  color: #f0f6fc;
+}
+
+.techniques-showcase__header p {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Technique Cards */
+.technique-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.dark .technique-card {
+  background: rgba(15, 20, 25, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.technique-card__glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(204, 85, 0, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.technique-card--hovered .technique-card__glow {
+  opacity: 1;
+  animation: rotate-glow 4s linear infinite;
+}
+
+@keyframes rotate-glow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.technique-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(204, 85, 0, 0.3);
+}
+
+.technique-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+  border-radius: 20px;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 28px rgba(204, 85, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.technique-card:hover .technique-card__icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 16px 40px rgba(204, 85, 0, 0.4);
+}
+
+.technique-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.dark .technique-card__title {
+  color: #f0f6fc;
+}
+
+.technique-card__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.technique-card__metrics {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.technique-metric {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(204, 85, 0, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(204, 85, 0, 0.2);
+}
+
+.technique-card__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.technique-card:hover .technique-card__cta {
+  transform: translateX(4px);
+}
+
+.technique-card__cta svg {
+  transition: all 0.3s ease;
+}
+
+.technique-card:hover .technique-card__cta svg {
+  transform: translateX(2px);
+}
+
+/* Success Guarantee */
+.success-guarantee {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.success-guarantee::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.success-guarantee__content {
+  position: relative;
+  z-index: 1;
+}
+
+.success-guarantee__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.success-guarantee h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.success-guarantee p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guarantee-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.guarantee-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guarantee-stat__number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.guarantee-stat__label {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1399px) {
+  .approach-section__header {
+    margin-bottom: 5rem;
+  }
+  
+  .methodology-showcase {
+    max-width: 1200px;
+    padding: 2.5rem;
+  }
+  
+  .techniques-showcase {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .approach-section {
+    padding: 7rem 0;
+  }
+  
+  .methodology-showcase {
+    padding: 2.5rem;
+    margin-bottom: 6rem;
+  }
+  
+  .phase-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .phase-feature {
+    padding: 1.75rem;
+  }
+  
+  .techniques-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .technique-card {
+    padding: 2rem;
+  }
+  
+  .methodology-content {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .methodology-nav__item {
+    padding: 1.25rem 0.875rem;
+  }
+  
+  .methodology-nav__title {
+    font-size: 0.85rem;
+  }
+  
+  .phase-features {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .techniques-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .technique-card {
+    padding: 1.5rem;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .techniques-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .technique-card {
+    padding: 1.25rem;
+    min-height: 320px;
+  }
+  
+  .technique-card__title {
+    font-size: 1.1rem;
+  }
+  
+  .technique-card__description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .approach-section {
+    padding: 5rem 0;
+  }
+  
+  .approach-section__header {
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+  
+  .methodology-showcase {
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+  
+  .methodology-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.375rem;
+  }
+  
+  .methodology-nav__item {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  
+  .methodology-nav__icon {
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+  
+  .methodology-nav__title {
+    text-align: left;
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  
+  .methodology-nav__progress {
+    width: 60px;
+    height: 4px;
+  }
+  
+  .methodology-content {
+    min-height: 400px;
+  }
+  
+  .methodology-phase__header {
+    margin-bottom: 2rem;
+  }
+  
+  .methodology-phase__meta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .phase-metrics {
+    gap: 2rem;
+    justify-content: space-around;
+  }
+  
+  .phase-metric__number {
+    font-size: 2rem;
+  }
+  
+  .techniques-showcase {
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+  }
+  
+  .techniques-showcase__header {
+    margin-bottom: 3rem;
+  }
+  
+  .techniques-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .guarantee-stats {
+    gap: 2rem;
+  }
+  
+  .guarantee-stat__number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .approach-section {
+    padding: 3rem 0;
+  }
+  
+  .approach-section__header {
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+  }
+  
+  .approach-section__badge {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .approach-section h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .approach-section__description {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .methodology-showcase {
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 16px;
+  }
+  
+  .methodology-nav {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+  
+  .methodology-nav__item {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+  
+  .methodology-nav__icon {
+    font-size: 1.25rem;
+  }
+  
+  .methodology-nav__title {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  
+  .methodology-content {
+    min-height: auto;
+  }
+  
+  .methodology-phase__header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .methodology-phase__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .methodology-phase__number,
+  .methodology-phase__timeline {
+    font-size: 0.8rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .methodology-phase__title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  .methodology-phase__subtitle {
+    font-size: 1rem;
+  }
+  
+  .phase-features {
+    gap: 1rem;
+  }
+  
+  .phase-feature {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .phase-feature__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+  
+  .phase-feature__content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .phase-feature__content p {
+    font-size: 0.9rem;
+  }
+  
+  .phase-metrics {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .phase-metric__number {
+    font-size: 1.8rem;
+  }
+  
+  .techniques-showcase {
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .techniques-showcase__header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .techniques-showcase__header h3 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  
+  .techniques-showcase__header p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .techniques-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .technique-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .technique-card__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .technique-card__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .technique-card__description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .technique-card__metrics {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .technique-metric {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .success-guarantee {
+    padding: 2.5rem 1.5rem;
+    margin: 0 1rem;
+    border-radius: 16px;
+  }
+  
+  .success-guarantee__badge {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-guarantee h3 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .success-guarantee p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .guarantee-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .guarantee-stat__number {
+    font-size: 2rem;
+  }
+  
+  .guarantee-stat__label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .approach-section {
+    padding: 2.5rem 0;
+  }
+  
+  .approach-section__header {
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .approach-section__badge {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+  
+  .approach-section h2 {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    line-height: 1.15;
+  }
+  
+  .approach-section__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .methodology-showcase {
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .methodology-nav {
+    padding: 0.125rem;
+    gap: 0.125rem;
+  }
+  
+  .methodology-nav__item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .methodology-nav__icon {
+    margin-right: 0;
+    font-size: 1.1rem;
+  }
+  
+  .methodology-nav__title {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+  
+  .methodology-nav__progress {
+    width: 100%;
+    height: 3px;
+  }
+  
+  .methodology-phase__title {
+    font-size: clamp(1.25rem, 7vw, 1.75rem);
+  }
+  
+  .methodology-phase__subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .phase-feature {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .phase-feature__icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+  }
+  
+  .phase-feature__content h4 {
+    font-size: 1rem;
+  }
+  
+  .phase-feature__content p {
+    font-size: 0.85rem;
+  }
+  
+  .phase-metric__number {
+    font-size: 1.6rem;
+  }
+  
+  .phase-metric__label {
+    font-size: 0.8rem;
+  }
+  
+  .techniques-showcase {
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .techniques-showcase__header h3 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+  
+  .techniques-showcase__header p {
+    font-size: 0.9rem;
+  }
+  
+  .technique-card {
+    padding: 1.25rem;
+  }
+  
+  .technique-card__icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .technique-card__title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .technique-card__description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .technique-metric {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.625rem;
+  }
+  
+  .success-guarantee {
+    padding: 2rem 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .success-guarantee h3 {
+    font-size: clamp(1.25rem, 7vw, 1.75rem);
+    line-height: 1.25;
+  }
+  
+  .success-guarantee p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .guarantee-stat__number {
+    font-size: 1.75rem;
+  }
+  
+  .guarantee-stat__label {
+    font-size: 0.8rem;
+  }
+  
+  /* Enhanced touch interactions for mobile */
+  .methodology-nav__item {
+    min-height: 60px;
+  }
+  
+  .technique-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .technique-card__content {
+    flex: 1;
+  }
+  
+  .bg-particle {
+    display: none; /* Hide background particles on very small screens */
+  }
+}
+
+/* Desktop optimization for 4 cards in a row */
+@media (min-width: 1024px) {
+  .techniques-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .technique-card {
+    min-height: 420px;
+    padding: 2rem;
+  }
+  
+  .technique-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .technique-card__description {
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .technique-card__metrics {
+    margin-top: auto;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .techniques-grid {
+    gap: 2rem;
+    max-width: 1500px;
+  }
+  
+  .technique-card {
+    min-height: 450px;
+    padding: 2.5rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+  .techniques-grid {
+    gap: 2.5rem;
+    max-width: 1600px;
+  }
+  
+  .technique-card {
+    min-height: 480px;
+    padding: 3rem;
+  }
+}

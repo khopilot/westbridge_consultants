@@ -6,6 +6,7 @@ const Footer: React.FC = () => {
 
   const navigationLinks = [
     { path: '/', label: 'Home' },
+    { path: '/landing', label: 'Landing' },
     { path: '/services', label: 'Services' },
     { path: '/projects', label: 'Projects' },
     { path: '/about', label: 'About' },
@@ -13,12 +14,12 @@ const Footer: React.FC = () => {
   ]
 
   const services = [
-    'Strategic Planning',
-    'Digital Transformation',
-    'Process Optimization',
-    'Change Management',
-    'Risk Assessment',
-    'Market Analysis'
+    'Market Entry Strategy',
+    'Business Setup & Licensing',
+    'Partnership Development',
+    'Regulatory Compliance',
+    'Investment Advisory',
+    'Digital Transformation'
   ]
 
   return (
@@ -41,13 +42,13 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <p className="footer__tagline">
-                Your trusted partner for modern, innovative solutions that drive sustainable business growth and success.
+                Your trusted partner for business success in Cambodia. Expert guidance for market entry, regulatory compliance, and sustainable growth in Southeast Asia's most promising economy.
               </p>
               
               {/* Newsletter Signup */}
               <div className="footer__newsletter">
-                <h4 className="footer__newsletter-title">Stay Informed</h4>
-                <p className="footer__newsletter-desc">Get insights and updates delivered to your inbox.</p>
+                <h4 className="footer__newsletter-title">Cambodia Business Insights</h4>
+                <p className="footer__newsletter-desc">Get exclusive market updates and business opportunities in Cambodia.</p>
                 <form className="footer__newsletter-form">
                   <div className="footer__newsletter-input-group">
                     <input 
@@ -109,8 +110,8 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="footer__contact-info">
                     <span className="footer__contact-label">Email</span>
-                    <a href="mailto:contact@westbridge.com" className="footer__contact-link">
-                      contact@westbridge.com
+                    <a href="mailto:hello@westbridge.com.kh" className="footer__contact-link">
+                      hello@westbridge.com.kh
                     </a>
                   </div>
                 </div>
@@ -123,8 +124,8 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="footer__contact-info">
                     <span className="footer__contact-label">Phone</span>
-                    <a href="tel:+15551234567" className="footer__contact-link">
-                      +1 (555) 123-4567
+                    <a href="tel:+85523123456" className="footer__contact-link">
+                      +855 23 123 456
                     </a>
                   </div>
                 </div>
@@ -139,8 +140,8 @@ const Footer: React.FC = () => {
                   <div className="footer__contact-info">
                     <span className="footer__contact-label">Address</span>
                     <span className="footer__contact-text">
-                      123 Business Avenue<br />
-                      New York, NY 10001, USA
+                      Diamond Island<br />
+                      Phnom Penh, Cambodia
                     </span>
                   </div>
                 </div>

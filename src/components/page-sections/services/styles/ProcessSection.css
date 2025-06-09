@@ -25,7 +25,7 @@
 
 /* Dark theme process badge */
 .dark .process-badge {
-  background: linear-gradient(135deg, #0f1419, #2d1b1f);
+  background: var(--dark-gradient-warm);
 }
 
 .process-badge::before {
@@ -196,7 +196,7 @@
 
 /* Dark theme process number */
 .dark .process-step__number {
-  background: linear-gradient(135deg, #0f1419, #ff7733);
+  background: linear-gradient(135deg, var(--color-bg-primary), var(--color-accent));
 }
 
 .process-step__number span {
@@ -217,7 +217,7 @@
 
 /* Dark theme process number hover */
 .dark .process-step__number::before {
-  background: linear-gradient(135deg, #ff7733, #0f1419);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-bg-primary));
 }
 
 .process-step:hover .process-step__number::before {

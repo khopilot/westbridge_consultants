@@ -119,7 +119,7 @@
 
 /* Dark theme industry insights */
 .dark .industry-insights {
-  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  background: var(--dark-gradient-primary);
   color: #f0f6fc;
 }
 

@@ -26,16 +26,32 @@
   --transition-standard: all 0.3s ease-in-out;
 }
 
-/* Dark Theme Colors */
+/* Dark Theme Colors - Harmonized Palette */
 .dark {
-  --color-primary: #e8f1ff;    /* Light blue for dark theme - maintains readability */
-  --color-secondary: #d4b5a1;  /* Lighter mocha for dark theme */
-  --color-accent: #ff7733;     /* Brighter terracotta for dark theme */
-  --color-bg-light: #2a2a2a;   /* Dark surface for cards */
-  --color-text: #e0e0e0;       /* Light text for dark theme */
-  --color-bg-primary: #1a1a1a; /* Dark background */
-  --color-surface: #242424;    /* Dark surface elements */
+  /* Core Background Colors */
+  --color-bg-primary: #0f1419;    /* Deepest background */
+  --color-bg-secondary: #1a2332;  /* Mid-tone background */
+  --color-bg-tertiary: #21262d;   /* Lighter background */
+  --color-surface: #242930;       /* Card and surface elements */
+  --color-bg-light: #2d3440;      /* Lightest surface for highlights */
+  
+  /* Text and UI Colors */
+  --color-primary: #e8f1ff;       /* Light blue for dark theme - maintains readability */
+  --color-secondary: #d4b5a1;     /* Lighter mocha for dark theme */
+  --color-accent: #ff7733;        /* Brighter terracotta for dark theme */
+  --color-text: #e0e0e0;          /* Light text for dark theme */
   --color-border: rgba(232, 241, 255, 0.1); /* Dark borders */
+  
+  /* Semantic Overlay Colors */
+  --dark-overlay-subtle: rgba(240, 246, 252, 0.05);
+  --dark-overlay-medium: rgba(240, 246, 252, 0.08);
+  --dark-overlay-strong: rgba(240, 246, 252, 0.12);
+  --dark-overlay-prominent: rgba(240, 246, 252, 0.15);
+  
+  /* Gradient Definitions */
+  --dark-gradient-primary: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  --dark-gradient-hero: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  --dark-gradient-warm: linear-gradient(135deg, #0a0e14 0%, #1a2332 40%, #2d1b1f 100%);
 }
 
 /* Reset & Base Styles */
@@ -56,6 +72,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg-primary);
   padding-top: 6rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography */
@@ -271,7 +288,7 @@ p {
 
 /* Dark theme navigation */
 .dark .nav {
-  background: rgba(26, 26, 26, 0.98);
+  background: rgba(15, 20, 25, 0.98);
   box-shadow: 
     0 4px 20px rgba(0, 0, 0, 0.3),
     0 1px 3px rgba(0, 0, 0, 0.2),
@@ -290,7 +307,7 @@ p {
 }
 
 .dark .nav--scrolled {
-  background: rgba(26, 26, 26, 0.99);
+  background: rgba(15, 20, 25, 0.99);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.4),
     0 2px 8px rgba(0, 0, 0, 0.3),
@@ -523,7 +540,7 @@ p {
 }
 
 .dark .nav__mobile {
-  background: rgba(26, 26, 26, 0.98);
+  background: rgba(15, 20, 25, 0.98);
 }
 
 .nav__mobile--active {
@@ -674,7 +691,7 @@ p {
 }
 
 .dark .nav__mobile-footer {
-  background: rgba(42, 42, 42, 0.3);
+  background: var(--dark-overlay-subtle);
 }
 
 .nav__mobile-theme {
@@ -818,7 +835,7 @@ p {
 
 /* Dark theme hero adjustments with improved contrast */
 .dark .hero {
-  background: linear-gradient(180deg, #0a0e14 0%, #1a2332 50%, #2d1b1f 100%);
+  background: var(--dark-gradient-hero);
 }
 
 /* Enhanced hero text readability in dark mode */
@@ -878,7 +895,7 @@ p {
 
 /* Dark theme footer adjustments */
 .dark .footer {
-  background: linear-gradient(135deg, #0a0e14 0%, #161b22 50%, #21262d 100%);
+  background: var(--dark-gradient-primary);
   color: #f0f6fc;
 }
 
@@ -955,7 +972,7 @@ p {
 
 /* Dark theme footer border */
 .dark .footer::before {
-  background: linear-gradient(90deg, transparent, rgba(240, 246, 252, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, var(--dark-overlay-prominent), transparent);
 }
 
 .footer__main {

@@ -1,0 +1,361 @@
+/* Case Studies Section */
+.case-studies-section {
+  background: var(--color-bg-primary);
+  color: var(--color-text);
+}
+
+.case-studies-section__header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.case-studies-section__badge {
+  display: inline-block;
+  background: rgba(204, 85, 0, 0.1);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(204, 85, 0, 0.2);
+}
+
+.case-studies-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.case-studies-section__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* Case Studies Grid */
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.case-study-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.case-study-card__header {
+  margin-bottom: 1.5rem;
+}
+
+.case-study-card__industry {
+  display: inline-block;
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.case-study-card__challenge,
+.case-study-card__solution,
+.case-study-card__results {
+  margin-bottom: 1.5rem;
+}
+
+.case-study-card__challenge h4,
+.case-study-card__solution h4,
+.case-study-card__results h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.case-study-card__challenge p,
+.case-study-card__solution p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-bottom: 0;
+}
+
+.case-study-card__solution ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.case-study-card__solution li {
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.case-study-card__solution li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.results-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.result-metric {
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  background: var(--color-bg-light);
+  border-radius: 8px;
+  border: 1px solid rgba(17, 45, 78, 0.1);
+}
+
+.metric__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.metric__label {
+  font-size: 0.75rem;
+  color: var(--color-text);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Testimonials */
+.testimonials-section {
+  margin-bottom: 4rem;
+}
+
+.testimonials-section h3 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+}
+
+.testimonial-card__industry {
+  display: inline-block;
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card__quote {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.testimonial-card__author-name {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-card__author-position {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-card__company {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card__location {
+  color: var(--color-text);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Success Metrics */
+.success-metrics {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b6b56 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  color: var(--color-bg-light);
+  text-align: center;
+}
+
+.success-metrics__content h3 {
+  color: var(--color-bg-light);
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.success-metrics__content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.success-metric {
+  text-align: center;
+}
+
+.success-metric__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-bg-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.success-metric__label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Dark theme adjustments */
+.dark .success-metrics {
+  background: var(--dark-gradient-warm);
+}
+
+.dark .success-metrics__content h3,
+.dark .success-metric__number {
+  color: #f0f6fc;
+}
+
+.dark .success-metrics__content p {
+  color: rgba(240, 246, 252, 0.9);
+}
+
+.dark .success-metric__label {
+  color: #f0f6fc;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .case-studies-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .results-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .success-metrics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .case-studies-section h2 {
+    font-size: 2rem;
+  }
+  
+  .case-study-card {
+    padding: 1.5rem;
+  }
+  
+  .results-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .success-metrics {
+    padding: 2rem;
+  }
+  
+  .success-metrics__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}
