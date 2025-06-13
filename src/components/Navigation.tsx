@@ -113,8 +113,8 @@ const Navigation: React.FC = () => {
                 </svg>
               </div>
               <div className="nav__logo-text">
-                <span className="nav__logo-main">West Bridge</span>
-                <span className="nav__logo-sub">Consultants</span>
+                <span className="nav__logo-main">Goulding & Co</span>
+                <span className="nav__logo-sub">Strategic Advisory</span>
               </div>
             </Link>
             
@@ -160,8 +160,8 @@ const Navigation: React.FC = () => {
         <div className="nav__mobile-header">
           <div className="nav__mobile-logo">
             <Link to="/" onClick={closeMobileMenu}>
-              <span className="nav__mobile-logo-text">West Bridge</span>
-              <span className="nav__mobile-logo-sub">Consultants</span>
+              <span className="nav__mobile-logo-text">Goulding & Co</span>
+              <span className="nav__mobile-logo-sub">Strategic Advisory</span>
             </Link>
           </div>
           <button 

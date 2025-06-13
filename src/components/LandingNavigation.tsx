@@ -115,8 +115,8 @@ const LandingNavigation: React.FC = () => {
                 </svg>
               </div>
               <div className="landing-nav__logo-text">
-                <span className="landing-nav__logo-main">West Bridge</span>
-                <span className="landing-nav__logo-sub">Consultants</span>
+                <span className="landing-nav__logo-main">Goulding & Co</span>
+                <span className="landing-nav__logo-sub">Strategic Advisory</span>
               </div>
             </Link>
           </div>
@@ -169,8 +169,8 @@ const LandingNavigation: React.FC = () => {
                 </svg>
               </div>
               <div className="landing-nav__mobile-logo-text">
-                <span className="landing-nav__mobile-logo-main">West Bridge</span>
-                <span className="landing-nav__mobile-logo-sub">Consultants</span>
+                <span className="landing-nav__mobile-logo-main">Goulding & Co</span>
+                <span className="landing-nav__mobile-logo-sub">Strategic Advisory</span>
               </div>
             </Link>
           </div>
