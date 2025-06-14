@@ -154,7 +154,7 @@
   outline: none;
   border-color: var(--color-accent);
   background: var(--color-surface);
-  box-shadow: 0 0 0 4px rgba(204, 85, 0, 0.1);
+  box-shadow: 0 0 0 4px rgba(114, 47, 55, 0.1);
 }
 
 .form-group input::placeholder,
@@ -186,7 +186,7 @@
 }
 
 .contact-form__submit.submitting {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #a47864 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
 }
 
 .contact-form__submit.success {

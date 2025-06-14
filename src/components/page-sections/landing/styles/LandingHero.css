@@ -5,7 +5,7 @@
     var(--color-primary) 0%, 
     #0a1e3d 25%, 
     var(--color-secondary) 75%, 
-    #8b6b56 100%);
+    var(--color-primary) 100%);
   color: #ffffff;
   padding: 0;
   display: flex;
@@ -140,7 +140,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 50%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,9 +196,9 @@
 }
 
 .hero-cta--primary {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #b54a00 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   color: white;
-  box-shadow: 0 8px 24px rgba(204, 85, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(26, 46, 78, 0.4);
 }
 
 .hero-cta--primary::before {
@@ -218,7 +218,7 @@
 
 .hero-cta--primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(204, 85, 0, 0.5);
+  box-shadow: 0 12px 32px rgba(26, 46, 78, 0.5);
 }
 
 .hero-cta--secondary {
@@ -270,11 +270,11 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   border-radius: 16px;
   margin-bottom: 1.5rem;
   color: white;
-  box-shadow: 0 8px 20px rgba(204, 85, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(26, 46, 78, 0.3);
 }
 
 .highlight__content h3 {
@@ -325,7 +325,7 @@
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c42 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

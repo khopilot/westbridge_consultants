@@ -65,9 +65,9 @@ const ApproachSection: React.FC = () => {
         <div className="methodology-showcase">
           <div className="methodology-nav">
             {[
-              { id: 0, title: 'Discovery & Intelligence', icon: '🔍', color: '#cc5500' },
-              { id: 1, title: 'Strategic Architecture', icon: '🎯', color: '#a47864' },
-              { id: 2, title: 'Execution Excellence', icon: '⚡', color: '#112d4e' }
+              { id: 0, title: 'Discovery & Intelligence', icon: '🔍', color: 'var(--color-accent)' },
+              { id: 1, title: 'Strategic Architecture', icon: '🎯', color: 'var(--color-secondary)' },
+              { id: 2, title: 'Execution Excellence', icon: '⚡', color: 'var(--color-primary)' }
             ].map((phase, index) => (
               <button
                 key={phase.id}

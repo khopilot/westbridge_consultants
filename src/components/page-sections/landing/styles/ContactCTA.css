@@ -86,13 +86,13 @@
 }
 
 .contact-option--primary {
-  background: rgba(204, 85, 0, 0.2);
+  background: rgba(26, 46, 78, 0.2);
   border-color: var(--color-accent);
   transform: scale(1.05);
 }
 
 .contact-option--primary:hover {
-  background: rgba(204, 85, 0, 0.3);
+  background: rgba(26, 46, 78, 0.3);
   transform: scale(1.05) translateY(-4px);
 }
 
@@ -149,7 +149,7 @@
 }
 
 .contact-option__button:hover {
-  background: #b54a00;
+  background: var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -342,7 +342,7 @@
 }
 
 .dark .contact-method__label {
-  color: #d4b5a1;
+  color: #9ca3af;
 }
 
 .dark .contact-method__note,

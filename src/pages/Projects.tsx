@@ -197,7 +197,7 @@ const Projects: React.FC = () => {
               <Link to="/contact" className="btn btn--primary">
                 Start Your Project
               </Link>
-              <Link to="/services" className="btn btn--secondary" style={{ backgroundColor: 'transparent', borderColor: '#ffffff', color: '#ffffff' }}>
+              <Link to="/services" className="btn btn--secondary-light">
                 View Our Services
               </Link>
             </div>

@@ -1,15 +1,26 @@
 /* West Bridge Consultants - Design System Foundation */
 
 :root {
-  /* Light Theme Colors */
-  --color-primary: #112d4e;    /* Navy Profond – Confiance, sérieux */
-  --color-secondary: #a47864;  /* Mocha Mousse – Chaleur, proximité */
-  --color-accent: #cc5500;     /* Terracotta – Appels à l'action */
-  --color-bg-light: #f7e8d3;   /* Crème Douce – Confort visuel */
-  --color-text: #333333;       /* Textes sombres – Lisibilité optimale */
-  --color-bg-primary: #ffffff; /* White background */
-  --color-surface: #ffffff;    /* Surface elements */
-  --color-border: rgba(17, 45, 78, 0.1); /* Light borders */
+  /* Light Theme Colors - 60% White, 30% Navy Blue, 10% Nice Grey */
+  --color-primary: #1a2e4e;    /* Navy Blue (30%) - Primary text, headings, buttons */
+  --color-secondary: #6b7280;  /* Nice Grey (10%) - Secondary text, subtle elements */
+  --color-accent: #1a2e4e;     /* Navy Blue – Accent actions */
+  
+  /* White Dominance (60%) */
+  --color-bg-primary: #ffffff; /* Primary white background */
+  --color-surface: #ffffff;    /* White surface elements - cards, modals */
+  --color-bg-light: #fafafa;   /* Off-white for subtle sections */
+  --color-bg-section: #ffffff; /* Section backgrounds */
+  
+  /* Navy Blue (30%) */
+  --color-text: #1a2e4e;       /* Primary text in navy blue */
+  --color-heading: #1a2e4e;    /* Headings in navy blue */
+  --color-nav: #1a2e4e;        /* Navigation elements */
+  
+  /* Nice Grey (10%) */
+  --color-text-secondary: #6b7280; /* Secondary text in grey */
+  --color-border: #e5e7eb;     /* Light grey borders */
+  --color-border-subtle: #f3f4f6; /* Very subtle borders */
   
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -37,8 +48,8 @@
   
   /* Text and UI Colors */
   --color-primary: #e8f1ff;       /* Light blue for dark theme - maintains readability */
-  --color-secondary: #d4b5a1;     /* Lighter mocha for dark theme */
-  --color-accent: #ff7733;        /* Brighter terracotta for dark theme */
+  --color-secondary: #9ca3af;     /* Light grey for dark theme */
+  --color-accent: #4a90e2;        /* Brighter blue for dark theme */
   --color-text: #e0e0e0;          /* Light text for dark theme */
   --color-border: rgba(232, 241, 255, 0.1); /* Dark borders */
   
@@ -80,21 +91,25 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  color: var(--color-heading); /* Navy blue headings */
 }
 
 h1 {
   font-size: var(--font-size-h1);
   font-weight: 700;
+  color: var(--color-heading);
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-weight: 600;
+  color: var(--color-heading);
 }
 
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 600;
+  color: var(--color-heading);
 }
 
 p {
@@ -191,34 +206,34 @@ p {
 }
 
 .btn--secondary {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
+  border: 2px solid var(--color-primary); /* Navy blue border (30%) */
+  color: var(--color-primary); /* Navy blue text (30%) */
+  background: var(--color-surface); /* White background (60%) */
 }
 
 .btn--secondary:hover {
-  background: var(--color-primary);
-  color: #ffffff;
+  background: var(--color-primary); /* Navy blue hover (30%) */
+  color: var(--color-surface); /* White text on hover (60%) */
 }
 
 .btn--secondary-light {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid var(--color-surface); /* White border (60%) */
+  color: var(--color-surface); /* White text (60%) */
   background: transparent;
 }
 
 .btn--secondary-light:hover {
-  background: #ffffff;
-  color: var(--color-primary);
+  background: var(--color-surface); /* White background (60%) */
+  color: var(--color-primary); /* Navy blue text (30%) */
 }
 
 /* Card Components */
 .card {
-  background: var(--color-surface);
+  background: var(--color-surface); /* White cards (60%) */
   padding: var(--spacing-unit);
   border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(26, 46, 78, 0.05); /* Navy shadow */
+  border: 1px solid var(--color-border); /* Light grey border (10%) */
   transition: var(--transition-standard);
 }
 
@@ -351,14 +366,14 @@ p {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-nav); /* Navy blue (30%) */
 }
 
 .nav__logo-sub {
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-secondary);
+  color: var(--color-text-secondary); /* Nice grey (10%) */
   letter-spacing: 0.5px;
 }
 
@@ -907,7 +922,7 @@ p {
 }
 
 .dark .footer__logo-sub {
-  color: #d4b5a1;
+  color: #9ca3af;
   opacity: 0.9;
 }
 
@@ -928,12 +943,12 @@ p {
 .dark .footer__nav-link:hover,
 .dark .footer__services-link:hover,
 .dark .footer__contact-link:hover {
-  color: #ff7733;
+  color: var(--color-accent);
   opacity: 1;
 }
 
 .dark .footer__contact-label {
-  color: #d4b5a1;
+  color: #9ca3af;
   opacity: 0.9;
 }
 
@@ -956,7 +971,7 @@ p {
 }
 
 .dark .footer__bottom-link:hover {
-  color: #ff7733;
+  color: var(--color-accent);
   opacity: 1;
 }
 
@@ -1116,7 +1131,7 @@ p {
 }
 
 .footer__newsletter-button:hover {
-  background: #b54a00;
+  background: var(--color-primary);
   transform: translateX(2px);
 }
 
@@ -1348,7 +1363,7 @@ p {
 
 /* Value Proposition Enhancements */
 .value-prop__banner {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b6b56 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   border-radius: 16px;
   padding: 2.5rem;
   margin-top: 3rem;
@@ -1637,14 +1652,14 @@ p {
 /* CTA Section Enhancements */
 .cta-section__badge {
   display: inline-block;
-  background: rgba(204, 85, 0, 0.2);
+  background: rgba(114, 47, 55, 0.2);
   color: var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  border: 1px solid rgba(204, 85, 0, 0.3);
+  border: 1px solid rgba(114, 47, 55, 0.3);
 }
 
 .cta-section__description {
@@ -1840,14 +1855,14 @@ p {
 
 .services-hero__badge {
   display: inline-block;
-  background: rgba(204, 85, 0, 0.1);
+  background: rgba(26, 46, 78, 0.1);
   color: var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(204, 85, 0, 0.2);
+  border: 1px solid rgba(26, 46, 78, 0.2);
 }
 
 .services-hero__title {
@@ -2037,13 +2052,13 @@ p {
 }
 
 .service-card__button:hover {
-  background: #b54a00;
+  background: var(--color-accent);
   transform: translateX(2px);
   color: white;
 }
 
 .services-overview {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b6b56 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   border-radius: 16px;
   padding: 2.5rem;
   color: var(--color-bg-light);
@@ -2335,7 +2350,7 @@ p {
   border-radius: 16px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(204, 85, 0, 0.2);
+  border: 1px solid rgba(26, 46, 78, 0.2);
 }
 
 .industry-insights {
@@ -2442,14 +2457,14 @@ p {
 
 .services-cta__badge {
   display: inline-block;
-  background: rgba(204, 85, 0, 0.2);
+  background: rgba(26, 46, 78, 0.2);
   color: var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(204, 85, 0, 0.3);
+  border: 1px solid rgba(26, 46, 78, 0.3);
 }
 
 .services-cta__title {
@@ -2492,7 +2507,7 @@ p {
 }
 
 .cta-option--highlight {
-  background: rgba(204, 85, 0, 0.2);
+  background: rgba(114, 47, 55, 0.2);
   border-color: var(--color-accent);
 }
 
@@ -2532,7 +2547,7 @@ p {
 }
 
 .cta-option__button:hover {
-  background: #b54a00;
+  background: var(--color-primary);
   transform: translateX(2px);
   color: white;
 }
@@ -2802,6 +2817,7 @@ p {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: var(--color-heading); /* Navy blue labels (30%) */
 }
 
 .form__input,
@@ -2809,8 +2825,9 @@ p {
   width: 100%;
   padding: 0.75rem 0;
   border: none;
-  border-bottom: 2px solid var(--color-primary);
-  background: transparent;
+  border-bottom: 2px solid var(--color-border); /* Grey border (10%) */
+  background: var(--color-surface); /* White background (60%) */
+  color: var(--color-text); /* Navy blue text (30%) */
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   transition: var(--transition-standard);
@@ -2819,7 +2836,7 @@ p {
 .form__input:focus,
 .form__textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent); /* Bordeaux accent on focus */
 }
 
 /* Accessibility */
@@ -2857,7 +2874,7 @@ p {
 }
 
 .theme-toggle:hover {
-  background: rgba(17, 45, 78, 0.1);
+  background: rgba(26, 46, 78, 0.1);
   transform: translateY(-1px);
 }
 

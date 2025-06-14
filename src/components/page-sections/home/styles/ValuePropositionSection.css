@@ -1,6 +1,6 @@
 /* Value Proposition Enhancements */
 .value-prop__banner {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b6b56 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   border-radius: 16px;
   padding: 2.5rem;
   margin-top: 3rem;

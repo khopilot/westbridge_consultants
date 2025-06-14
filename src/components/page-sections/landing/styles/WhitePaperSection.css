@@ -71,14 +71,14 @@
 
 .whitepaper-info__badge {
   display: inline-block;
-  background: rgba(204, 85, 0, 0.1);
+  background: rgba(26, 46, 78, 0.1);
   color: var(--color-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(204, 85, 0, 0.2);
+  border: 1px solid rgba(26, 46, 78, 0.2);
 }
 
 .whitepaper-info h2 {
@@ -249,7 +249,7 @@
 }
 
 .download-btn--primary:hover {
-  background: #b54a00;
+  background: var(--color-primary);
   transform: translateY(-2px);
 }
 

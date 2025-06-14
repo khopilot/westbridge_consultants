@@ -164,7 +164,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(17, 45, 78, 0.08) 0%, rgba(164, 120, 100, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(26, 46, 78, 0.08) 0%, rgba(107, 114, 128, 0.06) 100%);
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 16px;
@@ -214,7 +214,7 @@
 
 .landing-nav__link--active {
   color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(17, 45, 78, 0.12) 0%, rgba(164, 120, 100, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(26, 46, 78, 0.12) 0%, rgba(107, 114, 128, 0.08) 100%);
   font-weight: 600;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -254,7 +254,7 @@
 }
 
 .landing-nav__hamburger:hover {
-  background: rgba(17, 45, 78, 0.1);
+  background: rgba(26, 46, 78, 0.1);
 }
 
 .landing-nav__hamburger-line {
@@ -496,10 +496,10 @@
 
 .landing-nav__mobile-link--active {
   color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(17, 45, 78, 0.08) 0%, rgba(164, 120, 100, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(26, 46, 78, 0.08) 0%, rgba(107, 114, 128, 0.06) 100%);
   font-weight: 600;
-  border: 1px solid rgba(17, 45, 78, 0.15);
-  box-shadow: 0 2px 8px rgba(17, 45, 78, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(26, 46, 78, 0.15);
+  box-shadow: 0 2px 8px rgba(26, 46, 78, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .dark .landing-nav__mobile-link:hover {
@@ -597,14 +597,14 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #b54a00 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   color: white;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(204, 85, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(26, 46, 78, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -625,10 +625,10 @@
 }
 
 .landing-nav__mobile-contact-link:hover {
-  background: linear-gradient(135deg, #b54a00 0%, #a04000 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   transform: translateY(-2px) scale(1.02);
   color: white;
-  box-shadow: 0 6px 16px rgba(204, 85, 0, 0.4);
+  box-shadow: 0 6px 16px rgba(26, 46, 78, 0.4);
 }
 
 /* Responsive Design */

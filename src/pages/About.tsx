@@ -242,7 +242,7 @@ const About: React.FC = () => {
               <Link to="/contact" className="btn btn--primary">
                 Start a Conversation
               </Link>
-              <Link to="/projects" className="btn btn--secondary" style={{ backgroundColor: 'transparent', borderColor: '#ffffff', color: '#ffffff' }}>
+              <Link to="/projects" className="btn btn--secondary-light">
                 View Our Work
               </Link>
             </div>
