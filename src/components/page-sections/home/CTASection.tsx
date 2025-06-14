@@ -32,11 +32,11 @@ const CTASection: React.FC = () => {
             🚀 Ready to Grow Your Business?
           </div>
           <h2 style={{ color: '#ffffff', marginBottom: '1rem' }}>
-            Partner with Cambodia's Leading Business Consultants
+            Partner with Cambodia's Leading Strategic Advisors
           </h2>
           <p className="cta-section__description">
             Join over 50 successful Cambodian businesses who have transformed their operations, 
-            expanded their markets, and achieved sustainable growth with West Bridge Consultants. 
+            expanded their markets, and achieved sustainable growth with Goulding & Co Strategic Advisory. 
             From startup guidance to enterprise transformation, we're here to bridge your vision 
             with reality.
           </p>

@@ -1,6 +1,6 @@
-West Bridge Consultants – Guide Design Complet
+Goulding & Co Strategic Advisory – Guide Design Complet
 
-Ce document .nd contient toutes les spécifications nécessaires pour un·e web designer afin de produire un site professionnel, moderne et cohérent pour West Bridge Consultants.
+Ce document .nd contient toutes les spécifications nécessaires pour un·e web designer afin de produire un site professionnel, moderne et cohérent pour Goulding & Co Strategic Advisory.
 
 ⸻
 

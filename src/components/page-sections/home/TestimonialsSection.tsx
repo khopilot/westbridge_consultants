@@ -25,7 +25,7 @@ const TestimonialsSection: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "West Bridge Consultants helped us navigate the complex process of expanding our rice export business to new ASEAN markets. Their deep understanding of both Cambodian regulations and international trade requirements was invaluable.",
+      quote: "Goulding & Co Strategic Advisory helped us navigate the complex process of expanding our rice export business to new ASEAN markets. Their deep understanding of both Cambodian regulations and international trade requirements was invaluable.",
       author: "Sorn Vicheka",
       position: "Managing Director",
       company: "Golden Rice Export Co.",
@@ -33,7 +33,7 @@ const TestimonialsSection: React.FC = () => {
       industry: "Agriculture"
     },
     {
-      quote: "As a tech startup in Phnom Penh, we needed guidance on business registration and investor relations. West Bridge made the entire process smooth and helped us secure our first round of funding within 4 months.",
+      quote: "As a tech startup in Phnom Penh, we needed guidance on business registration and investor relations. Goulding & Co made the entire process smooth and helped us secure our first round of funding within 4 months.",
       author: "Dr. Jennifer Kim",
       position: "CEO & Founder",
       company: "CamboTech Solutions",
@@ -41,7 +41,7 @@ const TestimonialsSection: React.FC = () => {
       industry: "Technology"
     },
     {
-      quote: "Our tourism business was struggling post-pandemic. West Bridge helped us pivot our strategy, develop sustainable tourism practices, and build partnerships with international tour operators. We're now stronger than ever.",
+      quote: "Our tourism business was struggling post-pandemic. Goulding & Co helped us pivot our strategy, develop sustainable tourism practices, and build partnerships with international tour operators. We're now stronger than ever.",
       author: "Pich Sophea",
       position: "Owner",
       company: "Angkor Heritage Tours",
@@ -49,7 +49,7 @@ const TestimonialsSection: React.FC = () => {
       industry: "Tourism"
     },
     {
-      quote: "The regulatory landscape for banking in Cambodia is complex. West Bridge's expertise in financial services compliance helped us launch our new microfinance products while ensuring full regulatory compliance.",
+      quote: "The regulatory landscape for banking in Cambodia is complex. Goulding & Co's expertise in financial services compliance helped us launch our new microfinance products while ensuring full regulatory compliance.",
       author: "David Chen",
       position: "Regional Director",
       company: "Community Development Bank",

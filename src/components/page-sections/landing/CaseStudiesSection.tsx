@@ -144,7 +144,7 @@ const CaseStudiesSection: React.FC = () => {
             <div className="testimonial-card">
               <div className="testimonial-card__industry">Manufacturing</div>
               <blockquote className="testimonial-card__quote">
-                "West Bridge Consultants transformed our business from a local operation to an international exporter. 
+                "Goulding & Co Strategic Advisory transformed our business from a local operation to an international exporter. 
                 Their deep understanding of both Cambodian regulations and global standards was invaluable."
               </blockquote>
               <div className="testimonial-card__author">

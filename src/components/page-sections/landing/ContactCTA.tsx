@@ -10,7 +10,7 @@ const ContactCTA: React.FC = () => {
             <div className="contact-cta__badge">
               🚀 Ready to Start?
             </div>
-            <h2>Take the Next Step with Cambodia's Premier Business Consultants</h2>
+            <h2>Take the Next Step with Cambodia's Premier Strategic Advisors</h2>
             <p className="contact-cta__description">
               Don't let another opportunity pass by. Connect with our team today and discover how 
               we can accelerate your business success in Cambodia's dynamic market.
@@ -124,7 +124,7 @@ const ContactCTA: React.FC = () => {
 
           <div className="social-proof">
             <p className="social-proof__text">
-              Join 50+ successful businesses who have chosen West Bridge Consultants for their Cambodia expansion
+              Join 50+ successful businesses who have chosen Goulding & Co Strategic Advisory for their Cambodia expansion
             </p>
             <div className="social-proof__stats">
               <div className="proof-stat">

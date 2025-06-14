@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
                   </svg>
                 </div>
                 <div className="footer__logo-text">
-                  <span className="footer__logo-main">West Bridge</span>
-                  <span className="footer__logo-sub">Consultants</span>
+                  <span className="footer__logo-main">Goulding & Co</span>
+                  <span className="footer__logo-sub">Strategic Advisory</span>
                 </div>
               </div>
               <p className="footer__tagline">
@@ -181,7 +181,7 @@ const Footer: React.FC = () => {
           <div className="footer__bottom-content">
             <div className="footer__bottom-left">
               <p className="footer__copyright">
-                &copy; {currentYear} West Bridge Consultants. All rights reserved.
+                &copy; {currentYear} Goulding & Co Strategic Advisory. All rights reserved.
               </p>
             </div>
             <div className="footer__bottom-right">

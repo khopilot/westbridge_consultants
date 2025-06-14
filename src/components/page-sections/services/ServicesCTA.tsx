@@ -77,7 +77,7 @@ const ServicesCTA: React.FC = () => {
             </h2>
             <p className="services-cta__description">
               Join the growing number of successful businesses that have partnered with 
-              West Bridge Consultants to navigate Cambodia's dynamic market. Whether you're 
+              Goulding & Co Strategic Advisory to navigate Cambodia's dynamic market. Whether you're 
               entering the market or scaling operations, we have the expertise and connections 
               to accelerate your success.
             </p>
@@ -106,7 +106,7 @@ const ServicesCTA: React.FC = () => {
 
           {/* Why Choose Us Quick Summary */}
           <div className="services-cta__benefits fade-up" style={{ marginTop: '3rem' }}>
-            <h3>Why Choose West Bridge Consultants?</h3>
+            <h3>Why Choose Goulding & Co Strategic Advisory?</h3>
             <div className="cta-benefits__grid">
               <div className="cta-benefit">
                 <span className="cta-benefit__number">8+</span>

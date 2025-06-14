@@ -99,9 +99,9 @@ const About: React.FC = () => {
         <div className="container">
           <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div className="fade-up">
-              <h1 style={{ color: 'var(--color-primary)', marginBottom: '2rem' }}>About West Bridge Consultants</h1>
+              <h1 style={{ color: 'var(--color-primary)', marginBottom: '2rem' }}>About Goulding & Co Strategic Advisory</h1>
               <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Founded on the principle that every business has untapped potential, West Bridge Consultants 
+                Founded on the principle that every business has untapped potential, Goulding & Co Strategic Advisory 
                 has been transforming organizations for over a decade. We believe in the power of strategic 
                 thinking, innovative solutions, and collaborative partnerships to drive meaningful change.
               </p>

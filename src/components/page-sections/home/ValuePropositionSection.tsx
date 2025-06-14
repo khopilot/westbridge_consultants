@@ -70,7 +70,7 @@ const ValuePropositionSection: React.FC = () => {
     <section className="py-3">
       <div className="container">
         <div className="text-center mb-3">
-          <h2>Why Choose West Bridge Consultants</h2>
+          <h2>Why Choose Goulding & Co Strategic Advisory</h2>
           <p>Your trusted partner for navigating Cambodia's business landscape with confidence and success</p>
         </div>
         
