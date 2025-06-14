@@ -16,6 +16,65 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
 
     const sketch = (p: p5) => {
       let t = 0
+      let animationSettings = {
+        pointCount: 20000,
+        timeStep: p.PI / 90,
+        strokeAlpha: 92,
+        enabled: true
+      }
+
+      // Detect device capabilities and optimize accordingly
+      const optimizeForDevice = () => {
+        const width = p.windowWidth || window.innerWidth
+        const height = p.windowHeight || window.innerHeight
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+        const pixelRatio = window.devicePixelRatio || 1
+        const totalPixels = width * height * pixelRatio
+
+        console.log(`🎨 Device Detection: ${width}x${height}, Mobile: ${isMobile}, Touch: ${isTouchDevice}, Ratio: ${pixelRatio}`)
+
+        // Very small screens or low-end devices
+        if (width < 480 || totalPixels < 500000) {
+          animationSettings = {
+            pointCount: 2500,
+            timeStep: p.PI / 120,
+            strokeAlpha: 80,
+            enabled: true
+          }
+          console.log('🎨 Performance Mode: Very Low (2.5K points)')
+        }
+        // Mobile phones
+        else if (isMobile || (isTouchDevice && width < 768)) {
+          animationSettings = {
+            pointCount: 5000,
+            timeStep: p.PI / 100,
+            strokeAlpha: 85,
+            enabled: true
+          }
+          console.log('🎨 Performance Mode: Mobile (5K points)')
+        }
+        // Tablets
+        else if (isTouchDevice || width < 1024) {
+          animationSettings = {
+            pointCount: 10000,
+            timeStep: p.PI / 95,
+            strokeAlpha: 88,
+            enabled: true
+          }
+          console.log('🎨 Performance Mode: Tablet (10K points)')
+        }
+        // Desktop - full quality
+        else {
+          animationSettings = {
+            pointCount: 20000,
+            timeStep: p.PI / 90,
+            strokeAlpha: 92,
+            enabled: true
+          }
+          console.log('🎨 Performance Mode: Desktop (20K points)')
+        }
+      }
 
       // The original elegant mathematical function from your algorithm
       const a = (x: number, y: number) => {
@@ -36,31 +95,43 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
       }
 
       p.setup = () => {
-        console.log('🎨 HeroAnimation: Setting up original curve animation with gradient')
+        console.log('🎨 HeroAnimation: Setting up responsive curve animation')
         const canvas = p.createCanvas(p.windowWidth, p.windowHeight)
         canvas.parent(sketchRef.current!)
-        console.log('🎨 HeroAnimation: Original curve animation initialized')
+        
+        // Optimize settings based on device
+        optimizeForDevice()
+        
+        console.log('🎨 HeroAnimation: Responsive animation initialized')
       }
 
       p.draw = () => {
-        // Clear background to keep CSS gradient visible (instead of background(6))
+        // Skip animation if disabled
+        if (!animationSettings.enabled) {
+          return
+        }
+
+        // Clear background to keep CSS gradient visible
         p.clear()
         
-        // Set stroke properties (white with transparency for visibility on gradient)
-        p.stroke(255, 255, 255, 92)
+        // Set stroke properties with adaptive alpha
+        p.stroke(255, 255, 255, animationSettings.strokeAlpha)
         p.strokeWeight(1)
         
-        // Increment time (original speed)
-        t += p.PI / 90
+        // Increment time with adaptive speed
+        t += animationSettings.timeStep
         
-        // Draw 20,000 points in elegant curves (original parameters)
-        for (let i = 20000; i > 0; i--) {
+        // Draw adaptive number of points
+        for (let i = animationSettings.pointCount; i > 0; i--) {
           a(i % 100, i / 350)
         }
       }
 
       p.windowResized = () => {
         p.resizeCanvas(p.windowWidth, p.windowHeight)
+        // Re-optimize when window is resized (orientation change, etc.)
+        optimizeForDevice()
+        console.log('🎨 Animation re-optimized for new window size')
       }
     }
 
