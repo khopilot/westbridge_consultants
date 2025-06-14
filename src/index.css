@@ -988,10 +988,69 @@ p {
   }
 }
 
+/* Animation Toggle Component */
+.animation-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(74, 144, 226, 0.4);
+  color: #74d0e2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.2);
+}
+
+.animation-toggle--active {
+  background: rgba(74, 144, 226, 0.2);
+  border-color: rgba(74, 144, 226, 0.4);
+  color: #74d0e2;
+}
+
+.dark .animation-toggle {
+  background: rgba(15, 20, 25, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .animation-toggle:hover {
+  background: rgba(15, 20, 25, 0.9);
+  border-color: rgba(74, 144, 226, 0.5);
+}
+
+.dark .animation-toggle--active {
+  background: rgba(74, 144, 226, 0.15);
+  border-color: rgba(74, 144, 226, 0.4);
+}
+
+@media (max-width: 768px) {
+  .animation-toggle {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -999,11 +1058,12 @@ p {
   color: #ffffff;
   margin-top: -6rem;
   padding-top: 6rem;
+  position: relative;
 }
 
 /* Dark theme hero adjustments with improved contrast */
 .dark .hero {
-  background: var(--dark-gradient-hero);
+  background: transparent;
 }
 
 /* Enhanced hero text readability in dark mode */
@@ -1044,13 +1104,15 @@ p {
   color: #ffffff;
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 .hero__content h2 {
   color: var(--color-bg-light);
   margin-bottom: 2rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 /* Professional Footer */

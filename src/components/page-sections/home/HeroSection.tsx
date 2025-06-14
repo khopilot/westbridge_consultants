@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HeroAnimation from '../../HeroAnimation'
 import './styles/HeroSection.css'
 
 const HeroSection: React.FC = () => {
   return (
     <section className="hero">
+      {/* Animated Background - Always visible */}
+      <HeroAnimation />
+      
+      {/* Content Overlay */}
+      <div className="hero__overlay"></div>
+      
       <div className="container">
         <div className="hero__content">
           <h1>Bridging Success Across Cambodia</h1>
