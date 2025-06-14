@@ -14,11 +14,10 @@ const HeroSection: React.FC = () => {
       
       <div className="container">
         <div className="hero__content">
-          <h1>Bridging Success Across Cambodia</h1>
-          <h2>Expert business consulting for sustainable growth in Southeast Asia's emerging markets</h2>
+          <h1>Find your way in Cambodia</h1>
+          <h2>Cambodia is profitable but complicated.</h2>
           <p className="hero__subtitle">
-            From Phnom Penh to Siem Reap, we help businesses navigate Cambodia's dynamic landscape 
-            with strategic insights, local expertise, and proven methodologies.
+            We simplify complexity, clarify risk, and get your projects moving quickly. We know local rules, relationships, and realities because we learned them firsthand. You benefit from our direct experience without repeating our mistakes.
           </p>
           <div className="hero__actions">
             <Link to="/contact" className="btn btn--primary">
