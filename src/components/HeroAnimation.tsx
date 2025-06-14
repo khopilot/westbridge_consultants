@@ -16,11 +16,9 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
 
     const sketch = (p: p5) => {
       let t = 0
-      let w: number
 
       p.setup = () => {
         console.log('🎨 HeroAnimation: Setting up generative art canvas')
-        w = 400 // Base canvas size for the algorithm
         const canvas = p.createCanvas(p.windowWidth, p.windowHeight)
         canvas.parent(sketchRef.current!)
         console.log('🎨 HeroAnimation: Generative art initialized')
