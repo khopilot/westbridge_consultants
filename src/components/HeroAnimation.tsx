@@ -26,43 +26,46 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
         console.log('🎨 HeroAnimation: Generative art initialized')
       }
 
-      // Your beautiful generative art algorithm (adapted)
-      const a = (x: number, y: number) => {
-        const k = x / 8 - 12
-        const e = y / 8 - 12
+      // Your new sophisticated generative art algorithm
+      const a = (x: number, y: number): [number, number] => {
+        const k = x / 8 - 25
+        const e = y / 8 - 25
         const mag = Math.sqrt(k * k + e * e)
-        const o = 2 - mag / 3
-        const d = -5 * Math.abs(Math.sin(k / 2) * Math.cos(e * 0.8))
+        const d = Math.cos(mag / 3) * e / 5
+        const q = x / 4 + k / Math.cos(y / 9) * Math.sin(d * 9 - t) + 25
+        const c = d - t / 8
         
-        const px = (x - d * k * 4 + d * k * Math.sin(d + t)) * 0.7 + k * o * 2 + 130
-        const py = (y - d * y / 5 + d * e * Math.cos(d + t + o) * Math.sin(t + d)) * 0.7 + e * o + 70
+        const px = q * Math.sin(c) + 200
+        const py = (q * 2 + x + y / 2 + d * 90) / 4 * Math.cos(c) + 200
         
-        // Scale to fit full screen
-        const scaledX = (px / 400) * p.width
-        const scaledY = (py / 400) * p.height
-        
-        // Ensure points are within screen bounds
-        if (scaledX >= 0 && scaledX <= p.width && scaledY >= 0 && scaledY <= p.height) {
-          p.point(scaledX, scaledY)
-        }
+        return [px, py]
       }
 
       p.draw = () => {
-        // Dark background (matching your algorithm)
-        p.background(6, 96)
+        // Dark background with subtle transparency
+        p.background(6, 36)
         
         // Set stroke color (white with transparency)
-        p.stroke(w, 46)
+        p.stroke(255, 36)
         p.strokeWeight(1)
         
         // Increment time (matching your algorithm)
-        t += Math.PI / 90
+        t += Math.PI / 60
         
-        // Draw the generative art pattern (40000 points like your algorithm)
-        for (let i = 0; i < 40000; i++) {
-          const x = i % 200
-          const y = Math.floor(i / 200)
-          a(x, y)
+        // Draw the generative art pattern (nested loops like your algorithm)
+        for (let y = 99; y < 300; y += 2) {
+          for (let x = 99; x < 300; x++) {
+            const [px, py] = a(x, y)
+            
+            // Scale to fit full screen while maintaining aspect ratio
+            const scaledX = (px / 400) * p.width
+            const scaledY = (py / 400) * p.height
+            
+            // Ensure points are within screen bounds
+            if (scaledX >= 0 && scaledX <= p.width && scaledY >= 0 && scaledY <= p.height) {
+              p.point(scaledX, scaledY)
+            }
+          }
         }
       }
 
