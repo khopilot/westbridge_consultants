@@ -9,18 +9,17 @@ const CaseStudiesSection: React.FC = () => {
           <div className="case-studies-section__badge">
             📊 Success Stories
           </div>
-          <h2>Case Studies & Client Testimonials</h2>
+          <h2>Case&nbsp;Studies</h2>
           <p className="case-studies-section__description">
-            Real results from real businesses. See how we've helped companies across Cambodia 
-            achieve their growth objectives and transform their operations.
+            One picture is worth a thousand words. We like to keep things simple:
           </p>
         </div>
 
         <div className="case-studies-grid">
           <div className="case-study-card">
             <div className="case-study-card__header">
-              <div className="case-study-card__industry">Manufacturing</div>
-              <h3 className="case-study-card__title">Textile Export Expansion</h3>
+              <div className="case-study-card__industry">Client</div>
+              <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
             </div>
             <div className="case-study-card__challenge">
               <h4>Challenge</h4>
@@ -30,7 +29,7 @@ const CaseStudiesSection: React.FC = () => {
               </p>
             </div>
             <div className="case-study-card__solution">
-              <h4>Our Solution</h4>
+              <h4>Solution&nbsp;Implemented</h4>
               <ul>
                 <li>Implemented lean manufacturing processes</li>
                 <li>Facilitated international certifications</li>
@@ -39,7 +38,7 @@ const CaseStudiesSection: React.FC = () => {
               </ul>
             </div>
             <div className="case-study-card__results">
-              <h4>Results</h4>
+              <h4>Real&nbsp;Outcome</h4>
               <div className="results-metrics">
                 <div className="result-metric">
                   <span className="metric__number">300%</span>
@@ -59,8 +58,8 @@ const CaseStudiesSection: React.FC = () => {
 
           <div className="case-study-card">
             <div className="case-study-card__header">
-              <div className="case-study-card__industry">Technology</div>
-              <h3 className="case-study-card__title">Fintech Platform Launch</h3>
+              <div className="case-study-card__industry">Client</div>
+              <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
             </div>
             <div className="case-study-card__challenge">
               <h4>Challenge</h4>
@@ -70,7 +69,7 @@ const CaseStudiesSection: React.FC = () => {
               </p>
             </div>
             <div className="case-study-card__solution">
-              <h4>Our Solution</h4>
+              <h4>Solution&nbsp;Implemented</h4>
               <ul>
                 <li>Guided through National Bank licensing process</li>
                 <li>Facilitated partnerships with major local banks</li>
@@ -79,7 +78,7 @@ const CaseStudiesSection: React.FC = () => {
               </ul>
             </div>
             <div className="case-study-card__results">
-              <h4>Results</h4>
+              <h4>Real&nbsp;Outcome</h4>
               <div className="results-metrics">
                 <div className="result-metric">
                   <span className="metric__number">6 months</span>
@@ -99,8 +98,8 @@ const CaseStudiesSection: React.FC = () => {
 
           <div className="case-study-card">
             <div className="case-study-card__header">
-              <div className="case-study-card__industry">Agriculture</div>
-              <h3 className="case-study-card__title">Rice Processing Modernization</h3>
+              <div className="case-study-card__industry">Client</div>
+              <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
             </div>
             <div className="case-study-card__challenge">
               <h4>Challenge</h4>
@@ -110,7 +109,7 @@ const CaseStudiesSection: React.FC = () => {
               </p>
             </div>
             <div className="case-study-card__solution">
-              <h4>Our Solution</h4>
+              <h4>Solution&nbsp;Implemented</h4>
               <ul>
                 <li>Upgraded processing equipment and technology</li>
                 <li>Implemented quality control systems</li>
@@ -119,7 +118,7 @@ const CaseStudiesSection: React.FC = () => {
               </ul>
             </div>
             <div className="case-study-card__results">
-              <h4>Results</h4>
+              <h4>Real&nbsp;Outcome</h4>
               <div className="results-metrics">
                 <div className="result-metric">
                   <span className="metric__number">250%</span>

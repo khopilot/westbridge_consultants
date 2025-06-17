@@ -3199,3 +3199,23 @@ p {
   color: var(--color-text);
   line-height: 1.5;
 }
+
+/* Current gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* We should add a dark mode specific gradient */
+.dark .text-gradient {
+  background: linear-gradient(135deg, 
+    #f0f6fc 0%, 
+    #e8f1ff 50%, 
+    #9ca3af 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

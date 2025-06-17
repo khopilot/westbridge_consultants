@@ -7,13 +7,10 @@ const ContactCTA: React.FC = () => {
       <div className="container">
         <div className="contact-cta__content">
           <div className="contact-cta__header text-center">
-            <div className="contact-cta__badge">
-              🚀 Ready to Start?
-            </div>
-            <h2>Take the Next Step with Cambodia's Premier Strategic Advisors</h2>
+            <div className="contact-cta__badge">📞&nbsp;Let's&nbsp;Talk</div>
+            <h2>Request a Brief Call to Outline Your Project</h2>
             <p className="contact-cta__description">
-              Don't let another opportunity pass by. Connect with our team today and discover how 
-              we can accelerate your business success in Cambodia's dynamic market.
+              You get direct feedback, not sales pitches.
             </p>
           </div>
 

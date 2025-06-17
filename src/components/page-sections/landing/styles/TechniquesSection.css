@@ -171,7 +171,7 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -354,13 +354,13 @@
   }
   
   .techniques-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
+    max-width: 1500px;
   }
   
   .technique-card {
-    padding: 1.5rem;
-    min-height: 420px;
+    min-height: 450px;
+    padding: 2.5rem;
   }
 }
 
@@ -378,7 +378,6 @@
   .techniques-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 0 1rem;
   }
   
   .technique-card {

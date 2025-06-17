@@ -79,6 +79,14 @@
   font-size: 3rem;
   margin: 0 auto;
   border: 3px solid var(--color-border);
+  overflow: hidden;
+}
+
+.team-member__photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .team-member__name {
@@ -316,4 +324,35 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+.landing-hero__highlights{
+  grid-template-columns:repeat(4,1fr);        /* 4 colonnes fixes */
+}
+
+@media(max-width:1023px){
+  .landing-hero__highlights{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:767px){
+  .landing-hero__highlights{grid-template-columns:1fr;}
+}
+
+/* Current gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* We should add a dark mode specific gradient */
+.dark .text-gradient {
+  background: linear-gradient(135deg, 
+    #f0f6fc 0%, 
+    #e8f1ff 50%, 
+    #9ca3af 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

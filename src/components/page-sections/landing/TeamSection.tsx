@@ -6,34 +6,26 @@ const TeamSection: React.FC = () => {
     <section id="team" className="team-section py-3">
       <div className="container">
         <div className="team-section__header text-center mb-3">
-          <div className="team-section__badge">
-            👥 Leadership Team
-          </div>
-          <h2>Meet Your Cambodia Business Experts</h2>
-          <p className="team-section__description">
-            Our team combines decades of international business experience with deep local expertise. 
-            Led by seasoned consultants Brett and Hugo, we bring proven leadership to your Cambodia venture.
-          </p>
+          <div className="team-section__badge">👥 Our Partners</div>
+          <h2>Meet the Team</h2>
+          <p className="team-section__description">Two entrepreneurs who learned Cambodia the hard way—and now make it simple for you.</p>
         </div>
 
         <div className="team-grid">
           <div className="team-member">
             <div className="team-member__photo">
               <div className="team-member__photo-placeholder">
-                👨‍💼
+                <img src="/brett.jpg" alt="Brett Goulding" className="team-member__photo-img" />
               </div>
             </div>
             <div className="team-member__info">
-              <h3 className="team-member__name">Brett Harrison</h3>
-              <div className="team-member__title">Managing Partner & Strategic Advisor</div>
+              <h3 className="team-member__name">Brett&nbsp;Goulding</h3>
+              <div className="team-member__title">Founder</div>
               <div className="team-member__credentials">
-                <span className="credential">MBA, Wharton</span>
-                <span className="credential">15+ Years Asia Experience</span>
+                <span className="credential">Operating in Cambodia since 2015</span>
               </div>
               <p className="team-member__bio">
-                Brett leads our strategic consulting practice with extensive experience in Southeast Asian markets. 
-                Previously served as Regional Director for Fortune 500 companies across ASEAN, with particular 
-                expertise in manufacturing and export operations in Cambodia.
+                Experienced in turning complex rural investments into profitable realities, Brett is known for practical problem-solving and hands-on execution across Cambodia.
               </p>
               <div className="team-member__expertise">
                 <h4>Core Expertise:</h4>
@@ -50,20 +42,18 @@ const TeamSection: React.FC = () => {
           <div className="team-member">
             <div className="team-member__photo">
               <div className="team-member__photo-placeholder">
-                👨‍💻
+                <img src="/hugo.brett.jpg" alt="Hugo Morel" className="team-member__photo-img" />
               </div>
             </div>
             <div className="team-member__info">
-              <h3 className="team-member__name">Hugo Chen</h3>
-              <div className="team-member__title">Senior Partner & Innovation Lead</div>
+              <h3 className="team-member__name">Hugo&nbsp;Morel</h3>
+              <div className="team-member__title">Co-Founder</div>
               <div className="team-member__credentials">
-                <span className="credential">MS, Technology Management</span>
-                <span className="credential">12+ Years Cambodia Focus</span>
+                <span className="credential">Operating in Cambodia since 2016</span>
+                <span className="credential">Fluent in Khmer</span>
               </div>
               <p className="team-member__bio">
-                Hugo specializes in technology integration and digital transformation for Cambodian businesses. 
-                His background in fintech and agtech has enabled numerous startups and traditional businesses 
-                to leverage technology for competitive advantage.
+                Hugo excels at navigating local complexity to achieve strategic objectives. His language skills and network open doors that outsiders rarely see.
               </p>
               <div className="team-member__expertise">
                 <h4>Core Expertise:</h4>

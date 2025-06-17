@@ -5,6 +5,14 @@ interface HeroAnimationProps {
   className?: string
 }
 
+interface Walker {
+  n: number
+  m: number
+  t: number
+  hue: number
+  trail: { x: number, y: number, alpha: number }[]
+}
+
 const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
   const sketchRef = useRef<HTMLDivElement>(null)
   const [p5Instance, setP5Instance] = useState<p5 | null>(null)
@@ -15,123 +23,213 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ className = '' }) => {
     if (!sketchRef.current) return
 
     const sketch = (p: p5) => {
-      let t = 0
-      let animationSettings = {
-        pointCount: 20000,
-        timeStep: p.PI / 90,
-        strokeAlpha: 92,
-        enabled: true
-      }
+      let w: number, s: number
+      let walkers: Walker[]
+      let gridSize: number
+      let animationSpeed: number
+      let maxTrailLength: number
 
-      // Detect device capabilities and optimize accordingly
+      // Device optimization settings
       const optimizeForDevice = () => {
         const width = p.windowWidth || window.innerWidth
-        const height = p.windowHeight || window.innerHeight
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-        const pixelRatio = window.devicePixelRatio || 1
-        const totalPixels = width * height * pixelRatio
 
-        console.log(`🎨 Device Detection: ${width}x${height}, Mobile: ${isMobile}, Touch: ${isTouchDevice}, Ratio: ${pixelRatio}`)
-
-        // Very small screens or low-end devices
-        if (width < 480 || totalPixels < 500000) {
-          animationSettings = {
-            pointCount: 2500,
-            timeStep: p.PI / 120,
-            strokeAlpha: 80,
-            enabled: true
-          }
-          console.log('🎨 Performance Mode: Very Low (2.5K points)')
-        }
-        // Mobile phones
-        else if (isMobile || (isTouchDevice && width < 768)) {
-          animationSettings = {
-            pointCount: 5000,
-            timeStep: p.PI / 100,
-            strokeAlpha: 85,
-            enabled: true
-          }
-          console.log('🎨 Performance Mode: Mobile (5K points)')
-        }
-        // Tablets
-        else if (isTouchDevice || width < 1024) {
-          animationSettings = {
-            pointCount: 10000,
-            timeStep: p.PI / 95,
-            strokeAlpha: 88,
-            enabled: true
-          }
-          console.log('🎨 Performance Mode: Tablet (10K points)')
-        }
-        // Desktop - full quality
-        else {
-          animationSettings = {
-            pointCount: 20000,
-            timeStep: p.PI / 90,
-            strokeAlpha: 92,
-            enabled: true
-          }
-          console.log('🎨 Performance Mode: Desktop (20K points)')
+        if (width < 480) {
+          // Small mobile - minimal
+          gridSize = 4
+          animationSpeed = 1/30
+          maxTrailLength = 8
+          return { walkerCount: 1, showGrid: false }
+        } else if (isMobile || (isTouchDevice && width < 768)) {
+          // Mobile - optimized
+          gridSize = 5
+          animationSpeed = 1/25
+          maxTrailLength = 12
+          return { walkerCount: 2, showGrid: true }
+        } else if (isTouchDevice || width < 1024) {
+          // Tablet - balanced
+          gridSize = 6
+          animationSpeed = 1/20
+          maxTrailLength = 15
+          return { walkerCount: 3, showGrid: true }
+        } else {
+          // Desktop - full experience
+          gridSize = 7
+          animationSpeed = 1/20
+          maxTrailLength = 20
+          return { walkerCount: 4, showGrid: true }
         }
       }
 
-      // The original elegant mathematical function from your algorithm
-      const a = (x: number, y: number) => {
-        const k = x / 4 - 12.5
-        const e = y / 9
-        const o = p.mag(k, e) / 9
-        const q = x / 3 + 99 + 3 / k * p.sin(y) + k * (1 + p.cos(y) / 3 + p.sin(e + o * 4 - t * 2))
-        const c = o / 5 + e / 4 - t / 8
+      const createWalker = (index: number): Walker => ({
+        n: Math.floor(Math.random() * gridSize * gridSize),
+        m: Math.floor(Math.random() * gridSize * gridSize),
+        t: Math.random(),
+        hue: (index * 80 + Math.random() * 40) % 360,
+        trail: []
+      })
+
+      const getNeighbors = (pos: number): number[] => {
+        const neighbors: number[] = []
+        const x = pos % gridSize
+        const y = Math.floor(pos / gridSize)
         
-        const px = q * p.cos(c) + 200
-        const py = (q + 49) * p.sin(c) * p.cos(c) - q / 3 + 30 * o + 220
+        // Check all 4 adjacent positions
+        if (x > 0) neighbors.push(pos - 1) // Left
+        if (x < gridSize - 1) neighbors.push(pos + 1) // Right
+        if (y > 0) neighbors.push(pos - gridSize) // Up
+        if (y < gridSize - 1) neighbors.push(pos + gridSize) // Down
         
-        // Scale to fit the screen while maintaining proportions
-        const scaledX = (px / 400) * p.width
-        const scaledY = (py / 400) * p.height
-        
-        p.point(scaledX, scaledY)
+        return neighbors
+      }
+
+      const updateTrail = (walker: Walker, x: number, y: number) => {
+        walker.trail.unshift({ x, y, alpha: 255 })
+        if (walker.trail.length > maxTrailLength) {
+          walker.trail.pop()
+        }
+        // Fade trail
+        walker.trail.forEach((point, i) => {
+          point.alpha = 255 * (1 - i / maxTrailLength)
+        })
       }
 
       p.setup = () => {
-        console.log('🎨 HeroAnimation: Setting up responsive curve animation')
+        console.log('🎨 HeroAnimation: Setting up enhanced pathfinding animation')
         const canvas = p.createCanvas(p.windowWidth, p.windowHeight)
         canvas.parent(sketchRef.current!)
         
-        // Optimize settings based on device
-        optimizeForDevice()
+        const deviceSettings = optimizeForDevice()
+        w = gridSize
+        s = Math.min(400, Math.min(p.width, p.height) * 0.8) / w
         
-        console.log('🎨 HeroAnimation: Responsive animation initialized')
+        // Initialize multiple walkers
+        walkers = []
+        for (let i = 0; i < deviceSettings.walkerCount; i++) {
+          walkers.push(createWalker(i))
+        }
+        
+        console.log(`🎨 Enhanced pathfinding: ${deviceSettings.walkerCount} walkers on ${w}×${w} grid`)
       }
 
       p.draw = () => {
-        // Skip animation if disabled
-        if (!animationSettings.enabled) {
-          return
-        }
-
         // Clear background to keep CSS gradient visible
         p.clear()
         
-        // Set stroke properties with adaptive alpha
-        p.stroke(255, 255, 255, animationSettings.strokeAlpha)
-        p.strokeWeight(1)
+        // Calculate scale and center position
+        const maxSize = Math.min(p.width, p.height) * 0.7
+        const scaleFactor = maxSize / (w * s)
+        const offsetX = (p.width - w * s * scaleFactor) / 2
+        const offsetY = (p.height - w * s * scaleFactor) / 2
+
+        // Draw grid background (subtle)
+        p.fill(255, 255, 255, 15)
+        p.stroke(255, 255, 255, 30)
+        p.strokeWeight(0.5)
         
-        // Increment time with adaptive speed
-        t += animationSettings.timeStep
-        
-        // Draw adaptive number of points
-        for (let i = animationSettings.pointCount; i > 0; i--) {
-          a(i % 100, i / 350)
+        for (let y = 0; y < w; y++) {
+          for (let x = 0; x < w; x++) {
+            const rectX = offsetX + x * s * scaleFactor
+            const rectY = offsetY + y * s * scaleFactor
+            const rectSize = s * scaleFactor
+            p.rect(rectX, rectY, rectSize, rectSize, 8 * scaleFactor)
+          }
+        }
+
+        // Update and draw each walker
+        walkers.forEach((walker, index) => {
+          // Animation timing
+          walker.t = walker.t > 1 ? 0 : walker.t + animationSpeed
+          
+          // Choose new target when animation completes
+          if (walker.t === 0) {
+            const neighbors = getNeighbors(walker.n)
+            if (neighbors.length > 0) {
+              walker.m = walker.n
+              walker.n = neighbors[Math.floor(Math.random() * neighbors.length)]
+            }
+          }
+
+          // Calculate current position with easing
+          const fromX = walker.m % w
+          const fromY = Math.floor(walker.m / w)
+          const toX = walker.n % w
+          const toY = Math.floor(walker.n / w)
+          
+          // Different easing for each walker
+          const easing = index % 2 === 0 ? walker.t * walker.t : 1 - (1 - walker.t) * (1 - walker.t)
+          const currentX = p.lerp(fromX, toX, easing)
+          const currentY = p.lerp(fromY, toY, easing)
+          
+          // Update trail
+          updateTrail(walker, currentX, currentY)
+
+          // Draw trail
+          walker.trail.forEach((point, i) => {
+            if (i > 0) {
+              const alpha = point.alpha * 0.6
+              p.stroke(255, 255, 255, alpha)
+              p.strokeWeight((3 - i * 0.1) * scaleFactor)
+              
+              const trailX = offsetX + point.x * s * scaleFactor + s * scaleFactor / 2
+              const trailY = offsetY + point.y * s * scaleFactor + s * scaleFactor / 2
+              const prevX = offsetX + walker.trail[i-1].x * s * scaleFactor + s * scaleFactor / 2
+              const prevY = offsetY + walker.trail[i-1].y * s * scaleFactor + s * scaleFactor / 2
+              
+              p.line(prevX, prevY, trailX, trailY)
+            }
+          })
+            
+          // Draw walker with glow effect
+          const walkerX = offsetX + currentX * s * scaleFactor
+          const walkerY = offsetY + currentY * s * scaleFactor
+          const walkerSize = s * scaleFactor * 0.8
+          
+          // Glow effect
+          for (let r = 4; r > 0; r--) {
+            p.fill(255, 255, 255, 50 / r)
+            p.noStroke()
+            p.ellipse(walkerX + s * scaleFactor / 2, walkerY + s * scaleFactor / 2, walkerSize + r * 4 * scaleFactor)
+          }
+          
+          // Main walker
+          p.fill(255, 255, 255, 200)
+          p.stroke(255, 255, 255, 255)
+          p.strokeWeight(2 * scaleFactor)
+          p.ellipse(walkerX + s * scaleFactor / 2, walkerY + s * scaleFactor / 2, walkerSize)
+          
+          // Inner core
+          p.fill(255, 255, 255, 255)
+          p.noStroke()
+          p.ellipse(walkerX + s * scaleFactor / 2, walkerY + s * scaleFactor / 2, walkerSize * 0.4)
+        })
+
+        // Add subtle animated background elements
+        const time = p.millis() * 0.001
+        for (let i = 0; i < 8; i++) {
+          const x = (p.noise(i * 0.1, time * 0.2) * p.width)
+          const y = (p.noise(i * 0.1 + 100, time * 0.15) * p.height)
+          const size = p.noise(i * 0.1 + 200, time * 0.1) * 20 + 5
+          
+          p.fill(255, 255, 255, 8)
+          p.noStroke()
+          p.ellipse(x, y, size)
         }
       }
 
       p.windowResized = () => {
         p.resizeCanvas(p.windowWidth, p.windowHeight)
-        // Re-optimize when window is resized (orientation change, etc.)
-        optimizeForDevice()
-        console.log('🎨 Animation re-optimized for new window size')
+        const deviceSettings = optimizeForDevice()
+        s = Math.min(400, Math.min(p.width, p.height) * 0.8) / w
+        
+        // Adjust walker count if needed
+        while (walkers.length < deviceSettings.walkerCount) {
+          walkers.push(createWalker(walkers.length))
+        }
+        while (walkers.length > deviceSettings.walkerCount) {
+          walkers.pop()
+        }
       }
     }
 

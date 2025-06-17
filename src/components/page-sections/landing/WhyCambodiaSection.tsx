@@ -9,10 +9,12 @@ const WhyCambodiaSection: React.FC = () => {
           <div className="why-cambodia-section__badge">
             🇰🇭 Local Expertise
           </div>
-          <h2>Why Cambodia? Why Now?</h2>
+          <h2>Why&nbsp;Cambodia</h2>
           <p className="why-cambodia-section__description">
-            Cambodia represents one of Southeast Asia's most promising growth markets. Our deep local expertise 
-            and execution track record position your business for success in this dynamic economy.
+            Cambodia is full of opportunities, but unlocking them requires knowledge that is not taught in universities. You need to understand who controls decisions locally and how the money flows. We spent years learning this by making mistakes, building contacts, and finding practical solutions. You get the results without the headaches.
+          </p>
+          <p className="why-cambodia-section__description">
+            Cambodia is mostly rural. Its workforce is young. Operating costs are still low. The country has come a long way, but the transition is still ongoing and fuels growth. Indeed, Cambodia had the fastest-growing GDP in ASEAN over the past decade.
           </p>
         </div>
 

@@ -38,30 +38,28 @@ const LandingHero: React.FC = () => {
               <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
               <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
             </svg>
-            <span>Strategic Business Consulting in Cambodia</span>
+            <span>Cambodia Consulting Specialists</span>
           </div>
           
           <h1 className="fade-up-element">
-            Transform Your Business in 
-            <span className="text-gradient"> Cambodia's Growing Market</span>
+            Cambodia&nbsp;<span className="text-gradient">Made&nbsp;Simple</span>
           </h1>
           
-          <h2 className="fade-up-element">Premier consulting services for sustainable growth and market leadership</h2>
+          <h2 className="fade-up-element">Cambodia rewards bold investors, but only if you master its rules. We shorten the learning curve, cut the risk, and get you moving fast.</h2>
           
           <p className="landing-hero__subtitle fade-up-element">
-            Expert guidance from market entry to enterprise transformation. We combine deep local knowledge 
-            with international best practices to accelerate your success in Southeast Asia's most promising economy.
+            We have spent ten years in Cambodia learning the hard way. With us, you start on day one with that decade of knowledge in your pocket.
           </p>
           
           <div className="landing-hero__cta fade-up-element">
             <button className="hero-cta hero-cta--primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span>Start Your Journey</span>
+              <span>Request&nbsp;a&nbsp;Call</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             <button className="hero-cta hero-cta--secondary" onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span>Explore Our Approach</span>
+              <span>See&nbsp;Our&nbsp;Approach</span>
             </button>
           </div>
           
