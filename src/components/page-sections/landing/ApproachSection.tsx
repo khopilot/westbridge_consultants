@@ -290,9 +290,6 @@ const ApproachSection: React.FC = () => {
                     <span className="methodology-phase__number">
                       {phase.number}
                     </span>
-                    <span className="methodology-phase__timeline">
-                      {phase.timeline}
-                    </span>
                   </div>
                   <h3 className="methodology-phase__title">{phase.title}</h3>
                   <p className="methodology-phase__subtitle">{phase.subtitle}</p>
