@@ -81,19 +81,19 @@ const WhyCambodiaSection: React.FC = () => {
               </div>
               <div className="expertise-showcase__stats">
                 <div className="stat-card">
-                  <span className="stat-card__number">50+</span>
+                  <span className="stat-card__number shiny-metric">50+</span>
                   <span className="stat-card__label">Successful Projects</span>
                 </div>
                 <div className="stat-card">
-                  <span className="stat-card__number">8</span>
+                  <span className="stat-card__number shiny-metric">8</span>
                   <span className="stat-card__label">Years Local Experience</span>
                 </div>
                 <div className="stat-card">
-                  <span className="stat-card__number">15+</span>
+                  <span className="stat-card__number shiny-metric">15+</span>
                   <span className="stat-card__label">Industry Sectors</span>
                 </div>
                 <div className="stat-card">
-                  <span className="stat-card__number">100%</span>
+                  <span className="stat-card__number shiny-metric">100%</span>
                   <span className="stat-card__label">Client Retention Rate</span>
                 </div>
               </div>

@@ -37,23 +37,7 @@ const CaseStudiesSection: React.FC = () => {
                 <li>Optimized supply chain logistics</li>
               </ul>
             </div>
-            <div className="case-study-card__results">
-              <h4>Real&nbsp;Outcome</h4>
-              <div className="results-metrics">
-                <div className="result-metric">
-                  <span className="metric__number">300%</span>
-                  <span className="metric__label">Production Increase</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">$15M</span>
-                  <span className="metric__label">Annual Export Value</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">500+</span>
-                  <span className="metric__label">Jobs Created</span>
-                </div>
-              </div>
-            </div>
+
           </div>
 
           <div className="case-study-card">
@@ -77,23 +61,7 @@ const CaseStudiesSection: React.FC = () => {
                 <li>Executed market entry strategy</li>
               </ul>
             </div>
-            <div className="case-study-card__results">
-              <h4>Real&nbsp;Outcome</h4>
-              <div className="results-metrics">
-                <div className="result-metric">
-                  <span className="metric__number">6 months</span>
-                  <span className="metric__label">Time to Market</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">100K+</span>
-                  <span className="metric__label">Active Users</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">5</span>
-                  <span className="metric__label">Bank Partners</span>
-                </div>
-              </div>
-            </div>
+
           </div>
 
           <div className="case-study-card">
@@ -117,23 +85,7 @@ const CaseStudiesSection: React.FC = () => {
                 <li>Connected with premium export buyers</li>
               </ul>
             </div>
-            <div className="case-study-card__results">
-              <h4>Real&nbsp;Outcome</h4>
-              <div className="results-metrics">
-                <div className="result-metric">
-                  <span className="metric__number">250%</span>
-                  <span className="metric__label">Revenue Growth</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">15</span>
-                  <span className="metric__label">Export Countries</span>
-                </div>
-                <div className="result-metric">
-                  <span className="metric__number">80%</span>
-                  <span className="metric__label">Waste Reduction</span>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -144,19 +96,19 @@ const CaseStudiesSection: React.FC = () => {
             <p>The cumulative results from our client partnerships demonstrate our commitment to driving meaningful business transformation across Cambodia.</p>
             <div className="success-metrics__grid">
               <div className="success-metric">
-                <span className="success-metric__number">$150M+</span>
+                <span className="success-metric__number shiny-metric">$150M+</span>
                 <span className="success-metric__label">Total Revenue Generated</span>
               </div>
               <div className="success-metric">
-                <span className="success-metric__number">2,500+</span>
+                <span className="success-metric__number shiny-metric">2,500+</span>
                 <span className="success-metric__label">Jobs Created</span>
               </div>
               <div className="success-metric">
-                <span className="success-metric__number">30+</span>
+                <span className="success-metric__number shiny-metric">30+</span>
                 <span className="success-metric__label">International Markets Entered</span>
               </div>
               <div className="success-metric">
-                <span className="success-metric__number">95%</span>
+                <span className="success-metric__number shiny-metric">95%</span>
                 <span className="success-metric__label">Client Satisfaction Rate</span>
               </div>
             </div>

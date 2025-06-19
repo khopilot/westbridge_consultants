@@ -80,19 +80,19 @@ const WhitePaperSection: React.FC = () => {
                 <h3>Proven Insights</h3>
                 <div className="stats-grid">
                   <div className="whitepaper-stat">
-                    <span className="whitepaper-stat__number">8</span>
+                    <span className="whitepaper-stat__number shiny-metric">8</span>
                     <span className="whitepaper-stat__label">Years Research</span>
                   </div>
                   <div className="whitepaper-stat">
-                    <span className="whitepaper-stat__number">50+</span>
+                    <span className="whitepaper-stat__number shiny-metric">50+</span>
                     <span className="whitepaper-stat__label">Client Cases</span>
                   </div>
                   <div className="whitepaper-stat">
-                    <span className="whitepaper-stat__number">15</span>
+                    <span className="whitepaper-stat__number shiny-metric">15</span>
                     <span className="whitepaper-stat__label">Industry Sectors</span>
                   </div>
                   <div className="whitepaper-stat">
-                    <span className="whitepaper-stat__number">45</span>
+                    <span className="whitepaper-stat__number shiny-metric">45</span>
                     <span className="whitepaper-stat__label">Pages Content</span>
                   </div>
                 </div>

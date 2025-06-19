@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import ThemeToggle from './ThemeToggle'
 import './LandingNavigation.css'
 
 const LandingNavigation: React.FC = () => {
@@ -151,8 +150,6 @@ const LandingNavigation: React.FC = () => {
 
           {/* Actions */}
           <div className="landing-nav__actions">
-            <ThemeToggle />
-            
             {/* Mobile Hamburger */}
             <button
               className={`landing-nav__hamburger ${isMobileMenuOpen ? 'landing-nav__hamburger--active' : ''}`}
@@ -219,10 +216,6 @@ const LandingNavigation: React.FC = () => {
         </nav>
 
         <div className="landing-nav__mobile-footer">
-          <div className="landing-nav__mobile-theme">
-            <ThemeToggle />
-          </div>
-          
           <div className="landing-nav__mobile-contact">
             <div className="landing-nav__mobile-contact-title">Ready to Start?</div>
             <button 

@@ -115,19 +115,19 @@ const TeamSection: React.FC = () => {
             <p>Our team's combined expertise represents decades of successful business development across Cambodia's most dynamic sectors.</p>
             <div className="team-stats__grid">
               <div className="team-stat">
-                <span className="team-stat__number">50+</span>
+                <span className="team-stat__number shiny-metric">50+</span>
                 <span className="team-stat__label">Combined Years in Cambodia</span>
               </div>
               <div className="team-stat">
-                <span className="team-stat__number">200+</span>
+                <span className="team-stat__number shiny-metric">200+</span>
                 <span className="team-stat__label">Successful Projects</span>
               </div>
               <div className="team-stat">
-                <span className="team-stat__number">15+</span>
+                <span className="team-stat__number shiny-metric">15+</span>
                 <span className="team-stat__label">Industry Specializations</span>
               </div>
               <div className="team-stat">
-                <span className="team-stat__number">5</span>
+                <span className="team-stat__number shiny-metric">5</span>
                 <span className="team-stat__label">Languages Spoken</span>
               </div>
             </div>

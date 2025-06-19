@@ -220,14 +220,15 @@
 
 /* Team Stats */
 .team-stats {
-  background: var(--color-bg-light);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   border-radius: 16px;
   padding: 2.5rem;
   text-align: center;
+  color: white;
 }
 
 .team-stats__content h3 {
-  color: var(--color-primary);
+  color: white;
   margin-bottom: 1rem;
   font-size: 1.75rem;
 }
@@ -235,7 +236,7 @@
 .team-stats__content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
   max-width: 800px;
   margin-left: auto;
@@ -257,14 +258,14 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: white;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 
 .team-stat__label {
   font-size: 0.9rem;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   line-height: 1.3;
 }

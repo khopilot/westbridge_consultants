@@ -328,7 +328,7 @@ const ApproachSection: React.FC = () => {
                   <div className="phase-metrics">
                     {phase.metrics.map((metric) => (
                       <div key={metric.label} className="phase-metric">
-                        <span className="phase-metric__number">{metric.number}</span>
+                        <span className="phase-metric__number shiny-metric">{metric.number}</span>
                         <span className="phase-metric__label">{metric.label}</span>
                       </div>
                     ))}
@@ -353,15 +353,15 @@ const ApproachSection: React.FC = () => {
             <p>Our methodology has delivered success for every single client in Cambodia. Join the 100% success rate.</p>
             <div className="guarantee-stats">
               <div className="guarantee-stat">
-                <span className="guarantee-stat__number">100%</span>
+                <span className="guarantee-stat__number shiny-metric">100%</span>
                 <span className="guarantee-stat__label">Success Rate</span>
               </div>
               <div className="guarantee-stat">
-                <span className="guarantee-stat__number">90</span>
+                <span className="guarantee-stat__number shiny-metric">90</span>
                 <span className="guarantee-stat__label">Day Guarantee</span>
               </div>
               <div className="guarantee-stat">
-                <span className="guarantee-stat__number">250%</span>
+                <span className="guarantee-stat__number shiny-metric">250%</span>
                 <span className="guarantee-stat__label">Avg ROI</span>
               </div>
             </div>
