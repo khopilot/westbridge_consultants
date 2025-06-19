@@ -10,22 +10,22 @@ import Footer from './components/Footer'
 
 function App() {
   const location = useLocation()
-  const isLandingPage = location.pathname === '/landing'
+  const isHomePage = location.pathname === '/'
 
   return (
     <div className="App">
-      {!isLandingPage && <Navigation />}
+      {!isHomePage && <Navigation />}
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      {!isLandingPage && <Footer />}
+      {!isHomePage && <Footer />}
     </div>
   )
 }

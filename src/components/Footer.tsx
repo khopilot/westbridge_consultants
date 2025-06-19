@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
 
   const navigationLinks = [
     { path: '/', label: 'Home' },
-    { path: '/landing', label: 'Landing' },
+    { path: '/home', label: 'Original Home' },
     { path: '/services', label: 'Services' },
     { path: '/projects', label: 'Projects' },
     { path: '/about', label: 'About' },
