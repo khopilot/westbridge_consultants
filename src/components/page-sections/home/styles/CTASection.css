@@ -162,19 +162,19 @@
 .cta-benefit__icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-accent);
+  color: #ffffff;
 }
 
 .cta-benefit__title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-bg-light);
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .cta-benefit__description {
   font-size: 0.9rem;
-  color: rgba(247, 232, 211, 0.9);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.4;
 }
 
@@ -194,7 +194,7 @@
 }
 
 .cta-contact-info h4 {
-  color: var(--color-bg-light);
+  color: #ffffff;
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 1.25rem;
@@ -210,12 +210,12 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--color-bg-light);
+  color: #ffffff;
 }
 
 .cta-contact-method__icon {
   font-size: 1.25rem;
-  color: var(--color-accent);
+  color: #ffffff;
 }
 
 .cta-contact-method__details {
@@ -247,7 +247,7 @@
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-bg-light);
+  color: #ffffff;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;

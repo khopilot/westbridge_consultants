@@ -137,52 +137,6 @@ const CaseStudiesSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="testimonials-section">
-          <h3>What Our Clients Say</h3>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-card__industry">Manufacturing</div>
-              <blockquote className="testimonial-card__quote">
-                "Goulding & Co Strategic Advisory transformed our business from a local operation to an international exporter. 
-                Their deep understanding of both Cambodian regulations and global standards was invaluable."
-              </blockquote>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__author-name">Sophea Chan</div>
-                <div className="testimonial-card__author-position">CEO</div>
-                <div className="testimonial-card__company">Golden Thread Textiles</div>
-                <div className="testimonial-card__location">Phnom Penh, Cambodia</div>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-card__industry">Technology</div>
-              <blockquote className="testimonial-card__quote">
-                "Without their expertise in fintech regulations and local partnerships, we would never have 
-                launched successfully in Cambodia. They made the impossible possible."
-              </blockquote>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__author-name">David Kim</div>
-                <div className="testimonial-card__author-position">Founder & CTO</div>
-                <div className="testimonial-card__company">PayKhmer</div>
-                <div className="testimonial-card__location">Singapore / Phnom Penh</div>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-card__industry">Agriculture</div>
-              <blockquote className="testimonial-card__quote">
-                "The modernization program they designed increased our efficiency dramatically while maintaining 
-                the quality that our export customers demand. Exceptional results."
-              </blockquote>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__author-name">Pisach Lov</div>
-                <div className="testimonial-card__author-position">Managing Director</div>
-                <div className="testimonial-card__company">Cambodia Premium Rice</div>
-                <div className="testimonial-card__location">Battambang, Cambodia</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="success-metrics">
           <div className="success-metrics__content">

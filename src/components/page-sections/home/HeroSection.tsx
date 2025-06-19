@@ -27,20 +27,6 @@ const HeroSection: React.FC = () => {
               Our Services
             </Link>
           </div>
-          <div className="hero__stats">
-            <div className="hero__stat">
-              <span className="hero__stat-number">50+</span>
-              <span className="hero__stat-label">Cambodian Businesses Transformed</span>
-            </div>
-            <div className="hero__stat">
-              <span className="hero__stat-number">8</span>
-              <span className="hero__stat-label">Years in Cambodia</span>
-            </div>
-            <div className="hero__stat">
-              <span className="hero__stat-number">95%</span>
-              <span className="hero__stat-label">Client Success Rate</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

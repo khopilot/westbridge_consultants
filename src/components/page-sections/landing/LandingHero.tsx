@@ -121,31 +121,6 @@ const LandingHero: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <div className="landing-hero__stats fade-up-element">
-            <div className="landing-hero__stat">
-              <span className="landing-hero__stat-number">
-                <span className="stat-counter" data-target="50">0</span>+
-              </span>
-              <span className="landing-hero__stat-label">Businesses Transformed</span>
-            </div>
-            <div className="landing-hero__stat">
-              <span className="landing-hero__stat-number">
-                <span className="stat-counter" data-target="8">0</span>
-              </span>
-              <span className="landing-hero__stat-label">Years Local Experience</span>
-            </div>
-            <div className="landing-hero__stat">
-              <span className="landing-hero__stat-number">
-                <span className="stat-counter" data-target="95">0</span>%
-              </span>
-              <span className="landing-hero__stat-label">Success Rate</span>
-            </div>
-            <div className="landing-hero__stat">
-              <span className="landing-hero__stat-number">24/7</span>
-              <span className="landing-hero__stat-label">Support Available</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

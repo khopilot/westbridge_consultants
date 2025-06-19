@@ -1,26 +1,28 @@
 /* Goulding & Co Strategic Advisory - Design System Foundation */
 
 :root {
-  /* Light Theme Colors - 60% White, 30% Navy Blue, 10% Nice Grey */
-  --color-primary: #1a2e4e;    /* Navy Blue (30%) - Primary text, headings, buttons */
-  --color-secondary: #6b7280;  /* Nice Grey (10%) - Secondary text, subtle elements */
-  --color-accent: #1a2e4e;     /* Navy Blue – Accent actions */
+  /* Light Theme Colors - Navy Blue, White, and Grey */
+  --color-primary: #1a2e4e;    /* Navy Blue - Primary brand color */
+  --color-secondary: #6b7280;  /* Grey - Secondary elements */
+  --color-accent: #2d4a7c;     /* Lighter Navy Blue - Accent actions */
   
-  /* White Dominance (60%) */
-  --color-bg-primary: #ffffff; /* Primary white background */
-  --color-surface: #ffffff;    /* White surface elements - cards, modals */
-  --color-bg-light: #fafafa;   /* Off-white for subtle sections */
-  --color-bg-section: #ffffff; /* Section backgrounds */
+  /* White & Light Grey Backgrounds */
+  --color-bg-primary: #ffffff; /* Pure white background */
+  --color-surface: #ffffff;    /* White surface elements */
+  --color-bg-light: #f5f5f5;   /* Light grey for subtle sections */
+  --color-bg-section: #ffffff; /* White section backgrounds */
   
-  /* Navy Blue (30%) */
-  --color-text: #1a2e4e;       /* Primary text in navy blue */
-  --color-heading: #1a2e4e;    /* Headings in navy blue */
-  --color-nav: #1a2e4e;        /* Navigation elements */
+  /* Navy Blue Text Elements */
+  --color-text: #1a2e4e;       /* Navy blue primary text */
+  --color-heading: #1a2e4e;    /* Navy blue headings */
+  --color-nav: #1a2e4e;        /* Navy blue navigation */
   
-  /* Nice Grey (10%) */
-  --color-text-secondary: #6b7280; /* Secondary text in grey */
-  --color-border: #e5e7eb;     /* Light grey borders */
-  --color-border-subtle: #f3f4f6; /* Very subtle borders */
+  /* Grey Variations */
+  --color-text-secondary: #6b7280; /* Medium grey text */
+  --color-border: #e5e7eb;         /* Light grey borders */
+  --color-border-subtle: #f0f0f0;  /* Very light grey borders */
+  --color-grey-light: #f9f9f9;     /* Lightest grey */
+  --color-grey-medium: #9ca3af;    /* Medium grey */
   
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -62,7 +64,7 @@
   /* Gradient Definitions */
   --dark-gradient-primary: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
   --dark-gradient-hero: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
-  --dark-gradient-warm: linear-gradient(135deg, #0a0e14 0%, #1a2332 40%, #2d1b1f 100%);
+  --dark-gradient-warm: linear-gradient(135deg, #0a0e14 0%, #1a2332 40%, #1a2e4e 100%);
 }
 
 /* Reset & Base Styles */
@@ -84,6 +86,11 @@ body {
   background-color: var(--color-bg-primary);
   padding-top: 6rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove padding-top for landing page */
+.landing-page {
+  margin-top: -6rem;
 }
 
 /* Typography */
@@ -470,6 +477,17 @@ p {
   width: 70%;
 }
 
+/* Focus states for accessibility */
+.nav__link:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.nav__hamburger:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .nav__link:hover {
   color: var(--color-primary);
   transform: translateY(-2px);
@@ -534,12 +552,12 @@ p {
   display: none;
   flex-direction: column;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -621,7 +639,7 @@ p {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.35s ease-out;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1002;
   overflow-y: auto;
   display: flex;
@@ -960,6 +978,12 @@ p {
     max-width: none;
     border-radius: 0;
     border-left: none;
+    right: -100%;
+    left: auto;
+  }
+  
+  .nav__mobile--active {
+    right: 0;
   }
   
   body {
@@ -1011,16 +1035,16 @@ p {
 
 .animation-toggle:hover {
   background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(74, 144, 226, 0.4);
-  color: #74d0e2;
+  border-color: rgba(26, 46, 78, 0.4);
+  color: #2d4a7c;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 8px 24px rgba(26, 46, 78, 0.2);
 }
 
 .animation-toggle--active {
-  background: rgba(74, 144, 226, 0.2);
-  border-color: rgba(74, 144, 226, 0.4);
-  color: #74d0e2;
+  background: rgba(26, 46, 78, 0.2);
+  border-color: rgba(26, 46, 78, 0.4);
+  color: #2d4a7c;
 }
 
 .dark .animation-toggle {
@@ -1117,7 +1141,7 @@ p {
 
 /* Professional Footer */
 .footer {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   color: var(--color-bg-light);
   position: relative;
   overflow: hidden;
@@ -1663,20 +1687,45 @@ p {
   border: 1px solid rgba(17, 45, 78, 0.1);
 }
 
-.metric__number {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: 0.25rem;
+/* Standardized Metric Styles */
+.metric,
+.phase-metric,
+.result-metric,
+.success-metric,
+.stats-metric,
+.technique-metric,
+.case-study__metric {
+  text-align: center;
+  padding: 1rem;
+  background: transparent;
+  border-radius: 8px;
 }
 
-.metric__label {
+.metric__number,
+.phase-metric__number,
+.result-metric__number,
+.success-metric__number,
+.stats-metric__number,
+.technique-metric__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.metric__label,
+.phase-metric__label,
+.result-metric__label,
+.success-metric__label,
+.stats-metric__label,
+.technique-metric__label {
   font-size: 0.85rem;
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .case-study__outcomes h4 {
@@ -1827,7 +1876,7 @@ p {
 }
 
 .stats-banner {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   border-radius: 16px;
   padding: 2rem;
   color: var(--color-bg-light);
@@ -2123,7 +2172,7 @@ p {
 }
 
 .metric__icon {
-  color: var(--color-accent);
+  color: var(--color-primary);
   opacity: 0.9;
 }
 
@@ -2132,21 +2181,7 @@ p {
   flex-direction: column;
 }
 
-.metric__number {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-
-.metric__label {
-  font-size: 0.85rem;
-  color: var(--color-text);
-  font-weight: 500;
-  line-height: 1.2;
-}
+/* Metric styles now defined in standardized section above */
 
 .services-hero__highlights {
   display: flex;
@@ -2569,7 +2604,7 @@ p {
 }
 
 .industry-insights {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   border-radius: 16px;
   padding: 2.5rem;
   color: var(--color-bg-light);

@@ -1,17 +1,17 @@
 /* Contact CTA Section */
 .contact-cta {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2541 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   color: #ffffff;
 }
 
-/* Force transparent contact info section */
+/* Transparent contact info section */
 .contact-cta .contact-info,
 .contact-cta .contact-methods,
 .contact-cta .contact-method {
-  background: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 .dark .contact-cta {
@@ -411,7 +411,6 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    flex-wrap: wrap;
   }
   
   .contact-method {

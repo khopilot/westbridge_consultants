@@ -121,11 +121,11 @@
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: #74d0e2 !important;
+  color: #ffffff !important;
   line-height: 1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 8px rgba(116, 208, 226, 0.4);
-  filter: drop-shadow(0 0 8px rgba(116, 208, 226, 0.5));
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
 }
 
 .hero__stat-label {

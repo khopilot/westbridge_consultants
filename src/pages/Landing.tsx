@@ -7,6 +7,7 @@ import CaseStudiesSection from '../components/page-sections/landing/CaseStudiesS
 import TeamSection from '../components/page-sections/landing/TeamSection'
 import WhitePaperSection from '../components/page-sections/landing/WhitePaperSection'
 import ContactCTA from '../components/page-sections/landing/ContactCTA'
+import ChatBubble from '../components/ChatBubble'
 
 const Landing: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const Landing: React.FC = () => {
         <WhitePaperSection />
         <ContactCTA />
       </main>
+      <ChatBubble />
     </>
   )
 }
