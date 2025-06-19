@@ -436,7 +436,7 @@
 /* Small Desktop / Large Tablet (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .landing-hero__content {
-    padding: 8rem 2rem 4rem;
+    padding: 10rem 2rem 4rem;
   }
   
   .landing-hero__highlights {
@@ -472,7 +472,7 @@
   }
   
   .landing-hero__content {
-    padding: 7rem 1.5rem 3.5rem;
+    padding: 9rem 1.5rem 3.5rem;
   }
   
   .landing-hero__badge {
@@ -549,7 +549,7 @@
   }
   
   .landing-hero__content {
-    padding: 6rem 1.25rem 3rem;
+    padding: 8rem 1.25rem 3rem;
   }
   
   .landing-hero__badge {
@@ -601,7 +601,7 @@
   }
   
   .landing-hero__content {
-    padding: 5.5rem 1rem 2.5rem;
+    padding: 7.5rem 1rem 2.5rem;
   }
   
   .landing-hero__badge {
@@ -696,7 +696,7 @@
   }
   
   .landing-hero__content {
-    padding: 5rem 0.75rem 2rem;
+    padding: 7rem 0.75rem 2rem;
   }
   
   .landing-hero__badge {
