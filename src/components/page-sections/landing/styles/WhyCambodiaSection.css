@@ -42,6 +42,24 @@
   margin-bottom: 0;
 }
 
+.why-cambodia-section__image-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.why-cambodia-section__flag-map {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.why-cambodia-section__flag-map:hover {
+  transform: scale(1.05);
+}
+
 .why-cambodia__content {
   max-width: 1100px;
   margin: 0 auto;
@@ -300,6 +318,14 @@
 @media (max-width: 767px) {
   .why-cambodia-section h2 {
     font-size: 2rem;
+  }
+  
+  .why-cambodia-section__image-container {
+    margin: 1.5rem 0;
+  }
+  
+  .why-cambodia-section__flag-map {
+    width: 150px;
   }
   
   .market-insights {

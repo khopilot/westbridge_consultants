@@ -10,6 +10,13 @@ const WhyCambodiaSection: React.FC = () => {
             🇰🇭 Local Expertise
           </div>
           <h2 data-aos="fade-up" data-aos-delay="200">Why&nbsp;Cambodia</h2>
+          <div className="why-cambodia-section__image-container" data-aos="zoom-in" data-aos-delay="250">
+            <img 
+              src="/cambodia-flag-map.png" 
+              alt="Cambodia flag map" 
+              className="why-cambodia-section__flag-map"
+            />
+          </div>
           <p className="why-cambodia-section__description" data-aos="fade-up" data-aos-delay="300">
             Cambodia is full of opportunities, but unlocking them requires knowledge that is not taught in universities. You need to understand who controls decisions locally and how the money flows. We spent years learning this by making mistakes, building contacts, and finding practical solutions. You get the results without the headaches.
           </p>
