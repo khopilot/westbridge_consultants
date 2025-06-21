@@ -30,15 +30,13 @@
 /* Chat Window */
 .chat-window {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 5rem;
+  right: 2rem;
+  width: 400px;
+  height: 600px;
   background: #ffffff;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -279,7 +277,17 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Responsive Design - Tablet */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .chat-window {
+    bottom: 5rem;
+    right: 1.5rem;
+    width: 380px;
+    height: 550px;
+  }
+}
+
+/* Responsive Design - Mobile */
 @media (max-width: 767px) {
   .chat-bubble-button {
     bottom: 1rem;
@@ -289,11 +297,22 @@
   }
 
   .chat-window {
-    bottom: 5rem;
-    right: 1rem;
-    left: 1rem;
-    width: auto;
-    height: 400px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chat-header {
+    border-radius: 0;
+  }
+
+  .chat-input {
+    border-radius: 0;
   }
 
   .chat-message__bubble {
