@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import Services from './pages/Services'
@@ -11,6 +14,19 @@ import Footer from './components/Footer'
 function App() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100,
+    })
+  }, [])
+
+  useEffect(() => {
+    AOS.refresh()
+  }, [location])
 
   return (
     <div className="App">

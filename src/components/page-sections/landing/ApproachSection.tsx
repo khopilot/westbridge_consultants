@@ -206,14 +206,7 @@ const ApproachSection: React.FC = () => {
       id="approach"
       className={`approach-section ${isVisible ? 'approach-section--visible' : ''}`}
     >
-      {/* Decorative background blobs */}
-      <div className="approach-section__bg-animation">
-        <div className="bg-particle bg-particle--1" />
-        <div className="bg-particle bg-particle--2" />
-        <div className="bg-particle bg-particle--3" />
-        <div className="bg-particle bg-particle--4" />
-        <div className="bg-particle bg-particle--5" />
-      </div>
+
 
       <div className="container">
         {/* Section header */}
@@ -339,34 +332,7 @@ const ApproachSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Success guarantee block — unchanged */}
-        <div className="success-guarantee">
-          <div className="success-guarantee__content">
-            <div className="success-guarantee__badge">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              Results Guarantee
-            </div>
-            <h3>We guarantee measurable results within 90 days, or your investment back.</h3>
-            <p>Our methodology has delivered success for every single client in Cambodia. Join the 100% success rate.</p>
-            <div className="guarantee-stats">
-              <div className="guarantee-stat">
-                <span className="guarantee-stat__number shiny-metric">100%</span>
-                <span className="guarantee-stat__label">Success Rate</span>
-              </div>
-              <div className="guarantee-stat">
-                <span className="guarantee-stat__number shiny-metric">90</span>
-                <span className="guarantee-stat__label">Day Guarantee</span>
-              </div>
-              <div className="guarantee-stat">
-                <span className="guarantee-stat__number shiny-metric">250%</span>
-                <span className="guarantee-stat__label">Avg ROI</span>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   )

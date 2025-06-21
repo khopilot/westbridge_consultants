@@ -25,11 +25,15 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  padding: 0 1rem;
 }
 
 .contact-methods__intro {
   text-align: center;
   margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-methods__intro h2 {
@@ -42,23 +46,24 @@
 
 .contact-methods__intro p {
   color: var(--color-text);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   opacity: 0.9;
   margin: 0;
+  line-height: 1.6;
 }
 
 .contact-methods__flow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .contact-method {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 2rem;
@@ -71,6 +76,7 @@
   animation-delay: var(--delay, 0s);
   opacity: 0;
   transform: translateY(30px);
+  min-height: 120px;
 }
 
 @keyframes slideUp {
@@ -107,6 +113,11 @@
   color: var(--color-primary);
   transition: all 0.3s ease;
   transform: scale(1);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-method:hover .contact-method__icon {
@@ -139,6 +150,7 @@
   font-size: 1rem;
   margin-bottom: 0.25rem;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .contact-method__desc {
@@ -158,6 +170,11 @@
   color: var(--color-accent);
   transition: all 0.3s ease;
   transform: translateX(0);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-method:hover .contact-method__arrow {
@@ -166,6 +183,21 @@
 }
 
 /* Responsive Design */
+@media (min-width: 1400px) {
+  .contact-methods__content {
+    max-width: 1400px;
+  }
+  
+  .contact-methods__flow {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .contact-method {
+    padding: 2.5rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .contact-methods__flow {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -177,10 +209,35 @@
   }
 }
 
+@media (max-width: 1023px) {
+  .contact-methods {
+    padding: 4rem 0 3rem;
+    margin-top: -1.5rem;
+  }
+  
+  .contact-methods__content {
+    padding: 0 2rem;
+  }
+  
+  .contact-methods__flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .contact-method {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-methods {
     padding: 4rem 0 3rem;
     margin-top: -1.5rem;
+  }
+  
+  .contact-methods__content {
+    padding: 0 1.5rem;
   }
   
   .contact-methods__intro {
@@ -198,22 +255,23 @@
   .contact-methods__flow {
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
   }
-  
+
   .contact-method {
     padding: 1.5rem;
-    gap: 1.25rem;
+    gap: 1rem;
+    min-height: 100px;
   }
-  
+
   .contact-method__content h4 {
     font-size: 1rem;
   }
-  
+
   .contact-method__info {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
-  
+
   .contact-method__desc {
     font-size: 0.8rem;
   }
@@ -224,32 +282,45 @@
     padding: 3rem 0 2.5rem;
   }
   
+  .contact-methods__content {
+    padding: 0 1rem;
+  }
+
   .contact-method {
     padding: 1.25rem;
     gap: 1rem;
     flex-direction: column;
     text-align: center;
+    min-height: auto;
   }
-  
+
+  .contact-method__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-method__content {
+    width: 100%;
+  }
+
   .contact-method__arrow {
-    align-self: center;
-    margin-top: 0.5rem;
+    display: none;
   }
-  
+
   .contact-method:hover .contact-method__arrow {
     transform: translateY(-2px);
+    display: flex;
   }
 }
 
-/* High-resolution displays */
 @media (min-width: 1400px) {
   .contact-methods__flow {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin: 2rem auto 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
   }
-  
+
   .contact-method {
     padding: 2.5rem;
+    border-radius: 20px;
   }
 } 

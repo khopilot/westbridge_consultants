@@ -30,10 +30,10 @@ const TeamSection: React.FC = () => {
               <div className="team-member__expertise">
                 <h4>Core Expertise:</h4>
                 <div className="expertise-tags">
-                  <span className="expertise-tag">Market Entry Strategy</span>
-                  <span className="expertise-tag">Operations Scaling</span>
-                  <span className="expertise-tag">Export Development</span>
-                  <span className="expertise-tag">Partnership Facilitation</span>
+                  <span className="expertise-tag">Rural Investment Development</span>
+                  <span className="expertise-tag">Agricultural Projects</span>
+                  <span className="expertise-tag">Practical Problem-Solving</span>
+                  <span className="expertise-tag">Cambodia Operations</span>
                 </div>
               </div>
             </div>
@@ -53,15 +53,15 @@ const TeamSection: React.FC = () => {
                 <span className="credential">Fluent in Khmer</span>
               </div>
               <p className="team-member__bio">
-                Hugo excels at navigating local complexity to achieve strategic objectives. His language skills and network open doors that outsiders rarely see.
+                Hugo is profoundly results-oriented. A genuinely curious mind, he has explored many different types of businesses (construction, tourism, entertainment, travel) and learnt along the way. He speaks Khmer and maintains a strong local network, enabling access others often miss.
               </p>
               <div className="team-member__expertise">
                 <h4>Core Expertise:</h4>
                 <div className="expertise-tags">
-                  <span className="expertise-tag">Digital Transformation</span>
-                  <span className="expertise-tag">Fintech Regulations</span>
-                  <span className="expertise-tag">Process Automation</span>
-                  <span className="expertise-tag">Innovation Strategy</span>
+                  <span className="expertise-tag">Multi-Industry Experience</span>
+                  <span className="expertise-tag">Local Network Development</span>
+                  <span className="expertise-tag">Khmer Language & Culture</span>
+                  <span className="expertise-tag">Tourism & Entertainment</span>
                 </div>
               </div>
             </div>

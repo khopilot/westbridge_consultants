@@ -1704,7 +1704,6 @@ p {
 .metric__number,
 .phase-metric__number,
 .result-metric__number,
-.success-metric__number,
 .stats-metric__number,
 .technique-metric__number {
   display: block;
@@ -1712,6 +1711,16 @@ p {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.success-metric__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff !important;
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }

@@ -1,127 +1,306 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import './styles/LandingHero.css'
 
 const LandingHero: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const { scrollY } = useScroll()
+  
+  // Parallax transforms
+  const y1 = useTransform(scrollY, [0, 300], [0, 50])
+  const y2 = useTransform(scrollY, [0, 300], [0, -50])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3])
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e
+      const { innerWidth, innerHeight } = window
+      const x = (clientX / innerWidth - 0.5) * 20
+      const y = (clientY / innerHeight - 0.5) * 20
+      setMousePosition({ x, y })
+    }
 
-    const elements = document.querySelectorAll('.fade-up-element')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
+
+  // Floating animation variants
+  const floatingAnimation = {
+    initial: { y: 0 },
+    animate: {
+      y: [-20, 20, -20],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut" as const
+      }
+    }
+  }
+
+  // Text animation variants
+  const textAnimation = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.8,
+        ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number]
+      }
+    })
+  }
 
   return (
     <section id="hero" className="landing-hero" ref={heroRef}>
-      {/* Animated Background Elements */}
-      <div className="landing-hero__bg-elements">
-        <div className="bg-element bg-element--1"></div>
-        <div className="bg-element bg-element--2"></div>
-        <div className="bg-element bg-element--3"></div>
-      </div>
+      {/* Animated Background with Parallax */}
+      <motion.div 
+        className="landing-hero__bg-pattern"
+        style={{ opacity }}
+      >
+        <motion.div 
+          className="bg-shape bg-shape--1"
+          style={{ x: mousePosition.x, y: mousePosition.y }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="bg-shape bg-shape--2"
+          style={{ x: -mousePosition.x, y: -mousePosition.y }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" as const }}
+        />
+        <motion.div 
+          className="bg-shape bg-shape--3"
+          variants={floatingAnimation}
+          initial="initial"
+          animate="animate"
+        />
+      </motion.div>
       
       <div className="container">
-        <div className="landing-hero__content">
-          <div className="landing-hero__badge fade-up-element">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-            <span>Cambodia Consulting Specialists</span>
-          </div>
-          
-          <h1 className="fade-up-element">
-            Cambodia&nbsp;<span className="text-gradient">Made&nbsp;Simple</span>
-          </h1>
-          
-          <h2 className="fade-up-element">Cambodia rewards bold investors, but only if you master its rules. We shorten the learning curve, cut the risk, and get you moving fast.</h2>
-          
-          <p className="landing-hero__subtitle fade-up-element">
-            We have spent ten years in Cambodia learning the hard way. With us, you start on day one with that decade of knowledge in your pocket.
-          </p>
-          
-          <div className="landing-hero__cta fade-up-element">
-            <button className="hero-cta hero-cta--primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span>Request&nbsp;a&nbsp;Call</span>
+        <motion.div 
+          className="landing-hero__content"
+          style={{ y: y1 }}
+        >
+          {/* Animated Badge */}
+          <motion.div 
+            className="landing-hero__badge"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }}
+          >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" as const }}
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
               </svg>
-            </button>
-            <button className="hero-cta hero-cta--secondary" onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span>See&nbsp;Our&nbsp;Approach</span>
-            </button>
-          </div>
+            </motion.div>
+            <span>Cambodia Consulting Specialists</span>
+          </motion.div>
           
-          <div className="landing-hero__highlights fade-up-element">
-            <div className="landing-hero__highlight">
-              <div className="highlight__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="highlight__content">
-                <h3>Strategic Market Entry</h3>
-                <p>Navigate regulations and establish your presence</p>
-              </div>
-            </div>
-            <div className="landing-hero__highlight">
-              <div className="highlight__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 3V21L21 12L3 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="highlight__content">
-                <h3>Operational Excellence</h3>
-                <p>Optimize processes for maximum efficiency</p>
-              </div>
-            </div>
-            <div className="landing-hero__highlight">
-              <div className="highlight__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="highlight__content">
-                <h3>Partnership Development</h3>
-                <p>Build strategic local and international alliances</p>
-              </div>
-            </div>
-            <div className="landing-hero__highlight">
-              <div className="highlight__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2"/>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-              </div>
-              <div className="highlight__content">
-                <h3>Innovation Strategy</h3>
-                <p>Leverage technology for competitive advantage</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          {/* Main Title with Split Text Animation */}
+          <motion.h1 
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={textAnimation}
+          >
+            <span>Cambodia&nbsp;</span>
+            <motion.span 
+              className="text-gradient-animated"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear" as const
+              }}
+            >
+              Made&nbsp;Simple
+            </motion.span>
+          </motion.h1>
+          
+          {/* Subtitle with Typewriter Effect */}
+          <motion.h2
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={textAnimation}
+          >
+            Cambodia rewards bold investors, but only if you master its rules. We shorten the learning curve, cut the risk, and get you moving fast.
+          </motion.h2>
+          
+          <motion.p 
+            className="landing-hero__subtitle"
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            variants={textAnimation}
+          >
+            We have spent ten years in Cambodia learning the hard way. With us, you start on day one with that decade of knowledge in your pocket.
+          </motion.p>
+          
+          {/* CTA Buttons with Magnetic Effect */}
+          <motion.div 
+            className="landing-hero__cta"
+            initial="hidden"
+            animate="visible"
+            custom={4}
+            variants={textAnimation}
+          >
+            <motion.button 
+              className="hero-cta hero-cta--primary" 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{
+                boxShadow: [
+                  "0 8px 24px rgba(26, 46, 78, 0.4)",
+                  "0 12px 32px rgba(26, 46, 78, 0.6)",
+                  "0 8px 24px rgba(26, 46, 78, 0.4)"
+                ]
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+            >
+              <span>Request&nbsp;a&nbsp;Call</span>
+              <motion.svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </motion.svg>
+            </motion.button>
+            
+            <motion.button 
+              className="hero-cta hero-cta--secondary" 
+              onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(255, 255, 255, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>See&nbsp;Our&nbsp;Approach</span>
+            </motion.button>
+          </motion.div>
+          
+          {/* Animated Highlight Cards */}
+          <motion.div 
+            className="landing-hero__highlights"
+            style={{ y: y2 }}
+          >
+            {[
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                title: "Strategic Market Entry",
+                description: "Navigate regulations and establish your presence"
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3V21L21 12L3 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                title: "Operational Excellence",
+                description: "Optimize processes for maximum efficiency"
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                title: "Partnership Development",
+                description: "Build strategic local and international alliances"
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                ),
+                title: "Innovation Strategy",
+                description: "Leverage technology for competitive advantage"
+              }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                className="landing-hero__highlight"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)"
+                }}
+              >
+                <motion.div 
+                  className="highlight__icon"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  {item.icon}
+                </motion.div>
+                <div className="highlight__content">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.div 
+            className="landing-hero__scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19M12 19L7 14M12 19L17 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

@@ -25,9 +25,15 @@
   padding: 3rem 2rem;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.whitepaper-preview__cover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
 }
 
 .whitepaper-preview__cover::before {
@@ -41,27 +47,63 @@
   pointer-events: none;
 }
 
+.whitepaper-preview__badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.375rem 0.875rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
 .whitepaper-preview__icon {
   font-size: 4rem;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .whitepaper-preview__title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .whitepaper-preview__subtitle {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.95;
   position: relative;
   z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.whitepaper-preview__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.whitepaper-preview__meta span {
+  font-weight: 500;
 }
 
 /* Whitepaper Info */
@@ -91,28 +133,27 @@
 }
 
 .whitepaper-info__description {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.whitepaper-info__subdescription {
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
   margin-bottom: 0;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 /* Highlights */
 .whitepaper-highlights {
-  margin-bottom: 3rem;
-}
-
-.whitepaper-highlights h3 {
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-}
-
-.highlights-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .highlight-item {
@@ -126,15 +167,34 @@
   transition: all 0.3s ease-out;
 }
 
-.highlight-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+.highlight-item--compact {
+  padding: 1rem 1.25rem;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(26, 46, 78, 0.05) 0%, rgba(164, 120, 100, 0.03) 100%);
+}
+
+.highlight-item--compact:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-accent);
 }
 
 .highlight-item__icon {
   font-size: 1.5rem;
   margin-top: 0.25rem;
   flex-shrink: 0;
+}
+
+.highlight-item--compact .highlight-item__icon {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.highlight-item__text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
 }
 
 .highlight-item__content h4 {
@@ -228,29 +288,102 @@
   flex-wrap: wrap;
 }
 
+/* CTA Section */
+.whitepaper-cta {
+  margin-bottom: 2rem;
+}
+
+.whitepaper-cta__content {
+  text-align: center;
+}
+
+.whitepaper-cta__note {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+/* Download Button */
 .download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.25s ease-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   min-width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn--large {
+  padding: 1.25rem 2.5rem;
+  gap: 1rem;
+  min-width: 280px;
+}
+
+.download-btn__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.download-btn:hover .download-btn__icon {
+  transform: translateY(2px);
+}
+
+.download-btn__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.download-btn__main {
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.download-btn__sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.9;
+  display: block;
 }
 
 .download-btn--primary {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b34700 100%);
   color: white;
+  box-shadow: 0 4px 16px rgba(204, 85, 0, 0.3);
+}
+
+.download-btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .download-btn--primary:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(204, 85, 0, 0.4);
+}
+
+.download-btn--primary:hover::before {
+  opacity: 1;
 }
 
 .download-btn--secondary {
@@ -262,6 +395,27 @@
 .download-btn--secondary:hover {
   background: var(--color-primary);
   color: white;
+  transform: translateY(-2px);
+}
+
+/* Author Section */
+.whitepaper-author {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 3rem;
+}
+
+.whitepaper-author p {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  margin: 0;
+  opacity: 0.8;
+}
+
+.whitepaper-author strong {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .download-note p {
@@ -316,16 +470,28 @@
 @media (max-width: 1023px) {
   .whitepaper-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
   
   .whitepaper-preview {
     position: static;
-    order: 2;
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto 2rem;
   }
   
-  .highlights-grid {
+  .whitepaper-highlights {
     grid-template-columns: 1fr;
+  }
+  
+  .whitepaper-info__header {
+    text-align: center;
+  }
+  
+  .whitepaper-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .stats-grid {
@@ -338,12 +504,54 @@
 }
 
 @media (max-width: 767px) {
+  .whitepaper-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .whitepaper-content {
+    gap: 2rem;
+  }
+  
   .whitepaper-info h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  
+  .whitepaper-preview {
+    max-width: 300px;
+    margin-bottom: 1.5rem;
   }
   
   .whitepaper-preview__cover {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .whitepaper-preview__badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.625rem;
+    margin-bottom: 1rem;
+  }
+  
+  .whitepaper-preview__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.375rem;
+  }
+  
+  .whitepaper-preview__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .whitepaper-preview__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .whitepaper-preview__meta {
+    font-size: 0.75rem;
+    gap: 0.5rem;
   }
   
   .download-form {
@@ -355,18 +563,168 @@
     align-items: center;
   }
   
+  .download-btn--large {
+    padding: 1rem 1.5rem;
+    min-width: 100%;
+    max-width: 300px;
+    gap: 0.75rem;
+  }
+  
+  .download-btn__icon {
+    font-size: 1.25rem;
+  }
+  
+  .download-btn__main {
+    font-size: 0.9rem;
+  }
+  
+  .download-btn__sub {
+    font-size: 0.7rem;
+  }
+  
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .highlight-item {
-    flex-direction: column;
-    text-align: center;
+  .highlight-item--compact {
+    padding: 0.875rem 1rem;
     gap: 0.75rem;
   }
   
-  .highlight-item__icon {
-    margin-top: 0;
+  .highlight-item--compact .highlight-item__icon {
+    font-size: 1.1rem;
+  }
+  
+  .highlight-item__text {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .whitepaper-info__description {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+  
+  .whitepaper-info__subdescription {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .whitepaper-info__header {
+    margin-bottom: 2rem;
+  }
+  
+  .whitepaper-highlights {
+    margin-bottom: 2rem;
+  }
+  
+  .whitepaper-cta {
+    margin-bottom: 1.5rem;
+  }
+  
+  .whitepaper-cta__note {
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+  }
+  
+  .whitepaper-author {
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .whitepaper-author p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whitepaper-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .whitepaper-content {
+    gap: 1.5rem;
+  }
+  
+  .whitepaper-info h2 {
+    font-size: 1.3rem;
+  }
+  
+  .whitepaper-preview {
+    max-width: 260px;
+  }
+  
+  .whitepaper-preview__cover {
+    padding: 1.5rem 1rem;
+  }
+  
+  .whitepaper-preview__badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .whitepaper-preview__title {
+    font-size: 1.1rem;
+  }
+  
+  .whitepaper-preview__subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .whitepaper-preview__icon {
+    font-size: 2rem;
+  }
+  
+  .whitepaper-preview__meta {
+    font-size: 0.7rem;
+  }
+  
+  .download-btn--large {
+    padding: 0.875rem 1.25rem;
+    gap: 0.625rem;
+  }
+  
+  .download-btn__icon {
+    font-size: 1.1rem;
+  }
+  
+  .download-btn__main {
+    font-size: 0.85rem;
+  }
+  
+  .download-btn__sub {
+    font-size: 0.65rem;
+  }
+  
+  .highlight-item--compact {
+    padding: 0.75rem 0.875rem;
+    gap: 0.625rem;
+  }
+  
+  .highlight-item--compact .highlight-item__icon {
+    font-size: 1rem;
+  }
+  
+  .highlight-item__text {
+    font-size: 0.8rem;
+  }
+  
+  .whitepaper-info__description {
+    font-size: 0.95rem;
+  }
+  
+  .whitepaper-info__subdescription {
+    font-size: 0.85rem;
+  }
+  
+  .whitepaper-cta__note {
+    font-size: 0.75rem;
+  }
+  
+  .whitepaper-author p {
+    font-size: 0.75rem;
   }
 }

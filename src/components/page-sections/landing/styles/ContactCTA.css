@@ -2,6 +2,7 @@
 .contact-cta {
   background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   color: #ffffff;
+  padding: 4rem 0;
 }
 
 /* Transparent contact info section */
@@ -19,8 +20,9 @@
 }
 
 .contact-cta__content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .contact-cta__header {
@@ -42,7 +44,7 @@
 
 .contact-cta h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.2;
@@ -53,7 +55,7 @@
 }
 
 .contact-cta__description {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0;
@@ -65,7 +67,7 @@
 /* Contact Options */
 .contact-options {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -103,14 +105,14 @@
 
 .contact-option__content h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .contact-option__content p {
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.5vw, 0.95rem);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
@@ -138,7 +140,7 @@
   background: var(--color-accent);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -146,6 +148,7 @@
   transition: all 0.25s ease-out;
   text-decoration: none;
   min-width: 160px;
+  min-height: 48px; /* Better touch target */
 }
 
 .contact-option__button:hover {
@@ -176,19 +179,17 @@
   text-align: center;
   color: #ffffff;
   margin-bottom: 2.5rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
   font-family: var(--font-heading);
   font-weight: 600;
 }
 
 .contact-methods {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
-  flex-wrap: nowrap;
   background: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -197,110 +198,110 @@
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  gap: 1rem;
+  color: #ffffff;
   text-decoration: none;
-  color: inherit;
-  min-width: auto;
-  white-space: nowrap;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  min-height: 80px;
 }
 
 .contact-method:hover {
-  border-color: var(--color-accent);
-  background: none;
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .contact-method__icon {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1.5rem;
+  flex-shrink: 0;
 }
 
 .contact-method__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
 }
 
 .contact-method__label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.15rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
 }
 
 .contact-method__value {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 1rem;
   color: #ffffff;
-  line-height: 1.1;
+  font-weight: 600;
+  word-break: break-word;
 }
 
 .contact-method__note {
-  display: none;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.25rem;
 }
 
 /* Urgency Indicators */
 .urgency-indicators {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .urgency-indicator {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 .urgency-indicator__icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .urgency-indicator__content h4 {
-  font-size: 1rem;
-  font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .urgency-indicator__content p {
-  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0;
-  line-height: 1.3;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* Social Proof */
 .social-proof {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .social-proof__text {
-  font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .social-proof__stats {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .proof-stat {
@@ -310,125 +311,242 @@
 .proof-stat__number {
   display: block;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   font-weight: 700;
-  color: var(--color-accent);
+  color: #ffffff !important;
   line-height: 1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .proof-stat__label {
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
+  line-height: 1.3;
 }
 
 /* Dark theme adjustments */
 .dark .contact-cta h2,
-.dark .contact-info h3,
-.dark .contact-option__content h3,
-.dark .urgency-indicator__content h4 {
-  color: #f0f6fc;
-}
-
 .dark .contact-cta__description,
-.dark .contact-option__content p,
-.dark .social-proof__text {
-  color: rgba(240, 246, 252, 0.9);
-}
-
 .dark .contact-method__value {
-  color: #f0f6fc;
+  color: #ffffff;
 }
 
 .dark .contact-method__label {
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .dark .contact-method__note,
-.dark .contact-option__details span,
-.dark .urgency-indicator__content p,
+.dark .social-proof__text,
 .dark .proof-stat__label {
-  color: rgba(240, 246, 252, 0.8);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive Design */
-@media (max-width: 1023px) {
-  .contact-options {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .contact-option--primary {
-    transform: none;
-  }
-  
-  .contact-option--primary:hover {
-    transform: translateY(-4px);
+@media (min-width: 1400px) {
+  .contact-cta__content {
+    max-width: 1400px;
+    padding: 0 2rem;
   }
   
   .contact-methods {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .social-proof__stats {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact-cta {
+    padding: 3rem 0;
+  }
+  
+  .contact-options {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    flex-wrap: nowrap;
+    max-width: 600px;
+    margin: 0 auto 3rem;
   }
-  
+
+  .contact-option--primary {
+    transform: none;
+  }
+
+  .contact-option--primary:hover {
+    transform: translateY(-4px);
+  }
+
+  .contact-methods {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   .contact-method {
-    padding: 0.625rem 1rem;
+    padding: 1.25rem;
+    gap: 0.75rem;
+    min-height: 70px;
   }
-  
+
   .contact-method__icon {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
-  
+
   .contact-method__label {
-    font-size: 0.65rem;
-  }
-  
-  .contact-method__value {
     font-size: 0.8rem;
   }
-  
+
+  .contact-method__value {
+    font-size: 0.9rem;
+  }
+
   .urgency-indicators {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 767px) {
-  .contact-cta h2 {
-    font-size: 2rem;
+  .contact-cta {
+    padding: 2.5rem 0;
   }
-  
+
+  .contact-cta__content {
+    padding: 0 1.5rem;
+  }
+
+  .contact-cta h2 {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+  }
+
+  .contact-cta__header {
+    margin-bottom: 2rem;
+  }
+
+  .contact-cta__description {
+    font-size: 1rem;
+  }
+
   .contact-option {
     padding: 1.5rem;
   }
-  
+
+  .contact-info {
+    margin-bottom: 3rem;
+  }
+
   .contact-info h3 {
-    font-size: 1.3rem;
     margin-bottom: 2rem;
+    font-size: 1.3rem;
   }
-  
+
   .contact-methods {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    align-items: center;
   }
-  
+
   .contact-method {
-    width: 100%;
-    max-width: 280px;
-    justify-content: flex-start;
-    padding: 0.75rem 1rem;
+    padding: 1.25rem;
+    flex-direction: row;
+    text-align: left;
+    min-height: 70px;
   }
-  
+
+  .contact-method__icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-method__label {
+    font-size: 0.8rem;
+  }
+
+  .contact-method__value {
+    font-size: 0.9rem;
+  }
+
   .urgency-indicator {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
+    padding: 1.25rem;
   }
-  
+
+  .social-proof {
+    margin-top: 2rem;
+  }
+
+  .social-proof__text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
   .social-proof__stats {
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .proof-stat__number {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+  }
+
+  .proof-stat__label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cta {
+    padding: 2rem 0;
+  }
+
+  .contact-cta__content {
+    padding: 0 1rem;
+  }
+
+  .contact-cta h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .contact-cta__description {
+    font-size: 0.95rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-method {
+    padding: 1rem;
+    gap: 0.75rem;
+    min-height: 60px;
+  }
+
+  .contact-method__icon {
+    font-size: 1.25rem;
+  }
+
+  .contact-method__label {
+    font-size: 0.75rem;
+  }
+
+  .contact-method__value {
+    font-size: 0.85rem;
+  }
+
+  .social-proof__text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .social-proof__stats {
+    grid-template-columns: 1fr;
     gap: 1rem;
-    align-items: center;
+    max-width: 200px;
+  }
+
+  .proof-stat__number {
+    font-size: 1.5rem;
+  }
+
+  .proof-stat__label {
+    font-size: 0.75rem;
   }
 }
