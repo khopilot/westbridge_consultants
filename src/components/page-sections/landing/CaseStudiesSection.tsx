@@ -29,8 +29,8 @@ const CaseStudiesSection: React.FC = () => {
           >
             <div className="case-study-card" data-aos="fade-up" data-aos-delay="400">
               <div className="case-study-card__header">
-                <div className="case-study-card__industry">Client</div>
-                <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
+                <div className="case-study-card__industry">Case Study #1</div>
+                <h3 className="case-study-card__title">Financial&nbsp;Restructuring</h3>
               </div>
               <div className="case-study-card__challenge">
                 <h4>Challenge</h4>
@@ -65,8 +65,8 @@ const CaseStudiesSection: React.FC = () => {
           >
             <div className="case-study-card" data-aos="fade-up" data-aos-delay="500">
               <div className="case-study-card__header">
-                <div className="case-study-card__industry">Client</div>
-                <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
+                <div className="case-study-card__industry">Case Study #2</div>
+                <h3 className="case-study-card__title">Infrastructure&nbsp;Development</h3>
               </div>
               <div className="case-study-card__challenge">
                 <h4>Challenge</h4>
@@ -101,8 +101,8 @@ const CaseStudiesSection: React.FC = () => {
           >
             <div className="case-study-card" data-aos="fade-up" data-aos-delay="600">
               <div className="case-study-card__header">
-                <div className="case-study-card__industry">Client</div>
-                <h3 className="case-study-card__title">Client&nbsp;Problem</h3>
+                <div className="case-study-card__industry">Case Study #3</div>
+                <h3 className="case-study-card__title">Market&nbsp;Entry</h3>
               </div>
               <div className="case-study-card__challenge">
                 <h4>Challenge</h4>
