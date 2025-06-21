@@ -88,11 +88,11 @@ const WhyCambodiaSection: React.FC = () => {
               </div>
               <div className="expertise-showcase__stats">
                 <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">50+</span>
+                  <span className="stat-card__number shiny-metric">30+</span>
                   <span className="stat-card__label">Successful Projects</span>
                 </div>
                 <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">8</span>
+                  <span className="stat-card__number shiny-metric">23</span>
                   <span className="stat-card__label">Years Local Experience</span>
                 </div>
                 <div className="stat-card">
@@ -102,52 +102,6 @@ const WhyCambodiaSection: React.FC = () => {
                 <div className="stat-card">
                   <span className="stat-card__number shiny-metric">100%</span>
                   <span className="stat-card__label">Client Retention Rate</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="execution-track-record" data-aos="fade-up" data-aos-delay="700">
-            <h3 data-aos="fade-up" data-aos-delay="800">Proven Execution Track Record</h3>
-            <div className="track-record-grid">
-              <div className="track-record-item">
-                <div className="track-record-item__header">
-                  <div className="track-record-item__icon">🏭</div>
-                  <h4>Manufacturing & Export</h4>
-                </div>
-                <p>Helped establish 12+ manufacturing operations, navigating special economic zones and export regulations.</p>
-                <div className="track-record-item__results">
-                  <span>$50M+ in export value generated</span>
-                </div>
-              </div>
-              <div className="track-record-item">
-                <div className="track-record-item__header">
-                  <div className="track-record-item__icon">🏪</div>
-                  <h4>Retail & Consumer Goods</h4>
-                </div>
-                <p>Facilitated market entry for international brands, establishing distribution networks and retail partnerships.</p>
-                <div className="track-record-item__results">
-                  <span>25+ store locations opened</span>
-                </div>
-              </div>
-              <div className="track-record-item">
-                <div className="track-record-item__header">
-                  <div className="track-record-item__icon">💻</div>
-                  <h4>Technology & Fintech</h4>
-                </div>
-                <p>Guided tech startups through regulatory approvals and partnership development with local financial institutions.</p>
-                <div className="track-record-item__results">
-                  <span>8 fintech licenses obtained</span>
-                </div>
-              </div>
-              <div className="track-record-item">
-                <div className="track-record-item__header">
-                  <div className="track-record-item__icon">🌾</div>
-                  <h4>Agriculture & Food Processing</h4>
-                </div>
-                <p>Modernized agricultural operations and established food processing facilities meeting international standards.</p>
-                <div className="track-record-item__results">
-                  <span>300% productivity increase</span>
                 </div>
               </div>
             </div>

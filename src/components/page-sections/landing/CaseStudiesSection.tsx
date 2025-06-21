@@ -125,32 +125,6 @@ const CaseStudiesSection: React.FC = () => {
             </div>
           </Tilt>
         </div>
-
-
-        <div className="success-metrics" data-aos="fade-up" data-aos-delay="700">
-          <div className="success-metrics__content">
-            <h3 data-aos="fade-up" data-aos-delay="800">Collective Impact</h3>
-            <p>The cumulative results from our client partnerships demonstrate our commitment to driving meaningful business transformation across Cambodia.</p>
-            <div className="success-metrics__grid">
-              <div className="success-metric" data-aos="zoom-in" data-aos-delay="900">
-                <span className="success-metric__number shiny-metric">$150M+</span>
-                <span className="success-metric__label">Total Revenue Generated</span>
-              </div>
-              <div className="success-metric" data-aos="zoom-in" data-aos-delay="1000">
-                <span className="success-metric__number shiny-metric">2,500+</span>
-                <span className="success-metric__label">Jobs Created</span>
-              </div>
-              <div className="success-metric" data-aos="zoom-in" data-aos-delay="1100">
-                <span className="success-metric__number shiny-metric">30+</span>
-                <span className="success-metric__label">International Markets Entered</span>
-              </div>
-              <div className="success-metric" data-aos="zoom-in" data-aos-delay="1200">
-                <span className="success-metric__number shiny-metric">95%</span>
-                <span className="success-metric__label">Client Satisfaction Rate</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
