@@ -131,7 +131,7 @@ const OperateWithConfidence: React.FC = () => {
   ]
 
   return (
-    <section ref={sectionRef} id="approach" className="operate-confidence">
+    <section ref={sectionRef} id="approach" className="operate-confidence" style={{ position: 'relative' }}>
       {/* Platinum wave backgrounds */}
       <div className="wave-container">
         <motion.div 

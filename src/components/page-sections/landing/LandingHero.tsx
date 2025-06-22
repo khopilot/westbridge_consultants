@@ -59,6 +59,27 @@ const LandingHero: React.FC = () => {
         className="landing-hero__bg-pattern"
         style={{ opacity }}
       >
+        {/* Cambodia SVG Background */}
+        <motion.div 
+          className="cambodia-bg"
+          style={{ y: y2 }}
+          animate={{ 
+            scale: [1, 1.05, 1],
+            rotate: [0, 2, 0, -2, 0]
+          }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        >
+          <img 
+            src="/cambodia.svg" 
+            alt="Cambodia Map Background" 
+            className="cambodia-svg"
+          />
+        </motion.div>
+        
         <motion.div 
           className="bg-shape bg-shape--1"
           style={{ x: mousePosition.x, y: mousePosition.y }}
@@ -84,25 +105,7 @@ const LandingHero: React.FC = () => {
           className="landing-hero__content"
           style={{ y: y1 }}
         >
-          {/* Animated Badge */}
-          <motion.div 
-            className="landing-hero__badge"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }}
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" as const }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
-                <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-            </motion.div>
-            <span>Cambodia Consulting Specialists</span>
-          </motion.div>
+
           
           {/* Main Title with Split Text Animation */}
           <motion.h1 
@@ -112,19 +115,9 @@ const LandingHero: React.FC = () => {
             variants={textAnimation}
           >
             <span>Cambodia&nbsp;</span>
-            <motion.span 
-              className="text-gradient-animated"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear" as const
-              }}
-            >
+            <span className="text-gradient-animated">
               Made&nbsp;Simple
-            </motion.span>
+            </span>
           </motion.h1>
           
           {/* Subtitle with Typewriter Effect */}

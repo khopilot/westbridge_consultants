@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LandingNavigation from '../components/LandingNavigation'
 import LandingHero from '../components/page-sections/landing/LandingHero'
 import OperateWithConfidence from '../components/page-sections/landing/OperateWithConfidence'
@@ -10,6 +10,21 @@ import ContactCTA from '../components/page-sections/landing/ContactCTA'
 import ChatBubble from '../components/ChatBubble'
 
 const Landing: React.FC = () => {
+  // Add landing-specific body class immediately
+  if (typeof document !== 'undefined') {
+    document.body.classList.add('landing-body')
+  }
+  
+  useEffect(() => {
+    // Ensure class is added
+    document.body.classList.add('landing-body')
+    
+    // Cleanup when component unmounts
+    return () => {
+      document.body.classList.remove('landing-body')
+    }
+  }, [])
+
   return (
     <>
       <LandingNavigation />
