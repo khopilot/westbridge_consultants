@@ -3,14 +3,11 @@ import './styles/TeamSection.css'
 
 const TeamSection: React.FC = () => {
   return (
-    <section id="team" className="team-section py-3">
+    <section id="team" className="team-section">
       <div className="container">
-        <div className="team-section__header text-center mb-3" data-aos="fade-up">
-          <div className="team-section__badge" data-aos="zoom-in" data-aos-delay="100">
-            Leadership
-          </div>
-          <h2 data-aos="fade-up" data-aos-delay="200">Meet the Founders</h2>
-          <p className="team-section__description" data-aos="fade-up" data-aos-delay="300">
+        <div className="team-section__header text-center" data-aos="fade-up">
+          <h2 data-aos="fade-up" data-aos-delay="100">Meet the Founders</h2>
+          <p className="team-section__description" data-aos="fade-up" data-aos-delay="200">
             Two entrepreneurs who learned Cambodia the hard way—and now make it simple for you.
           </p>
         </div>
@@ -108,93 +105,7 @@ const TeamSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Leadership Impact Stats */}
-        <div className="leadership-impact" data-aos="fade-up" data-aos-delay="700">
-          <div className="leadership-impact__content">
-            <h3 data-aos="fade-up" data-aos-delay="800">Combined Leadership Impact</h3>
-            <p data-aos="fade-up" data-aos-delay="900">
-              Two decades of combined expertise driving transformational success across Cambodia's most challenging sectors.
-            </p>
-            <div className="impact-stats__grid">
-              <div className="impact-stat" data-aos="zoom-in" data-aos-delay="1000">
-                <span className="impact-stat__number">23</span>
-                <span className="impact-stat__label">Combined Years in Cambodia</span>
-              </div>
-              <div className="impact-stat" data-aos="zoom-in" data-aos-delay="1100">
-                <span className="impact-stat__number">30+</span>
-                <span className="impact-stat__label">Successful Projects</span>
-              </div>
-              <div className="impact-stat" data-aos="zoom-in" data-aos-delay="1200">
-                <span className="impact-stat__number">15+</span>
-                <span className="impact-stat__label">Industry Specializations</span>
-              </div>
-              <div className="impact-stat" data-aos="zoom-in" data-aos-delay="1300">
-                <span className="impact-stat__number">5</span>
-                <span className="impact-stat__label">Languages Spoken</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Expert Network */}
-        <div className="expert-network" data-aos="fade-up" data-aos-delay="800">
-          <div className="expert-network__header">
-            <h3 data-aos="fade-up" data-aos-delay="900">Expert Advisory Network</h3>
-            <p data-aos="fade-up" data-aos-delay="1000">
-              Our founders lead a carefully curated network of Cambodia's most experienced professionals, 
-              ensuring comprehensive expertise across every aspect of your business journey.
-            </p>
-          </div>
-          <div className="experts-grid">
-            <div className="expert-card" data-aos="fade-up" data-aos-delay="1100">
-              <div className="expert-card__content">
-                <h4>Manufacturing Excellence</h4>
-                <p>Former operations directors from Cambodia's leading manufacturers, specializing in lean processes, quality systems, and export compliance standards.</p>
-                <div className="expert-card__specialties">
-                  <span>Textile Manufacturing</span>
-                  <span>Electronics Assembly</span>
-                  <span>Food Processing</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="expert-card" data-aos="fade-up" data-aos-delay="1200">
-              <div className="expert-card__content">
-                <h4>Regulatory Affairs</h4>
-                <p>Former government officials and legal professionals with insider knowledge of Cambodia's regulatory landscape and licensing procedures.</p>
-                <div className="expert-card__specialties">
-                  <span>Compliance Strategy</span>
-                  <span>Government Relations</span>
-                  <span>Trade Facilitation</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="expert-card" data-aos="fade-up" data-aos-delay="1300">
-              <div className="expert-card__content">
-                <h4>Financial Strategy</h4>
-                <p>Banking and finance professionals with deep experience in international investment, local banking relationships, and financial structuring.</p>
-                <div className="expert-card__specialties">
-                  <span>Investment Strategy</span>
-                  <span>Banking Relations</span>
-                  <span>Financial Planning</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="expert-card" data-aos="fade-up" data-aos-delay="1400">
-              <div className="expert-card__content">
-                <h4>Market Development</h4>
-                <p>Sales and marketing professionals with established networks across Cambodia's business community and international trade connections.</p>
-                <div className="expert-card__specialties">
-                  <span>Market Research</span>
-                  <span>Partnership Development</span>
-                  <span>Sales Strategy</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

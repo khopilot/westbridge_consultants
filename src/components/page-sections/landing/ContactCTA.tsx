@@ -46,25 +46,7 @@ const ContactCTA: React.FC = () => {
             </div>
           </div>
 
-          <div className="social-proof">
-            <p className="social-proof__text">
-              Join 50+ successful businesses who have chosen Goulding & Co Strategic Advisory for their Cambodia expansion
-            </p>
-            <div className="social-proof__stats">
-              <div className="proof-stat">
-                <span className="proof-stat__number">95%</span>
-                <span className="proof-stat__label">Client Satisfaction</span>
-              </div>
-              <div className="proof-stat">
-                <span className="proof-stat__number">24hrs</span>
-                <span className="proof-stat__label">Average Response</span>
-              </div>
-              <div className="proof-stat">
-                <span className="proof-stat__number">8yrs</span>
-                <span className="proof-stat__label">Cambodia Experience</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
