@@ -2,7 +2,8 @@
 .operate-confidence {
   position: relative;
   padding: 8rem 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
   min-height: 100vh;
 }
@@ -81,6 +82,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  overflow-x: hidden;
 }
 
 /* Header Section */
@@ -244,6 +246,7 @@
   position: relative;
   min-height: 500px;
   margin-bottom: 4rem;
+  overflow-x: hidden;
 }
 
 .step-content {
@@ -386,8 +389,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
@@ -702,4 +705,14 @@
   .card-wave-accent {
     transition: none;
   }
+}
+
+/* Global fix for horizontal scrollbar issue */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure main content doesn't overflow */
+.landing-page {
+  overflow-x: hidden;
 }
