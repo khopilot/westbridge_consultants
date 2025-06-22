@@ -6,13 +6,11 @@ const WhyCambodiaSection: React.FC = () => {
     <section id="why-cambodia" className="why-cambodia-section">
       <div className="container">
         <div className="why-cambodia-section__header text-center" data-aos="fade-up">
-          <div className="why-cambodia-section__badge" data-aos="zoom-in" data-aos-delay="100">
-            🇰🇭 Local Expertise
-          </div>
+
           <h2 data-aos="fade-up" data-aos-delay="200">Why&nbsp;Cambodia</h2>
           <div className="why-cambodia-section__image-container" data-aos="zoom-in" data-aos-delay="250">
             <img 
-              src="/cambodia-flag-map.png" 
+              src="/157f5e02-2c3f-4d42-8f11-a7a9a2aabda1.png" 
               alt="Cambodia flag map" 
               className="why-cambodia-section__flag-map"
             />
