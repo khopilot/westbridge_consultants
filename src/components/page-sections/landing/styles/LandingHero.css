@@ -822,9 +822,9 @@
   
   .hero-video-container--mobile #hero-youtube-player,
   .hero-video-container--mobile .hero-youtube-iframe {
-    /* 9:16 video - increased to fill screen completely */
-    width: 125%;
-    height: 125%;
+    /* 9:16 video - scale more to eliminate margins */
+    width: 200%;
+    height: 200%;
   }
 }
 
@@ -846,6 +846,13 @@
 @media (max-width: 480px) {
   .hero-video-container {
     opacity: 0.3;
+  }
+  
+  .hero-video-container--mobile #hero-youtube-player,
+  .hero-video-container--mobile .hero-youtube-iframe {
+    /* Even more scaling for very small screens */
+    width: 250%;
+    height: 250%;
   }
 }
 
