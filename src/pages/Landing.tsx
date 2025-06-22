@@ -1,7 +1,7 @@
 import React from 'react'
 import LandingNavigation from '../components/LandingNavigation'
 import LandingHero from '../components/page-sections/landing/LandingHero'
-import ApproachSection from '../components/page-sections/landing/ApproachSection'
+import OperateWithConfidence from '../components/page-sections/landing/OperateWithConfidence'
 import WhyCambodiaSection from '../components/page-sections/landing/WhyCambodiaSection'
 import CaseStudiesSection from '../components/page-sections/landing/CaseStudiesSection'
 import TeamSection from '../components/page-sections/landing/TeamSection'
@@ -15,7 +15,7 @@ const Landing: React.FC = () => {
       <LandingNavigation />
       <main className="landing-page">
         <LandingHero />
-        <ApproachSection />
+        <OperateWithConfidence />
         <WhyCambodiaSection />
         <CaseStudiesSection />
         <TeamSection />
