@@ -63,12 +63,19 @@ const LandingHero: React.FC = () => {
           showinfo: 0,
           mute: 1,
           loop: 0, // We'll handle loop manually
-          origin: window.location.origin
+          origin: window.location.origin,
+          vq: 'hd2160', // Request 4K quality
+          quality: 'highres' // Highest available quality
         },
         events: {
           onReady: (event: any) => {
             setIsPlayerReady(true)
             event.target.mute()
+            // Set to highest quality
+            const qualityLevels = event.target.getAvailableQualityLevels()
+            if (qualityLevels && qualityLevels.length > 0) {
+              event.target.setPlaybackQuality(qualityLevels[0])
+            }
             event.target.playVideo()
           },
           onStateChange: (event: any) => {
@@ -383,7 +390,7 @@ const LandingHero: React.FC = () => {
             {/* Fallback iframe if YT API fails */}
             {!isPlayerReady && (
               <iframe
-                src="https://www.youtube.com/embed/lm5-iFxneBQ?autoplay=1&mute=1&controls=0&loop=1&playlist=lm5-iFxneBQ&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1"
+                src="https://www.youtube.com/embed/lm5-iFxneBQ?autoplay=1&mute=1&controls=0&loop=1&playlist=lm5-iFxneBQ&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&vq=hd2160&quality=highres"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="hero-youtube-iframe"
