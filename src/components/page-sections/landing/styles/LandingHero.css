@@ -520,9 +520,9 @@
   }
   
   .landing-hero__content {
-    padding: 0 1.5rem;
+    padding: 5rem 1.5rem 0 1.5rem; /* Add top padding for fixed navigation */
     max-width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 5rem); /* Adjust min-height to account for padding */
   }
   
   .landing-hero h1 {
@@ -619,8 +619,8 @@
 
 @media (max-width: 480px) {
   .landing-hero__content {
-    padding: 0 1.25rem;
-    min-height: 100vh;
+    padding: 4.5rem 1.25rem 0 1.25rem; /* Add top padding for fixed navigation */
+    min-height: calc(100vh - 4.5rem); /* Adjust min-height to account for padding */
   }
   
   .landing-hero h1 {
@@ -702,8 +702,8 @@
 
 @media (max-width: 360px) {
   .landing-hero__content {
-    padding: 0 1rem;
-    min-height: 100vh;
+    padding: 4rem 1rem 0 1rem; /* Add top padding for fixed navigation */
+    min-height: calc(100vh - 4rem); /* Adjust min-height to account for padding */
   }
   
   .landing-hero h1 {
