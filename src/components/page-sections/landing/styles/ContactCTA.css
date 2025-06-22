@@ -1,93 +1,56 @@
-/* Elegant Navy Blue Gradient Contact Section */
+/* Ultra Elegant Contact CTA Section */
 .contact-cta {
-  background: 
-    radial-gradient(ellipse at top, #f8f9fa 0%, transparent 40%),
-    radial-gradient(ellipse at bottom, rgba(26, 46, 78, 0.3) 0%, transparent 50%),
-    linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #e9ecef 50%, #dee2e6 75%, #ced4da 100%);
+  background: linear-gradient(180deg, #0a0e14 0%, #1a2332 50%, #0f1419 100%);
   position: relative;
   overflow: hidden;
-  padding: 6rem 0;
-  border-top: 1px solid rgba(26, 46, 78, 0.1);
+  padding: 4rem 0;
 }
 
-/* Navy Blue Gradient Overlay */
+/* Sophisticated Background Pattern */
 .contact-cta::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(26, 46, 78, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(36, 52, 86, 0.06) 0%, transparent 50%),
-    linear-gradient(180deg, transparent 0%, rgba(26, 46, 78, 0.02) 50%, rgba(26, 46, 78, 0.05) 100%);
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(164, 120, 100, 0.06) 0%, transparent 60%);
   pointer-events: none;
-  z-index: 1;
+  animation: backgroundShift 30s ease-in-out infinite alternate;
 }
 
-/* Subtle Shine Effect */
+@keyframes backgroundShift {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(3deg);
+  }
+}
+
+/* Elegant Grid Overlay */
 .contact-cta::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 45%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.4) 55%,
-    transparent 100%
-  );
-  transform: translateX(-100%);
-  animation: elegantSweep 8s ease-in-out infinite;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100px 100px;
   pointer-events: none;
-  z-index: 2;
-}
-
-@keyframes elegantSweep {
-  0% {
-    transform: translateX(-100%);
-  }
-  50%, 100% {
-    transform: translateX(200%);
-  }
+  opacity: 0.3;
 }
 
 .dark .contact-cta {
   background: linear-gradient(180deg, #050810 0%, #0f1419 50%, #0a0e14 100%);
 }
 
-/* Subtle Shimmer Effect */
-.contact-cta__content::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.07) 50%,
-    transparent 60%
-  );
-  animation: subtleShimmer 8s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes subtleShimmer {
-  0% {
-    transform: translateX(-100%) translateY(-100%);
-  }
-  100% {
-    transform: translateX(100%) translateY(100%);
-  }
-}
 
 .contact-cta__content {
   position: relative;
@@ -100,45 +63,33 @@
 /* Elegant Header */
 .contact-cta__header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
 .contact-cta__header::before {
   content: '';
   position: absolute;
-  top: -2rem;
+  top: -1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-  animation: lineGlow 3s ease-in-out infinite;
-}
-
-@keyframes lineGlow {
-  0%, 100% {
-    opacity: 0.3;
-    width: 60px;
-  }
-  50% {
-    opacity: 0.8;
-    width: 100px;
-  }
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  opacity: 0.6;
 }
 
 .contact-cta h2 {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: 2.25rem;
   font-weight: 300;
-  color: #1a2e4e;
+  color: #ffffff;
   line-height: 1.2;
   margin: 0;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-cta h2::after {
@@ -148,8 +99,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: 40%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #1a2e4e, transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
 /* Contact Methods - Premium Glass Design */
@@ -162,9 +113,9 @@
 
 .contact-methods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
   margin: 0 auto;
   background: none !important;
   backdrop-filter: none !important;
@@ -174,20 +125,19 @@
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  color: #1a2e4e;
+  gap: 1rem;
+  color: #ffffff;
   text-decoration: none;
-  padding: 2rem;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border: 1px solid rgba(26, 46, 78, 0.1);
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  min-height: 100px;
-  box-shadow: 
-    0 4px 20px rgba(26, 46, 78, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.05);
+  min-height: 80px;
 }
 
 /* Elegant Hover Effect */
@@ -233,37 +183,42 @@
 }
 
 .contact-method:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+  transform: translateY(-2px);
   box-shadow: 
-    0 12px 40px rgba(26, 46, 78, 0.15),
-    0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: rgba(26, 46, 78, 0.2);
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Premium Icon Styling */
 .contact-method__icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a2e4e 0%, #243456 100%);
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-radius: 12px;
   box-shadow: 
-    0 4px 12px rgba(26, 46, 78, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15),
     inset 0 1px 1px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
+.contact-method__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
 .contact-method:hover .contact-method__icon {
-  transform: rotate(5deg) scale(1.1);
-  background: linear-gradient(135deg, #243456 0%, #2c4a73 100%);
+  transform: scale(1.05);
   box-shadow: 
-    0 8px 24px rgba(26, 46, 78, 0.3),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    0 6px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
 }
 
 .contact-method__content {
@@ -272,55 +227,39 @@
 }
 
 .contact-method__label {
-  font-size: 0.75rem;
-  color: #6c757d;
-  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .contact-method__value {
-  font-size: 1.1rem;
-  color: #1a2e4e;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 500;
   word-break: break-word;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   transition: all 0.3s ease;
 }
 
 .contact-method:hover .contact-method__value {
-  color: #243456;
+  color: #ffffff;
 }
 
-/* Floating Animation for Icons */
-@keyframes floatIcon {
+/* Subtle Icon Animation */
+@keyframes subtleFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 }
 
-.contact-method:nth-child(1) .contact-method__icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-.contact-method:nth-child(2) .contact-method__icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.contact-method:nth-child(3) .contact-method__icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.contact-method:nth-child(4) .contact-method__icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  animation-delay: 1.5s;
+.contact-method:hover .contact-method__icon {
+  animation: subtleFloat 2s ease-in-out infinite;
 }
 
 /* Dark theme adjustments */
@@ -346,13 +285,18 @@
 /* Responsive Design - Maintained Elegance */
 @media (min-width: 1400px) {
   .contact-cta__content {
-    max-width: 1400px;
+    max-width: 1200px;
     padding: 0 3rem;
   }
   
   .contact-methods {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    gap: 1.5rem;
+    max-width: 1000px;
+  }
+  
+  .contact-method {
+    padding: 1.5rem;
   }
 }
 
@@ -362,7 +306,7 @@
   }
 
   .contact-methods {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
   }
 
