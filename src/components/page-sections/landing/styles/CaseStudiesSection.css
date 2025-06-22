@@ -2,40 +2,55 @@
 .case-studies-section {
   background: var(--color-bg-primary);
   color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.case-studies-section > .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
 }
 
 .case-studies-section__header {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
+  position: relative;
 }
 
-.case-studies-section__badge {
-  display: inline-block;
-  background: rgba(26, 46, 78, 0.1);
-  color: var(--color-accent);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(26, 46, 78, 0.2);
-}
 
 .case-studies-section h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
   color: var(--color-primary);
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
 }
 
 .case-studies-section__description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  line-height: 1.8;
   color: var(--color-text);
   margin-bottom: 0;
-  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.case-studies-section__subtitle {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  margin-top: 0.75rem;
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* Case Studies Grid */
@@ -43,13 +58,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  align-items: stretch;
 }
 
 /* Tilt Wrapper */
 .tilt-wrapper {
   height: 100%;
   transform-style: preserve-3d;
+  display: flex;
 }
 
 /* Card Animation */
@@ -79,16 +99,17 @@
 }
 
 .case-study-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #1a2e4e 0%, #243456 50%, #1a2e4e 100%);
   border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 8px 32px rgba(26, 46, 78, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .case-study-card::before {
@@ -98,7 +119,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6));
   transform: translateX(-100%);
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -114,7 +135,7 @@
   background: linear-gradient(
     45deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 50%,
     transparent 70%
   );
   transform: rotate(0deg);
@@ -158,47 +179,46 @@
 
 /* Effet de glow supplémentaire */
 .case-study-card:hover {
-  box-shadow: 0 20px 40px rgba(26, 46, 78, 0.15), 0 4px 12px rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 1);
-  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%);
+  box-shadow: 0 16px 48px rgba(26, 46, 78, 0.3), 0 6px 16px rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, #243456 0%, #2c4a73 50%, #243456 100%);
   transform: translateY(-5px);
 }
 
 .case-study-card__header {
   margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .case-study-card__industry {
   display: inline-block;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   padding: 0.375rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(26, 46, 78, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .case-study-card__industry:hover {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(26, 46, 78, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .case-study-card__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #ffffff;
   margin-bottom: 0;
   line-height: 1.3;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.01em;
 }
 
 .case-study-card__challenge,
@@ -212,12 +232,14 @@
 .case-study-card__solution h4,
 .case-study-card__outcome h4,
 .case-study-card__results h4 {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 0.75rem;
   position: relative;
   padding-left: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .case-study-card__challenge h4::before,
@@ -236,24 +258,25 @@
 }
 
 .case-study-card__challenge h4::before {
-  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .case-study-card__solution h4::before {
-  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .case-study-card__outcome h4::before {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .case-study-card__challenge p,
 .case-study-card__solution p,
 .case-study-card__outcome p {
   font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--color-text);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0;
+  font-weight: 300;
 }
 
 .case-study-card__solution ul {
@@ -267,14 +290,14 @@
   padding-left: 1rem;
   position: relative;
   font-size: 0.9rem;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .case-study-card__solution li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: bold;
 }
 
@@ -287,9 +310,9 @@
 .result-metric {
   text-align: center;
   padding: 1rem 0.75rem;
-  background: linear-gradient(135deg, rgba(26, 46, 78, 0.05), rgba(45, 74, 124, 0.02));
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 1px solid rgba(26, 46, 78, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -302,7 +325,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(26, 46, 78, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
   transition: width 0.6s ease, height 0.6s ease;
   transform: translate(-50%, -50%);
 }
@@ -314,7 +337,8 @@
 
 .result-metric:hover {
   transform: translateY(-2px);
-  border-color: rgba(26, 46, 78, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .metric__number {
@@ -322,14 +346,14 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 0.25rem;
 }
 
 .metric__label {
   font-size: 0.75rem;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -353,11 +377,11 @@
 }
 
 .testimonial-card {
-  background: var(--color-surface);
+  background: linear-gradient(135deg, #1a2e4e 0%, #243456 50%, #1a2e4e 100%);
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px rgba(26, 46, 78, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -369,67 +393,68 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6));
 }
 
 .testimonial-card__industry {
   display: inline-block;
-  background: var(--color-bg-light);
-  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .testimonial-card__quote {
   font-size: 1rem;
   line-height: 1.6;
   font-style: italic;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.5rem;
   position: relative;
 }
 
 .testimonial-card__author-name {
-  color: var(--color-primary);
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
 .testimonial-card__author-position {
-  color: var(--color-secondary);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
 
 .testimonial-card__company {
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 .testimonial-card__location {
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
-  opacity: 0.7;
 }
 
 /* Success Metrics */
 .success-metrics {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, #1a2e4e 0%, #243456 100%);
   border-radius: 16px;
   padding: 2.5rem;
-  color: var(--color-bg-light);
+  color: #ffffff;
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .success-metrics__content h3 {
-  color: var(--color-bg-light);
+  color: #ffffff;
   margin-bottom: 1rem;
   font-size: 1.75rem;
 }
@@ -438,7 +463,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -466,7 +491,7 @@
 
 .success-metric__label {
   font-size: 0.9rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Dark theme adjustments */
@@ -489,15 +514,37 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+  .case-studies-section {
+    padding: 4rem 2rem;
+  }
+  
+  .case-studies-grid {
+    max-width: 1100px;
+  }
+}
+
 @media (max-width: 1199px) {
+  .case-studies-section {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
   .case-studies-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 900px;
   }
 }
 
 @media (max-width: 1023px) {
-  .case-studies-grid,
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    padding: 0 1.5rem;
+  }
+  
   .testimonials-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -514,38 +561,42 @@
 
 @media (max-width: 767px) {
   .case-studies-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 3rem 0;
+    min-height: auto;
+  }
+  
+  .case-studies-section__header {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
   }
   
   .case-studies-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .case-studies-section__description {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .case-studies-section__badge {
-    font-size: 0.8rem;
-    padding: 0.375rem 0.75rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
   
+  .case-studies-section__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .case-studies-section__subtitle {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  
   .case-study-card {
-    padding: 1.25rem;
+    padding: 1.75rem 1.5rem;
   }
   
   .case-study-card__title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   
   .case-study-card__challenge h4,
   .case-study-card__solution h4,
   .case-study-card__outcome h4 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-bottom: 0.5rem;
   }
   
@@ -559,10 +610,15 @@
   .case-study-card__challenge,
   .case-study-card__solution,
   .case-study-card__outcome {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   
   .case-study-card__outcome:last-child {
+    margin-bottom: 0;
+  }
+  
+  .case-study-card__challenge:last-child,
+  .case-study-card__solution:last-child {
     margin-bottom: 0;
   }
   
@@ -607,8 +663,12 @@
 
 @media (max-width: 480px) {
   .case-studies-section {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 2.5rem 0;
+  }
+  
+  .case-studies-grid {
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
   
   .case-studies-section h2 {
@@ -620,7 +680,7 @@
   }
   
   .case-study-card {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
   .case-study-card__industry {
@@ -629,19 +689,21 @@
   }
   
   .case-study-card__title {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
   
   .case-study-card__challenge h4,
   .case-study-card__solution h4,
   .case-study-card__outcome h4 {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+    padding-left: 1.25rem;
   }
   
   .case-study-card__challenge p,
   .case-study-card__solution p,
   .case-study-card__outcome p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
   
   .success-metrics {

@@ -3,9 +3,9 @@ import './styles/WhyCambodiaSection.css'
 
 const WhyCambodiaSection: React.FC = () => {
   return (
-    <section id="why-cambodia" className="why-cambodia-section py-3">
+    <section id="why-cambodia" className="why-cambodia-section">
       <div className="container">
-        <div className="why-cambodia-section__header text-center mb-3" data-aos="fade-up">
+        <div className="why-cambodia-section__header text-center" data-aos="fade-up">
           <div className="why-cambodia-section__badge" data-aos="zoom-in" data-aos-delay="100">
             🇰🇭 Local Expertise
           </div>
@@ -54,58 +54,6 @@ const WhyCambodiaSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="expertise-showcase" data-aos="fade-left" data-aos-delay="600">
-            <div className="expertise-showcase__content">
-              <div className="expertise-showcase__text">
-                <h3>Our Cambodia Advantage</h3>
-                <p>
-                  Eight years of continuous presence in Cambodia has given us unparalleled insights into the market dynamics, 
-                  regulatory landscape, and business culture that drive success in this emerging economy.
-                </p>
-                <div className="expertise-highlights">
-                  <div className="expertise-highlight">
-                    <div className="expertise-highlight__icon">🏢</div>
-                    <div className="expertise-highlight__content">
-                      <h4>Established Network</h4>
-                      <p>Deep relationships with government officials, industry leaders, and key stakeholders across all major sectors.</p>
-                    </div>
-                  </div>
-                  <div className="expertise-highlight">
-                    <div className="expertise-highlight__icon">📋</div>
-                    <div className="expertise-highlight__content">
-                      <h4>Regulatory Mastery</h4>
-                      <p>Complete understanding of Cambodia's evolving business regulations, licensing requirements, and compliance frameworks.</p>
-                    </div>
-                  </div>
-                  <div className="expertise-highlight">
-                    <div className="expertise-highlight__icon">🤝</div>
-                    <div className="expertise-highlight__content">
-                      <h4>Cultural Integration</h4>
-                      <p>Expertise in navigating Khmer business culture, relationship building, and long-term partnership development.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="expertise-showcase__stats">
-                <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">30+</span>
-                  <span className="stat-card__label">Successful Projects</span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">23</span>
-                  <span className="stat-card__label">Years Local Experience</span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">15+</span>
-                  <span className="stat-card__label">Industry Sectors</span>
-                </div>
-                <div className="stat-card">
-                  <span className="stat-card__number shiny-metric">100%</span>
-                  <span className="stat-card__label">Client Retention Rate</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

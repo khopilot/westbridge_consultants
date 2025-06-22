@@ -4,15 +4,13 @@ import './styles/CaseStudiesSection.css'
 
 const CaseStudiesSection: React.FC = () => {
   return (
-    <section id="case-studies" className="case-studies-section py-3">
+    <section id="case-studies" className="case-studies-section">
       <div className="container">
-        <div className="case-studies-section__header text-center mb-3" data-aos="fade-up">
-          <div className="case-studies-section__badge" data-aos="zoom-in" data-aos-delay="100">
-            📊 Success Stories
-          </div>
-          <h2 data-aos="fade-up" data-aos-delay="200">Case&nbsp;Studies</h2>
-          <p className="case-studies-section__description" data-aos="fade-up" data-aos-delay="300">
-            One picture is worth a thousand words. We like to keep things simple:
+        <div className="case-studies-section__header text-center" data-aos="fade-up">
+          <h2 data-aos="fade-up" data-aos-delay="100">Case&nbsp;Studies</h2>
+          <p className="case-studies-section__description" data-aos="fade-up" data-aos-delay="200">
+            One picture is worth a thousand words.<br/>
+            <span className="case-studies-section__subtitle">We like to keep things simple</span>
           </p>
         </div>
 
