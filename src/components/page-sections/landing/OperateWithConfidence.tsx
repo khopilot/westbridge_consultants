@@ -26,7 +26,7 @@ const OperateWithConfidence: React.FC = () => {
     {
       id: 0,
       title: 'Initial Consultation',
-      icon: '🤝',
+      icon: '01',
       number: 'Step 01',
       subtitle: '60-minute session (in-person or virtual) to clarify goals, budget & timelines.',
       features: [
@@ -47,7 +47,7 @@ const OperateWithConfidence: React.FC = () => {
     {
       id: 1,
       title: 'Stakeholder & Obstacle Mapping',
-      icon: '🗺️',
+      icon: '02',
       number: 'Step 02',
       subtitle: 'We flag regulatory hurdles, landlords and which ministry signs off — complete stakeholder map.',
       features: [
@@ -68,7 +68,7 @@ const OperateWithConfidence: React.FC = () => {
     {
       id: 2,
       title: 'Solution Roadmap',
-      icon: '📑',
+      icon: '03',
       number: 'Step 03',
       subtitle: 'Clear strategy highlighting everything you need, who is responsible and practical timelines.',
       features: [
@@ -89,7 +89,7 @@ const OperateWithConfidence: React.FC = () => {
     {
       id: 3,
       title: 'On-Site Execution',
-      icon: '🚀',
+      icon: '04',
       number: 'Step 04',
       subtitle: 'Implementation happens swiftly under our watch; we track progress weekly.',
       features: [
@@ -110,7 +110,7 @@ const OperateWithConfidence: React.FC = () => {
     {
       id: 4,
       title: 'Rapid Course Corrections',
-      icon: '🔄',
+      icon: '05',
       number: 'Step 05',
       subtitle: 'Immediate corrections if outcomes slip — priority is to keep your goals on track.',
       features: [
@@ -146,6 +146,10 @@ const OperateWithConfidence: React.FC = () => {
           className="wave wave-3"
           style={{ x: useTransform(waveTransform, x => x * 0.6) }}
         />
+        <motion.div 
+          className="wave wave-4"
+          style={{ x: useTransform(waveTransform, x => x * -0.4) }}
+        />
       </div>
 
       {/* Shimmer overlay */}
@@ -158,24 +162,8 @@ const OperateWithConfidence: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
         >
-          <motion.div 
-            className="methodology-badge"
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Our Proven Methodology
-          </motion.div>
 
-          <motion.div 
-            className="header-accent"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: "100%" } : {}}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
-          />
+
           <h2 className="confidence-title">
             Operate with Confidence
             <span className="title-subtitle">in Cambodia's Complex Market</span>
@@ -222,8 +210,7 @@ const OperateWithConfidence: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ 
                 opacity: activeStep === index ? 1 : 0,
-                x: activeStep === index ? 0 : 50,
-                display: activeStep === index ? 'block' : 'none'
+                x: activeStep === index ? 0 : 30
               }}
               transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             >
@@ -261,13 +248,13 @@ const OperateWithConfidence: React.FC = () => {
 
       {/* Floating particles effect */}
       <div className="particles-container">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
             className="particle"
             initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: window.innerHeight + 100,
+              x: Math.random() * 1200,
+              y: 800,
               opacity: 0
             }}
             animate={{
