@@ -430,50 +430,66 @@
 }
 
 .expert-card {
-  background: var(--color-surface);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
   border-radius: 16px;
   padding: clamp(2rem, 4vw, 3rem);
   box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.06),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--color-border);
-  transition: all 0.4s ease;
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .expert-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  border-radius: 16px 16px 0 0;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(148, 163, 184, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.expert-card:hover::before {
+  opacity: 1;
 }
 
 .expert-card:hover {
-  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
+  border-color: rgba(148, 163, 184, 0.3);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.12),
-    0 4px 15px rgba(0, 0, 0, 0.08);
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(148, 163, 184, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
 }
 
 .expert-card h4 {
   font-family: var(--font-heading);
   font-size: clamp(1.1rem, 3vw, 1.4rem);
   font-weight: 600;
-  color: var(--color-primary);
+  color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .expert-card p {
   font-size: clamp(0.9rem, 2.5vw, 1.05rem);
   line-height: 1.6;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: clamp(1.2rem, 3vw, 1.8rem);
-  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .expert-card__specialties {
@@ -484,19 +500,26 @@
 }
 
 .expert-card__specialties span {
-  background: linear-gradient(135deg, var(--color-accent), #8B2635);
-  color: white;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.2) 0%, rgba(71, 85, 105, 0.15) 100%);
+  color: #e2e8f0;
   padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.7rem, 2vw, 1rem);
   border-radius: 8px;
   font-size: clamp(0.7rem, 1.8vw, 0.85rem);
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(114, 47, 55, 0.2);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 .expert-card__specialties span:hover {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.3) 0%, rgba(71, 85, 105, 0.2) 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border-color: rgba(148, 163, 184, 0.3);
 }
 
 /* Dark Theme Adjustments */
@@ -560,8 +583,39 @@
 }
 
 .dark .expert-card {
-  background: var(--dark-surface);
-  border-color: rgba(240, 246, 252, 0.1);
+  background: linear-gradient(135deg, rgba(2, 8, 23, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-color: rgba(71, 85, 105, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .expert-card:hover {
+  background: linear-gradient(135deg, rgba(2, 8, 23, 0.98) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border-color: rgba(71, 85, 105, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(71, 85, 105, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+.dark .expert-card h4 {
+  color: #cbd5e1;
+}
+
+.dark .expert-card p {
+  color: rgba(203, 213, 225, 0.85);
+}
+
+.dark .expert-card__specialties span {
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.3) 0%, rgba(51, 65, 85, 0.2) 100%);
+  border-color: rgba(71, 85, 105, 0.3);
+  color: #cbd5e1;
+}
+
+.dark .expert-card__specialties span:hover {
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.4) 0%, rgba(51, 65, 85, 0.3) 100%);
+  border-color: rgba(71, 85, 105, 0.4);
 }
 
 /* Enhanced Responsive Design */
