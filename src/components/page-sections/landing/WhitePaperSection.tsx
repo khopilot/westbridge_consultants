@@ -3,13 +3,12 @@ import './styles/WhitePaperSection.css'
 
 const WhitePaperSection: React.FC = () => {
   return (
-    <section id="whitepaper" className="whitepaper-section py-3">
+    <section id="whitepaper" className="whitepaper-section">
       <div className="container">
         <div className="whitepaper-content">
           <div className="whitepaper-preview">
             <div className="whitepaper-preview__cover">
               <div className="whitepaper-preview__badge">Industry Report</div>
-              <div className="whitepaper-preview__icon">🇰🇭</div>
               <div className="whitepaper-preview__title">Cambodia 2025</div>
               <div className="whitepaper-preview__subtitle">A Bird's View</div>
               <div className="whitepaper-preview__meta">
@@ -33,27 +32,22 @@ const WhitePaperSection: React.FC = () => {
 
             <div className="whitepaper-highlights">
               <div className="highlight-item highlight-item--compact">
-                <div className="highlight-item__icon">📈</div>
-                <div className="highlight-item__text">Economic Growth Analysis</div>
+                  <div className="highlight-item__text">Economic Growth Analysis</div>
               </div>
               <div className="highlight-item highlight-item--compact">
-                <div className="highlight-item__icon">🏗️</div>
-                <div className="highlight-item__text">Real Estate Market Insights</div>
+                  <div className="highlight-item__text">Real Estate Market Insights</div>
               </div>
               <div className="highlight-item highlight-item--compact">
-                <div className="highlight-item__icon">💡</div>
-                <div className="highlight-item__text">Future Opportunities</div>
+                  <div className="highlight-item__text">Future Opportunities</div>
               </div>
               <div className="highlight-item highlight-item--compact">
-                <div className="highlight-item__icon">⚡</div>
-                <div className="highlight-item__text">Productivity Challenges</div>
+                  <div className="highlight-item__text">Productivity Challenges</div>
               </div>
             </div>
 
             <div className="whitepaper-cta">
               <div className="whitepaper-cta__content">
                 <a href="#" className="download-btn download-btn--primary download-btn--large">
-                  <span className="download-btn__icon">📥</span>
                   <span className="download-btn__text">
                     <span className="download-btn__main">Download Full Report</span>
                     <span className="download-btn__sub">PDF • 2.8 MB • Instant Download</span>
