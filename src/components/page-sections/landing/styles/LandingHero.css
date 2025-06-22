@@ -517,12 +517,19 @@
   .landing-hero {
     height: 100vh;
     padding: 0;
+    /* Ensure hero accounts for potential navigation overlap */
+    padding-top: 0;
   }
   
   .landing-hero__content {
-    padding: 5rem 1.5rem 0 1.5rem; /* Add top padding for fixed navigation */
+    padding: 0 1.5rem; /* Reset to original horizontal padding */
     max-width: 100%;
-    min-height: calc(100vh - 5rem); /* Adjust min-height to account for padding */
+    min-height: 100vh;
+    /* Create safe area at top for navigation */
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .landing-hero h1 {
@@ -619,8 +626,9 @@
 
 @media (max-width: 480px) {
   .landing-hero__content {
-    padding: 4.5rem 1.25rem 0 1.25rem; /* Add top padding for fixed navigation */
-    min-height: calc(100vh - 4.5rem); /* Adjust min-height to account for padding */
+    padding: 0 1.25rem; /* Reset to original horizontal padding */
+    min-height: 100vh;
+    margin-top: 5.5rem; /* Create safe area at top for navigation */
   }
   
   .landing-hero h1 {
@@ -702,8 +710,9 @@
 
 @media (max-width: 360px) {
   .landing-hero__content {
-    padding: 4rem 1rem 0 1rem; /* Add top padding for fixed navigation */
-    min-height: calc(100vh - 4rem); /* Adjust min-height to account for padding */
+    padding: 0 1rem; /* Reset to original horizontal padding */
+    min-height: 100vh;
+    margin-top: 5rem; /* Create safe area at top for navigation */
   }
   
   .landing-hero h1 {
