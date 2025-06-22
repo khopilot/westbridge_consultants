@@ -6,6 +6,8 @@ const LandingHero: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const { scrollY } = useScroll()
+  const playerRef = useRef<any>(null)
+  const [isPlayerReady, setIsPlayerReady] = useState(false)
   
   // Parallax transforms
   const y1 = useTransform(scrollY, [0, 300], [0, 50])
@@ -23,6 +25,84 @@ const LandingHero: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  // Initialize YouTube Player
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const initTimeout = setTimeout(() => {
+      // Check if API is already loaded
+      if ((window as any).YT && (window as any).YT.Player) {
+        initializePlayer()
+      } else {
+        // Load YouTube IFrame API
+        const tag = document.createElement('script')
+        tag.src = 'https://www.youtube.com/iframe_api'
+        const firstScriptTag = document.getElementsByTagName('script')[0]
+        firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag)
+
+        // YouTube API callback
+        ;(window as any).onYouTubeIframeAPIReady = () => {
+          initializePlayer()
+        }
+      }
+    }, 100)
+
+    function initializePlayer() {
+      playerRef.current = new (window as any).YT.Player('hero-youtube-player', {
+        videoId: 'lm5-iFxneBQ',
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          iv_load_policy: 3,
+          modestbranding: 1,
+          playsinline: 1,
+          rel: 0,
+          showinfo: 0,
+          mute: 1,
+          loop: 0, // We'll handle loop manually
+          origin: window.location.origin
+        },
+        events: {
+          onReady: (event: any) => {
+            setIsPlayerReady(true)
+            event.target.mute()
+            event.target.playVideo()
+          },
+          onStateChange: (event: any) => {
+            if (event.data === (window as any).YT.PlayerState.PLAYING) {
+              const duration = event.target.getDuration()
+              const restartTime = (duration - 4) * 1000 // Convert to milliseconds
+              
+              // Clear any existing timeout
+              if ((window as any).videoLoopTimeout) {
+                clearTimeout((window as any).videoLoopTimeout)
+              }
+              
+              // Set timeout to restart video 4 seconds before end
+              ;(window as any).videoLoopTimeout = setTimeout(() => {
+                if (playerRef.current && playerRef.current.seekTo) {
+                  playerRef.current.seekTo(0)
+                  playerRef.current.playVideo()
+                }
+              }, restartTime)
+            }
+          }
+        }
+      })
+    }
+
+    return () => {
+      clearTimeout(initTimeout)
+      if ((window as any).videoLoopTimeout) {
+        clearTimeout((window as any).videoLoopTimeout)
+      }
+      if (playerRef.current && playerRef.current.destroy) {
+        playerRef.current.destroy()
+      }
+    }
   }, [])
 
   // Floating animation variants
@@ -294,6 +374,23 @@ const LandingHero: React.FC = () => {
             </motion.div>
           </motion.div>
         </motion.div>
+      </div>
+      
+      {/* YouTube Video Background */}
+      <div className="hero-video-container">
+        <div className="hero-video-wrapper">
+          <div id="hero-youtube-player">
+            {/* Fallback iframe if YT API fails */}
+            {!isPlayerReady && (
+              <iframe
+                src="https://www.youtube.com/embed/lm5-iFxneBQ?autoplay=1&mute=1&controls=0&loop=1&playlist=lm5-iFxneBQ&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="hero-youtube-iframe"
+              />
+            )}
+          </div>
+        </div>
       </div>
     </section>
   )

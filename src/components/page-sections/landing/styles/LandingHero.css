@@ -142,7 +142,7 @@
 
 .landing-hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -756,11 +756,146 @@
   }
 }
 
+/* YouTube Video Background */
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.hero-video-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+#hero-youtube-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Default desktop size */
+  width: 150vw;
+  height: 150vh;
+  border: none;
+}
+
+/* Scale video iframe to cover */
+#hero-youtube-player iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Iframe fallback styles - full screen */
+.hero-youtube-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150vw;
+  height: 150vh;
+  border: none;
+}
+
+/* Responsive Video Styles */
+@media (max-width: 1023px) {
+  .hero-video-container {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #hero-youtube-player,
+  .hero-youtube-iframe {
+    transform: translate(-50%, -50%) scale(1.3);
+    width: 130vw;
+    height: 130vh;
+    min-width: 130vw;
+    min-height: 130vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-video-container {
+    opacity: 0.35;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  
+  .hero-video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #hero-youtube-player,
+  .hero-youtube-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Massive scale to ensure 21:9 fills portrait screens */
+    width: 500vmax;
+    height: 500vmax;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-video-container {
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #hero-youtube-player,
+  .hero-youtube-iframe {
+    /* Same as above - already very large */
+    width: 500vmax;
+    height: 500vmax;
+  }
+}
+
 /* Mobile Landscape Orientation */
 @media (max-width: 844px) and (orientation: landscape) {
   .landing-hero {
     min-height: 100vh;
     height: auto;
+  }
+  
+  .hero-video-container {
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+  }
+  
+  #hero-youtube-player,
+  .hero-youtube-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Landscape needs less scaling */
+    width: 200vw;
+    height: 200vh;
   }
   
   .landing-hero__content {
