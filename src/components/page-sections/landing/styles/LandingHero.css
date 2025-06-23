@@ -921,3 +921,10 @@
     font-size: 0.85rem;
   }
 }
+
+/* Hide CTA buttons on mobile devices */
+@media (max-width: 767px) {
+  .landing-hero__cta {
+    display: none;
+  }
+}
