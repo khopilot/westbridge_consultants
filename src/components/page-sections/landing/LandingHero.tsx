@@ -9,6 +9,7 @@ const LandingHero: React.FC = () => {
   const playerRef = useRef<any>(null)
   const [isPlayerReady, setIsPlayerReady] = useState(false)
   const [isMobilePortrait, setIsMobilePortrait] = useState(false)
+  const playerContainerRef = useRef<HTMLDivElement>(null)
   
   // Parallax transforms
   const y1 = useTransform(scrollY, [0, 300], [0, 50])
@@ -48,6 +49,11 @@ const LandingHero: React.FC = () => {
 
   // Initialize YouTube Player
   useEffect(() => {
+    // Only initialize on desktop
+    if (window.innerWidth < 1024) {
+      return
+    }
+    
     // Small delay to ensure DOM is ready
     const initTimeout = setTimeout(() => {
       // Check if API is already loaded
@@ -68,10 +74,16 @@ const LandingHero: React.FC = () => {
     }, 100)
 
     function initializePlayer() {
+      // Only initialize if container exists
+      if (!playerContainerRef.current || !document.getElementById('hero-youtube-player')) {
+        return
+      }
+      
       // Use different video ID based on orientation
       const videoId = isMobilePortrait ? 'aHvFHRzfT9I' : 'lm5-iFxneBQ'
       
-      playerRef.current = new (window as any).YT.Player('hero-youtube-player', {
+      try {
+        playerRef.current = new (window as any).YT.Player('hero-youtube-player', {
         videoId: videoId,
         playerVars: {
           autoplay: 1,
@@ -121,6 +133,9 @@ const LandingHero: React.FC = () => {
           }
         }
       })
+      } catch (error) {
+        console.error('Failed to initialize YouTube player:', error)
+      }
     }
 
     return () => {
@@ -128,8 +143,13 @@ const LandingHero: React.FC = () => {
       if ((window as any).videoLoopTimeout) {
         clearTimeout((window as any).videoLoopTimeout)
       }
-      if (playerRef.current && playerRef.current.destroy) {
-        playerRef.current.destroy()
+      if (playerRef.current && typeof playerRef.current.destroy === 'function') {
+        try {
+          playerRef.current.destroy()
+          playerRef.current = null
+        } catch (error) {
+          console.error('Error destroying YouTube player:', error)
+        }
       }
     }
   }, [isMobilePortrait]) // Reinitialize when orientation changes
@@ -162,7 +182,7 @@ const LandingHero: React.FC = () => {
   }
 
   return (
-    <section id="hero" className="landing-hero" ref={heroRef}>
+    <section id="hero" className="landing-hero" ref={heroRef} style={{ position: 'relative' }}>
       {/* Animated Background with Parallax */}
       <motion.div 
         className="landing-hero__bg-pattern"
@@ -249,86 +269,27 @@ const LandingHero: React.FC = () => {
             We have spent ten years in Cambodia learning the hard way. With us, you start on day one with that decade of knowledge in your pocket.
           </motion.p>
           
-          {/* Animated Highlight Cards */}
+          {/* YouTube Video 21:9 Frame - Desktop Only */}
           <motion.div 
-            className="landing-hero__highlights"
-            style={{ y: y2 }}
+            className={`hero-video-container ${isMobilePortrait ? 'hero-video-container--mobile' : ''}`}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
-            {[
-              {
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                title: "Strategic Market Entry",
-                description: "Navigate regulations and establish your presence"
-              },
-              {
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3V21L21 12L3 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                title: "Operational Excellence",
-                description: "Optimize processes for maximum efficiency"
-              },
-              {
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                title: "Partnership Development",
-                description: "Build strategic local and international alliances"
-              },
-              {
-                icon: (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                ),
-                title: "Innovation Strategy",
-                description: "Leverage technology for competitive advantage"
-              }
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                className="landing-hero__highlight"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)"
-                }}
-              >
-                <motion.div 
-                  className="highlight__icon"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  {item.icon}
-                </motion.div>
-                <div className="highlight__content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="hero-video-frame" />
+            <div className="hero-video-wrapper" ref={playerContainerRef}>
+              <div id="hero-youtube-player">
+                {/* Fallback iframe if YT API fails - Desktop only */}
+                {!isPlayerReady && window.innerWidth >= 1024 && (
+                  <iframe
+                    src={`https://www.youtube.com/embed/lm5-iFxneBQ?autoplay=1&mute=1&controls=0&loop=1&playlist=lm5-iFxneBQ&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&vq=hd2160&quality=highres`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="hero-youtube-iframe"
+                  />
+                )}
+              </div>
+            </div>
           </motion.div>
 
           {/* Scroll Indicator */}
@@ -348,23 +309,6 @@ const LandingHero: React.FC = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-      </div>
-      
-      {/* YouTube Video Background */}
-      <div className={`hero-video-container ${isMobilePortrait ? 'hero-video-container--mobile' : ''}`}>
-        <div className="hero-video-wrapper">
-          <div id="hero-youtube-player">
-            {/* Fallback iframe if YT API fails */}
-            {!isPlayerReady && (
-              <iframe
-                src={`https://www.youtube.com/embed/${isMobilePortrait ? 'aHvFHRzfT9I' : 'lm5-iFxneBQ'}?autoplay=1&mute=1&controls=0&loop=1&playlist=${isMobilePortrait ? 'aHvFHRzfT9I' : 'lm5-iFxneBQ'}&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&vq=hd2160&quality=highres`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="hero-youtube-iframe"
-              />
-            )}
-          </div>
-        </div>
       </div>
     </section>
   )
