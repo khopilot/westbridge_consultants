@@ -27,7 +27,7 @@ const LandingNavigation: React.FC = () => {
       setIsScrolled(scrollPosition > 50)
 
       // Update active section based on scroll position
-      const sections = ['hero', 'approach', 'why-cambodia', 'case-studies', 'team', 'whitepaper', 'contact']
+      const sections = ['hero', 'approach', 'why-cambodia', 'team', 'case-studies', 'whitepaper', 'contact']
       
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId)
@@ -76,15 +76,10 @@ const LandingNavigation: React.FC = () => {
         <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )},
-    { id: 'why-cambodia', label: 'Cambodia Edge', icon: (
+    { id: 'why-cambodia', label: 'Why Cambodia', icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
         <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    )},
-    { id: 'case-studies', label: 'Success Stories', icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )},
     { id: 'team', label: 'Meet the Team', icon: (
@@ -93,6 +88,11 @@ const LandingNavigation: React.FC = () => {
         <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
         <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    )},
+    { id: 'case-studies', label: 'Success Stories', icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )},
     { id: 'whitepaper', label: 'Resources', icon: (

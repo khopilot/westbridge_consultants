@@ -32,8 +32,8 @@ const Landing: React.FC = () => {
         <LandingHero />
         <OperateWithConfidence />
         <WhyCambodiaSection />
-        <CaseStudiesSection />
         <TeamSection />
+        <CaseStudiesSection />
         <WhitePaperSection />
         <ContactCTA />
       </main>
