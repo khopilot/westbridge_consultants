@@ -249,61 +249,6 @@ const LandingHero: React.FC = () => {
             We have spent ten years in Cambodia learning the hard way. With us, you start on day one with that decade of knowledge in your pocket.
           </motion.p>
           
-          {/* CTA Buttons with Magnetic Effect */}
-          <motion.div 
-            className="landing-hero__cta"
-            initial="hidden"
-            animate="visible"
-            custom={4}
-            variants={textAnimation}
-          >
-            <motion.button 
-              className="hero-cta hero-cta--primary" 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 8px 24px rgba(26, 46, 78, 0.4)",
-                  "0 12px 32px rgba(26, 46, 78, 0.6)",
-                  "0 8px 24px rgba(26, 46, 78, 0.4)"
-                ]
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-            >
-              <span>Request&nbsp;a&nbsp;Call</span>
-              <motion.svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </motion.svg>
-            </motion.button>
-            
-            <motion.button 
-              className="hero-cta hero-cta--secondary" 
-              onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.2)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>See&nbsp;Our&nbsp;Approach</span>
-            </motion.button>
-          </motion.div>
-          
           {/* Animated Highlight Cards */}
           <motion.div 
             className="landing-hero__highlights"
