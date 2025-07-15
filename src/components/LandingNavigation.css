@@ -78,13 +78,14 @@
   transform: translateY(-1px);
 }
 
-.landing-nav__logo-icon {
-  color: var(--color-primary);
+.landing-nav__logo-image {
+  height: 80px;
+  width: auto;
   transition: all 0.25s ease-out;
 }
 
-.landing-nav__logo-link:hover .landing-nav__logo-icon {
-  transform: rotate(2deg);
+.landing-nav__logo-link:hover .landing-nav__logo-image {
+  transform: scale(1.05);
 }
 
 .landing-nav__logo-text {

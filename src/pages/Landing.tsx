@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import LandingNavigation from '../components/LandingNavigation'
 import LandingHero from '../components/page-sections/landing/LandingHero'
-import OperateWithConfidence from '../components/page-sections/landing/OperateWithConfidence'
-import WhyCambodiaSection from '../components/page-sections/landing/WhyCambodiaSection'
+import VideoSection from '../components/page-sections/landing/VideoSection'
+import SolutionsSection from '../components/page-sections/landing/SolutionsSection'
+import OpportunitiesSection from '../components/page-sections/landing/OpportunitiesSection'
 import CaseStudiesSection from '../components/page-sections/landing/CaseStudiesSection'
 import TeamSection from '../components/page-sections/landing/TeamSection'
-import WhitePaperSection from '../components/page-sections/landing/WhitePaperSection'
 import ContactCTA from '../components/page-sections/landing/ContactCTA'
 import ChatBubble from '../components/ChatBubble'
 
@@ -30,11 +30,11 @@ const Landing: React.FC = () => {
       <LandingNavigation />
       <main className="landing-page">
         <LandingHero />
-        <OperateWithConfidence />
-        <WhyCambodiaSection />
-        <TeamSection />
+        <VideoSection />
+        <OpportunitiesSection />
+        <SolutionsSection />
         <CaseStudiesSection />
-        <WhitePaperSection />
+        <TeamSection />
         <ContactCTA />
       </main>
       <ChatBubble />

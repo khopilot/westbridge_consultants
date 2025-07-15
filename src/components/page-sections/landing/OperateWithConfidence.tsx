@@ -22,111 +22,30 @@ const OperateWithConfidence: React.FC = () => {
     return () => clearInterval(timer)
   }, [isInView])
 
-  const phases = [
+  const solutions = [
     {
       id: 0,
-      title: 'Initial Consultation',
-      icon: '01',
-      number: 'Step 01',
-      subtitle: '60-minute session (in-person or virtual) to clarify goals, budget & timelines.',
-      features: [
-        {
-          title: 'Goal, Budget & Timeline Alignment',
-          description: 'Crystal-clear understanding of your objectives in 60 minutes.'
-        },
-        {
-          title: 'Flexible Format',
-          description: 'Meet in-person in Phnom Penh or via secure video conference.'
-        },
-        {
-          title: 'Operational Footprint Decision',
-          description: 'Determine if you will run operations locally or remotely.'
-        }
-      ]
+      title: 'Navigate',
+      icon: '🧭',
+      description: 'Every permit, every process, every gatekeeper'
     },
     {
       id: 1,
-      title: 'Stakeholder & Obstacle Mapping',
-      icon: '02',
-      number: 'Step 02',
-      subtitle: 'We flag regulatory hurdles, landlords and which ministry signs off — complete stakeholder map.',
-      features: [
-        {
-          title: 'Regulatory Radar',
-          description: 'Full permitting and compliance checklist tailored to your industry.'
-        },
-        {
-          title: 'Stakeholder Matrix',
-          description: 'Identify key decision-makers, influencers and potential allies.'
-        },
-        {
-          title: 'Risk Snapshot',
-          description: 'Immediate visibility on hurdles that could delay your launch.'
-        }
-      ]
+      title: 'Structure',
+      icon: '🏗️',
+      description: 'International-grade legal protection'
     },
     {
       id: 2,
-      title: 'Solution Roadmap',
-      icon: '03',
-      number: 'Step 03',
-      subtitle: 'Clear strategy highlighting everything you need, who is responsible and practical timelines.',
-      features: [
-        {
-          title: 'Step-by-Step Plan',
-          description: 'From permits to partnerships, each action is timestamped.'
-        },
-        {
-          title: 'Ownership Grid',
-          description: 'Everyone knows exactly who does what and when.'
-        },
-        {
-          title: 'Success Definition',
-          description: 'Shared KPIs so you know precisely what success looks like.'
-        }
-      ]
+      title: 'Execute',
+      icon: '⚡',
+      description: 'On-ground team, bilingual, results-focused'
     },
     {
       id: 3,
-      title: 'On-Site Execution',
-      icon: '04',
-      number: 'Step 04',
-      subtitle: 'Implementation happens swiftly under our watch; we track progress weekly.',
-      features: [
-        {
-          title: 'Local Presence',
-          description: 'Our bilingual team executes directly on-site in Cambodia.'
-        },
-        {
-          title: 'Weekly Progress Reviews',
-          description: 'Dashboard updates keep you informed in real-time.'
-        },
-        {
-          title: 'Speed & Precision',
-          description: 'Swift execution without compromising on quality.'
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: 'Rapid Course Corrections',
-      icon: '05',
-      number: 'Step 05',
-      subtitle: 'Immediate corrections if outcomes slip — priority is to keep your goals on track.',
-      features: [
-        {
-          title: 'Live KPI Monitoring',
-          description: 'Detect deviations before they become problems.'
-        },
-        {
-          title: 'Contingency Protocols',
-          description: 'Pre-approved corrective actions for zero downtime.'
-        },
-        {
-          title: 'Outcome Guardianship',
-          description: 'Your objectives remain our north-star throughout the engagement.'
-        }
-      ]
+      title: 'Protect',
+      icon: '🛡️',
+      description: 'Your capital, your timeline, your reputation'
     }
   ]
 
@@ -165,12 +84,14 @@ const OperateWithConfidence: React.FC = () => {
 
 
           <h2 className="confidence-title">
-            Operate with Confidence
-            <span className="title-subtitle">in Cambodia's Complex Market</span>
+            OUR SOLUTIONS
           </h2>
+          <h3 className="confidence-subtitle">
+            Operate with Confidence in Cambodia's Complex Market
+          </h3>
           <p className="confidence-intro">
-            Tackling a complicated business environment isn't difficult when you have the right guide. 
-            Our 5-step framework turns complexity into certainty — fast.
+            Tackling a complicated business environment isn't difficult when you have the right guide.
+            We've spent a decade mapping what works. Now we make it work for you.
           </p>
         </motion.div>
 

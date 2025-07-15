@@ -1,0 +1,123 @@
+/* Video Section */
+.video-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-section__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Desktop Video Container - 21:9 aspect ratio */
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Mobile Video Container - 9:16 aspect ratio */
+.video-container--mobile {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+#video-youtube-player {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Desktop Video - 21:9 ultrawide - scale to fill height */
+.video-youtube-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Desktop specific scaling for 21:9 video */
+@media (min-width: 769px) {
+  .video-container:not(.video-container--mobile) #video-youtube-player {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+    transform-origin: center center;
+  }
+  
+  .video-container:not(.video-container--mobile) .video-youtube-iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.5);
+    transform-origin: center center;
+  }
+}
+
+/* Mobile Video Adjustments - 9:16 portrait */
+@media (max-width: 768px) {
+  .video-section {
+    height: 100vh;
+  }
+  
+  .video-container {
+    height: 100vh;
+  }
+  
+  .video-container--mobile .video-youtube-iframe {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+  }
+  
+  /* Ensure portrait video fills the screen properly */
+  .video-container--mobile #video-youtube-player {
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .video-section {
+    height: 70vh;
+  }
+  
+  .video-container {
+    height: 70vh;
+  }
+}

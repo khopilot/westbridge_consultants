@@ -1,4 +1,4 @@
-/* Landing Hero Section - Unique Design */
+/* Landing Hero Section - Centered Content */
 .landing-hero {
   min-height: 100vh;
   height: auto;
@@ -13,8 +13,65 @@
   overflow: hidden;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  /* Ensure hero starts from the very top */
   padding-top: 0 !important;
+}
+
+/* Hero Content Container */
+.hero-content-center {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+/* Hero Title - Large, prominent text */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Hero Subheading */
+.hero-subheading {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+/* Hero Supporting Text */
+.hero-supporting-text {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Text huge styling (matches opportunities section) */
+.text-huge {
+  font-size: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: inline-block;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.4);
+  }
 }
 
 /* Animated Background Pattern */
