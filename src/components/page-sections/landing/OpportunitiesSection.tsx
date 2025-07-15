@@ -79,12 +79,30 @@ const OpportunitiesSection: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.43, 0.13, 0.23, 0.96] }}
         >
-          <p className="opportunities-highlight">
-            Cambodia = <span className="text-huge">massive potential</span>
-          </p>
-          <p className="opportunities-subtext">
-            but hidden rules, slow permits, failed deals are often creating <span className="text-emphasis">massive entry barriers</span> for outsiders. Cambodia rewards bold investors who understand unwritten rules.
-          </p>
+          <div className="opportunities-content-wrapper">
+            <div className="opportunities-text-content">
+              <p className="opportunities-highlight">
+                Cambodia = <span className="text-huge">massive potential</span>
+              </p>
+              <p className="opportunities-subtext">
+                but hidden rules, slow permits, failed deals are often creating <span className="text-emphasis">massive entry barriers</span> for outsiders. Cambodia rewards bold investors who understand unwritten rules.
+              </p>
+            </div>
+            
+            <motion.div 
+              className="cambodia-map-container"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.43, 0.13, 0.23, 0.96] }}
+            >
+              <img 
+                src="/157f5e02-2c3f-4d42-8f11-a7a9a2aabda1.png" 
+                alt="Cambodia Map" 
+                className="cambodia-map"
+              />
+              <div className="map-glow-effect"></div>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Transition Image */}

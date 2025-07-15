@@ -1,217 +1,595 @@
-/* Team Section */
-.team-section {
-  background: linear-gradient(135deg, #1a2e4e 0%, #243456 50%, #1a2e4e 100%);
-  color: #ffffff;
-  position: relative;
+/* Revolutionary Team Section - Mind-Blowing Design */
+.team-section-revolutionary {
   min-height: 100vh;
-  padding: 5rem 0;
+  position: relative;
   overflow: hidden;
-  width: 100%;
+  perspective: 1000px;
+  background: #000;
+  cursor: none;
+}
+
+/* Revolutionary Background */
+.revolutionary-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bg-gradient-1 {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, 
+    rgba(164, 120, 100, 0.15) 0%, 
+    rgba(17, 45, 78, 0.3) 25%, 
+    rgba(204, 85, 0, 0.1) 50%, 
+    transparent 80%);
+  animation: gradient-rotate 30s linear infinite;
+}
+
+.bg-gradient-2 {
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 70% 80%, 
+    rgba(204, 85, 0, 0.2) 0%, 
+    rgba(164, 120, 100, 0.15) 25%, 
+    rgba(17, 45, 78, 0.25) 50%, 
+    transparent 80%);
+  animation: gradient-rotate 40s linear infinite reverse;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: grid-move 20s linear infinite;
+}
+
+.bg-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes gradient-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes grid-move {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 100px); }
+}
+
+/* Revolutionary Container */
+.revolutionary-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Revolutionary Header */
+.revolutionary-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.revolutionary-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin: 0;
+  line-height: 0.9;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffffff, #a47864, #cc5500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-text 3s ease-in-out infinite alternate;
+}
+
+.title-line {
+  display: block;
+  position: relative;
+}
+
+.title-main {
+  font-size: 1.2em;
+  margin-top: -0.1em;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.revolutionary-subtitle {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Revolutionary Split Layout */
+.revolutionary-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 70vh;
+  margin-bottom: 4rem;
+}
+
+/* Image Side */
+.split-image-side {
+  position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.team-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.team-section .container {
+.image-container-revolutionary {
   position: relative;
-  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  height: 700px;
+  transform-style: preserve-3d;
 }
 
-.team-section__header {
-  margin-bottom: 4rem;
-}
-
-.team-section__header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.team-member {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.team-member__image {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 2rem;
+.image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 0;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 50px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
 }
 
-.team-member__image img {
+.revolutionary-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  filter: contrast(1.1) brightness(0.9);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.team-member__content {
-  text-align: left;
+.image-container-revolutionary:hover .revolutionary-image {
+  filter: contrast(1.2) brightness(1.1);
+  transform: scale(1.05);
 }
 
-.team-member__name {
-  font-size: 2rem;
+.image-overlay-revolutionary {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(164, 120, 100, 0.2) 100%
+  );
+}
+
+.overlay-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  animation: scanlines 3s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Floating Name */
+.floating-name {
+  position: absolute;
+  bottom: -2rem;
+  left: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+.name-text {
+  display: block;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
   color: #ffffff;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
-.team-member__title {
-  font-size: 1.25rem;
-  color: var(--color-secondary);
+.role-text {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #a47864;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Content Side */
+.split-content-side {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content-revolutionary {
+  width: 100%;
+  max-width: 600px;
+}
+
+.content-header {
+  margin-bottom: 3rem;
+}
+
+.member-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: #a47864;
   margin-bottom: 1.5rem;
+  line-height: 1.3;
   font-style: italic;
 }
 
-.team-member__description {
-  margin-bottom: 2rem;
-}
-
-.team-member__description p {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.team-member__about {
-  margin-bottom: 2rem;
-}
-
-.team-member__about h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-secondary);
-}
-
-.team-member__about ul {
-  list-style: none;
-  padding: 0;
+.member-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
   margin: 0;
 }
 
-.team-member__about li {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  position: relative;
-  opacity: 0.85;
-}
-
-.team-member__about li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--color-secondary);
-}
-
-.team-member__skills {
-  margin-top: 2rem;
-}
-
-.team-member__skills h4 {
-  font-size: 1.25rem;
+/* Section Titles */
+.section-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-secondary);
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-.skills-grid {
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #a47864, #cc5500);
+}
+
+/* Revolutionary Skills */
+.skills-section {
+  margin-bottom: 3rem;
+}
+
+.skills-revolutionary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card-revolutionary {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transform-style: preserve-3d;
+}
+
+.skill-card-revolutionary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.skill-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skill-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.skill-card-revolutionary:hover .skill-shine {
+  left: 100%;
+}
+
+/* Highlights Section */
+.highlights-section {
+  margin-bottom: 2rem;
+}
+
+.highlights-revolutionary {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.skill-tag {
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  background: rgba(164, 120, 100, 0.2);
-  border: 1px solid rgba(164, 120, 100, 0.3);
-  border-radius: 0.25rem;
-  font-size: 0.85rem;
-  transition: all 0.2s ease;
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
-.skill-tag:hover {
-  background: rgba(164, 120, 100, 0.3);
-  border-color: rgba(164, 120, 100, 0.5);
-  transform: translateY(-2px);
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .team-grid {
+.highlight-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a47864;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 10px rgba(164, 120, 100, 0.5);
+  flex-shrink: 0;
+}
+
+.highlight-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+}
+
+/* Revolutionary Navigation */
+.revolutionary-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.nav-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 250px;
+}
+
+.nav-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.nav-card-active {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #a47864;
+  box-shadow: 0 20px 40px rgba(164, 120, 100, 0.3);
+}
+
+.nav-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nav-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%);
+  transition: filter 0.3s ease;
+}
+
+.nav-card:hover .nav-image img,
+.nav-card-active .nav-image img {
+  filter: grayscale(0%);
+}
+
+.nav-info h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 300;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #a47864;
+  transform-origin: left;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .revolutionary-split {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
+  }
+  
+  .image-container-revolutionary {
+    max-width: 500px;
+    height: 600px;
+  }
+  
+  .skills-revolutionary {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .team-section {
-    padding: 3rem 0;
+  .revolutionary-container {
+    padding: 1rem;
   }
-
-  .team-member {
+  
+  .revolutionary-split {
+    gap: 2rem;
+  }
+  
+  .image-container-revolutionary {
+    height: 500px;
+  }
+  
+  .floating-name {
+    bottom: -1.5rem;
+    left: 1rem;
+    right: 1rem;
     padding: 1.5rem;
   }
-
-  .team-member__image {
-    width: 150px;
-    height: 150px;
+  
+  .split-content-side {
+    padding: 1rem;
   }
+  
+  .skills-revolutionary {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .skill-card-revolutionary {
+    padding: 1rem;
+  }
+  
+  .revolutionary-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-card {
+    min-width: auto;
+  }
+}
 
-  .team-member__name {
+@media (max-width: 480px) {
+  .image-container-revolutionary {
+    height: 400px;
+  }
+  
+  .floating-name {
+    bottom: -1rem;
+    padding: 1rem;
+  }
+  
+  .name-text {
     font-size: 1.5rem;
   }
-
-  .team-member__title {
-    font-size: 1.1rem;
+  
+  .role-text {
+    font-size: 0.9rem;
   }
-
-  .team-member__about li {
-    font-size: 0.85rem;
+  
+  .skills-revolutionary {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-
-  .skill-tag {
+  
+  .skill-card-revolutionary {
+    padding: 0.75rem;
+  }
+  
+  .skill-text {
     font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
   }
 }
