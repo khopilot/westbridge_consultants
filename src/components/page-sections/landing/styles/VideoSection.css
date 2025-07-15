@@ -121,3 +121,87 @@
     height: 70vh;
   }
 }
+
+/* Logo Styling */
+.video-logo {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  animation: fadeInDown 1s ease-out;
+}
+
+.video-logo-image {
+  width: 320px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.video-logo-image:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Soft Blue Filter Overlay */
+.video-blue-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 45, 78, 0.15) 0%,
+    rgba(17, 45, 78, 0.25) 50%,
+    rgba(17, 45, 78, 0.15) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: multiply;
+}
+
+/* Animation for logo */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive Logo Sizing */
+@media (max-width: 1024px) {
+  .video-logo {
+    top: 2rem;
+  }
+  
+  .video-logo-image {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-logo {
+    top: 1.5rem;
+  }
+  
+  .video-logo-image {
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-logo {
+    top: 1rem;
+  }
+  
+  .video-logo-image {
+    width: 180px;
+  }
+}

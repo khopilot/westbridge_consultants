@@ -130,10 +130,20 @@ const VideoSection: React.FC = () => {
   return (
     <section id="video" className="video-section">
       <div className="video-section__container">
+        {/* Logo at the top */}
+        <div className="video-logo">
+          <img 
+            src="/visual/Logo_gouldingandco_white.png" 
+            alt="Goulding & Co" 
+            className="video-logo-image"
+          />
+        </div>
+        
         <div 
           className={`video-container ${isMobilePortrait ? 'video-container--mobile' : ''}`}
         >
           <div className="video-frame" />
+          <div className="video-blue-filter" />
           <div className="video-wrapper" ref={playerContainerRef}>
             <div id="video-youtube-player">
               {/* Fallback iframe if YT API fails */}
