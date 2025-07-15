@@ -3,8 +3,6 @@ import './styles/SolutionsSection.css'
 
 const SolutionsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
   
   const solutions = [
     {
