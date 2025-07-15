@@ -252,18 +252,9 @@
   width: 400px;
   height: 300px;
   border-radius: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.slide-icon {
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.95);
-  z-index: 2;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
 }
 
 .slide-content {
@@ -327,15 +318,10 @@
   width: 60px;
   height: 60px;
   border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
   flex-shrink: 0;
-}
-
-.thumb-icon {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .thumb-content {
@@ -444,9 +430,6 @@
   .thumb-image {
     width: 50px;
     height: 50px;
-  }
-
-  .thumb-icon {
-    font-size: 1.25rem;
+    padding: 0.4rem;
   }
 }

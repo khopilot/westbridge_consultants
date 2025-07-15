@@ -27,24 +27,21 @@ const OpportunitiesSection: React.FC = () => {
       id: 0,
       title: 'Regulatory Maze',
       description: 'Permits that seem simple aren\'t. Sub-decrees that have never been issued. Middle-bureaucrats.',
-      icon: '🏛️',
-      image: '/regulatory-maze.jpg',
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_d25a0fb6-9421-4dd5-b22b-a2f4cf092dc8_2.png',
       color: 'rgba(204, 85, 0, 0.9)' // Terracotta
     },
     {
       id: 1,
       title: 'Hidden Networks',
       description: 'The real decision-makers stay invisible',
-      icon: '🔗',
-      image: '/hidden-networks.jpg',
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_195d9c8e-7b48-42fe-8f22-3df9810f3a25_3.png',
       color: 'rgba(164, 120, 100, 0.9)' // Mocha Mousse
     },
     {
       id: 2,
       title: 'Legal Gaps',
       description: 'International protection requires local expertise',
-      icon: '⚖️',
-      image: '/legal-gaps.jpg',
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_8a257859-b817-4d3a-a4ff-da9d167b4273_0 (1).png',
       color: 'rgba(17, 45, 78, 0.9)' // Navy
     }
   ]
@@ -139,12 +136,11 @@ const OpportunitiesSection: React.FC = () => {
           >
             <div className="slide-main-card">
               <div className="slide-image-container">
-                <div 
+                <img 
+                  src={slides[activeSlide].image}
+                  alt={slides[activeSlide].title}
                   className="slide-image"
-                  style={{ background: slides[activeSlide].color }}
-                >
-                  <div className="slide-icon">{slides[activeSlide].icon}</div>
-                </div>
+                />
               </div>
               <div className="slide-content">
                 <h3 className="slide-title">{slides[activeSlide].title}</h3>
@@ -164,12 +160,11 @@ const OpportunitiesSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div 
+              <img 
+                src={slide.image}
+                alt={slide.title}
                 className="thumb-image"
-                style={{ background: slide.color }}
-              >
-                <span className="thumb-icon">{slide.icon}</span>
-              </div>
+              />
               <div className="thumb-content">
                 <h4 className="thumb-title">{slide.title}</h4>
                 <p className="thumb-description">{slide.description}</p>
