@@ -9,7 +9,7 @@ const LandingNavigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero')
   
   const lastScrollY = useRef(0)
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
+  const scrollTimeout = useRef<number | null>(null)
   
   // Handle body overflow when mobile menu is open
   useEffect(() => {
