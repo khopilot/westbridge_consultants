@@ -2,6 +2,20 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import './styles/OperateWithConfidence.css'
 
+interface Feature {
+  title: string
+  description: string
+}
+
+interface Phase {
+  id: number
+  number: string
+  title: string
+  subtitle: string
+  icon: string
+  features: Feature[]
+}
+
 const OperateWithConfidence: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [activeStep, setActiveStep] = useState(0)
@@ -17,35 +31,79 @@ const OperateWithConfidence: React.FC = () => {
   useEffect(() => {
     if (!isInView) return
     const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % 5)
+      setActiveStep((prev) => (prev + 1) % 4)
     }, 5000)
     return () => clearInterval(timer)
   }, [isInView])
 
-  const solutions = [
+  const phases: Phase[] = [
     {
       id: 0,
+      number: '01',
       title: 'Navigate',
+      subtitle: 'Every permit, every process, every gatekeeper',
       icon: '🧭',
-      description: 'Every permit, every process, every gatekeeper'
+      features: [
+        {
+          title: 'Regulatory Mapping',
+          description: 'Complete permit and licensing pathways'
+        },
+        {
+          title: 'Process Optimization',
+          description: 'Streamlined approval workflows'
+        }
+      ]
     },
     {
       id: 1,
+      number: '02',
       title: 'Structure',
+      subtitle: 'International-grade legal protection',
       icon: '🏗️',
-      description: 'International-grade legal protection'
+      features: [
+        {
+          title: 'Legal Framework',
+          description: 'Robust business structure setup'
+        },
+        {
+          title: 'Compliance Systems',
+          description: 'Ongoing regulatory adherence'
+        }
+      ]
     },
     {
       id: 2,
+      number: '03',
       title: 'Execute',
+      subtitle: 'On-ground team, bilingual, results-focused',
       icon: '⚡',
-      description: 'On-ground team, bilingual, results-focused'
+      features: [
+        {
+          title: 'Local Implementation',
+          description: 'Bilingual team execution'
+        },
+        {
+          title: 'Results Tracking',
+          description: 'Performance monitoring and optimization'
+        }
+      ]
     },
     {
       id: 3,
+      number: '04',
       title: 'Protect',
+      subtitle: 'Your capital, your timeline, your reputation',
       icon: '🛡️',
-      description: 'Your capital, your timeline, your reputation'
+      features: [
+        {
+          title: 'Risk Mitigation',
+          description: 'Comprehensive protection strategies'
+        },
+        {
+          title: 'Reputation Management',
+          description: 'Brand and relationship safeguarding'
+        }
+      ]
     }
   ]
 
