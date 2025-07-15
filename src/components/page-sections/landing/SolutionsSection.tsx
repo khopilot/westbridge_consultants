@@ -11,7 +11,7 @@ const SolutionsSection: React.FC = () => {
       description: 'Every permit, every process, every gatekeeper'
     },
     {
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_66988448-a1e0-403d-9d5f-35a921ac4eed_2.png',
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_51f32a45-bc82-4fd3-a57f-49a45165d9bf_3.png',
       title: 'Structure',
       description: 'International-grade legal protection'
     },
