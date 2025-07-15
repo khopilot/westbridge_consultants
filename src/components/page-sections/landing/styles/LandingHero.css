@@ -100,12 +100,11 @@
 }
 
 .cambodia-svg {
-  width: min(65vw, 520px);
+  width: min(85vw, 800px);
   height: auto;
   opacity: 0.25;
   filter: brightness(1.1) contrast(0.9);
   mix-blend-mode: soft-light;
-  max-width: 520px;
 }
 
 /* Advanced Background Effects */
@@ -1052,5 +1051,57 @@
   
   .highlight__content h3 {
     opacity: 0.9;
+  }
+}
+
+/* Hero Logo Styling */
+.hero-logo {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-image {
+  width: 400px;
+  height: auto;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.hero-logo-image:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsive Logo Sizing */
+@media (max-width: 1024px) {
+  .hero-logo {
+    margin-top: 4rem;
+  }
+  
+  .hero-logo-image {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    margin-top: 3.5rem;
+  }
+  
+  .hero-logo-image {
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo {
+    margin-top: 3rem;
+  }
+  
+  .hero-logo-image {
+    width: 200px;
   }
 }

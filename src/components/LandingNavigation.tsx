@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './LandingNavigation.css'
 
 const LandingNavigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
+  
+  const lastScrollY = useRef(0)
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
   
   // Handle body overflow when mobile menu is open
   useEffect(() => {
@@ -20,40 +24,85 @@ const LandingNavigation: React.FC = () => {
     }
   }, [isMobileMenuOpen])
 
-  // Handle scroll effects
+  // Handle scroll effects with optimized hide/show behavior
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
-
-      // Update active section based on scroll position
-      const sections = ['hero', 'opportunities', 'struggles', 'solutions', 'success-stories', 'team', 'contact']
-      
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          const offset = 120 // Navigation height offset
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY
+          const scrollDelta = currentScrollY - lastScrollY.current
           
-          if (rect.top <= offset && rect.bottom >= offset) {
-            setActiveSection(sectionId)
-            break
+          // Update scrolled state
+          setIsScrolled(currentScrollY > 50)
+          
+          // Smart hide/show logic
+          if (currentScrollY < 50) {
+            // Always show at top
+            setIsVisible(true)
+          } else if (scrollDelta > 10 && currentScrollY > 100) {
+            // Hide when scrolling down fast
+            setIsVisible(false)
+          } else if (scrollDelta < -5) {
+            // Show when scrolling up
+            setIsVisible(true)
           }
-        }
+          
+          // Clear existing timeout
+          if (scrollTimeout.current) {
+            clearTimeout(scrollTimeout.current)
+          }
+          
+          // Show navbar after scrolling stops
+          scrollTimeout.current = setTimeout(() => {
+            setIsVisible(true)
+          }, 300)
+          
+          lastScrollY.current = currentScrollY
+
+          // Update active section
+          const sections = ['hero', 'opportunities', 'solutions', 'success-stories', 'team', 'contact']
+          const viewportHeight = window.innerHeight
+          const scrollCenter = currentScrollY + viewportHeight / 2
+          
+          for (const sectionId of sections) {
+            const element = document.getElementById(sectionId)
+            if (element) {
+              const { offsetTop, offsetHeight } = element
+              
+              if (scrollCenter >= offsetTop && scrollCenter < offsetTop + offsetHeight) {
+                setActiveSection(sectionId)
+                break
+              }
+            }
+          }
+          
+          ticking = false
+        })
+        ticking = true
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll() // Check initial state
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current)
+      }
+    }
   }, [])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const navHeight = 100 // Approximate navigation height
+      const navHeight = 80 // Height of floating navbar
       const elementPosition = element.offsetTop - navHeight
+      
+      // Ensure navbar is visible when navigating
+      setIsVisible(true)
       
       window.scrollTo({
         top: elementPosition,
@@ -105,7 +154,7 @@ const LandingNavigation: React.FC = () => {
   ]
 
   return (
-    <nav className={`landing-nav ${isScrolled ? 'landing-nav--scrolled' : ''}`}>
+    <nav className={`landing-nav ${isScrolled ? 'landing-nav--scrolled' : ''} ${!isVisible ? 'landing-nav--hidden' : ''}`}>
       <div className="container">
         <div className="landing-nav__container">
           {/* Logo */}
