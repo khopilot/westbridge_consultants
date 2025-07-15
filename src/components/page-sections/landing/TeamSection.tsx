@@ -2,110 +2,112 @@ import React from 'react'
 import './styles/TeamSection.css'
 
 const TeamSection: React.FC = () => {
+  const teamMembers = [
+    {
+      name: 'Brett Goulding',
+      title: 'Building successful companies in Cambodia since 2015.',
+      description: 'Brett Goulding is a dynamic entrepreneur and regional connector who has built successful ventures across Southeast Asia, driven by deep cultural insight and strategic vision.',
+      about: [
+        'Deep knowledge of Cambodian social, political, and religious context',
+        '5+ years of on-the-ground experience in Southeast Asia',
+        'Founder of multiple companies in real estate, finance, investment, and consulting',
+        'Strong regional business network',
+        'Strategic thinker with a long-term development vision',
+        'Entrepreneurial and opportunity-driven',
+        'Passionate about social impact and youth development',
+        'Skilled in cross-cultural leadership and community engagement',
+        'Committed to sports development and grassroots initiatives',
+        'Adaptive, resourceful, and resilient in emerging markets'
+      ],
+      skills: [
+        'Entrepreneurship',
+        'Real Estate Development',
+        'Legal & Regulatory',
+        'Strategic Vision',
+        'Investment Structuring',
+        'Business Networking',
+        'Market Entry',
+        'Cross-Cultural Leadership',
+        'Operations Oversight',
+        'Social Impact Orientation'
+      ],
+      image: '/brett.jpg'
+    },
+    {
+      name: 'Hugues Morel',
+      title: 'Rural & urban deal experience.',
+      description: 'Hugues Morel is a results-driven entrepreneur and strategic operator who has led and launched high-impact ventures across Cambodia, combining sharp business acumen with relentless execution and creative problem-solving.',
+      about: [
+        'In-depth understanding of Cambodian business, legal, and social environment',
+        '10+ years of experience in real estate, construction, media, and consumer products',
+        'Founder and director of multiple companies across property, media, and retail',
+        'Expert in financial modeling, forecasting, and investment planning',
+        'Proven track record in business development and market entry strategies',
+        'Hands-on leadership with strong operational and project management skills',
+        'Creative thinker with a builder\'s mindset and executional discipline',
+        'Passionate about entrepreneurship, innovation, and purposeful ventures',
+        'Driven by impact, efficiency, and long-term value creation',
+        'Adaptable, structured, and resilient in fast-changing environments'
+      ],
+      skills: [
+        'Strategic Planning',
+        'Project Management',
+        'Business Development',
+        'Financial Modeling & Forecasting',
+        'Leadership',
+        'Entrepreneurship',
+        'Construction & Engineering',
+        'Cross-Cultural Communication',
+        'Operations Management',
+        'Creative Problem-Solving'
+      ],
+      image: '/hugo.brett.jpg'
+    }
+  ]
+
   return (
     <section id="team" className="team-section">
       <div className="container">
         <div className="team-section__header text-center" data-aos="fade-up">
-          <h2 data-aos="fade-up" data-aos-delay="100">Meet the Founders</h2>
-          <p className="team-section__description" data-aos="fade-up" data-aos-delay="200">
-            Two entrepreneurs who learned Cambodia the hard way—and now make it simple for you.
-          </p>
+          <h2 data-aos="fade-up" data-aos-delay="100">TEAM</h2>
         </div>
 
-        {/* Founders Grid */}
-        <div className="founders-showcase" data-aos="fade-up" data-aos-delay="400">
-          <div className="founder-card founder-card--primary" data-aos="fade-right" data-aos-delay="500">
-            <div className="founder-card__content">
-              <div className="founder-card__photo-section">
-                <div className="founder-card__photo">
-                  <img src="/brett.jpg" alt="Brett Goulding" className="founder-card__photo-img" />
-                </div>
-                <div className="founder-card__badge">Founder & CEO</div>
+        <div className="team-grid">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="team-member" data-aos="fade-up" data-aos-delay={200 + index * 100}>
+              <div className="team-member__image">
+                <img src={member.image} alt={member.name} />
               </div>
-              <div className="founder-card__info">
-                <h3 className="founder-card__name">Brett Goulding</h3>
-                <div className="founder-card__credentials">
-                  <div className="credential credential--premium">
-                    <span>Operating in Cambodia since 2015</span>
-                  </div>
-                  <div className="credential credential--premium">
-                    <span>Rural Investment Specialist</span>
-                  </div>
+              
+              <div className="team-member__content">
+                <h3 className="team-member__name">{member.name}</h3>
+                <p className="team-member__title">{member.title}</p>
+                
+                <div className="team-member__description">
+                  <p>{member.description}</p>
                 </div>
-                <p className="founder-card__bio">
-                  Brett specializes in transforming complex rural investments into profitable ventures. 
-                  His hands-on approach and deep understanding of Cambodia's business landscape have 
-                  consistently delivered results across challenging projects. His methodology forms 
-                  the foundation of our strategic framework.
-                </p>
-                <div className="founder-card__expertise">
-                  <h4>Areas of Expertise</h4>
-                  <div className="expertise-grid">
-                    <div className="expertise-item">
-                      <span>Rural Investment Development</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Operational Excellence</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Strategic Implementation</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Project Management</span>
-                    </div>
+
+                <div className="team-member__about">
+                  <h4>About:</h4>
+                  <ul>
+                    {member.about.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="team-member__skills">
+                  <h4>Skill set:</h4>
+                  <div className="skills-grid">
+                    {member.skills.map((skill, idx) => (
+                      <span key={idx} className="skill-tag">{skill}</span>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="founder-card founder-card--secondary" data-aos="fade-left" data-aos-delay="600">
-            <div className="founder-card__content">
-              <div className="founder-card__photo-section">
-                <div className="founder-card__photo">
-                  <img src="/hugo.brett.jpg" alt="Hugo Morel" className="founder-card__photo-img" />
-                </div>
-                <div className="founder-card__badge">Co-Founder & COO</div>
-              </div>
-              <div className="founder-card__info">
-                <h3 className="founder-card__name">Hugo Morel</h3>
-                <div className="founder-card__credentials">
-                  <div className="credential credential--premium">
-                    <span>Operating in Cambodia since 2016</span>
-                  </div>
-                  <div className="credential credential--premium">
-                    <span>Fluent in Khmer</span>
-                  </div>
-                </div>
-                <p className="founder-card__bio">
-                  Hugo brings deep cultural integration and multi-industry experience to our operations. 
-                  His fluency in Khmer and extensive local network enable access to opportunities and 
-                  partnerships that others often miss. His diverse background spans construction, tourism, 
-                  and entertainment sectors.
-                </p>
-                <div className="founder-card__expertise">
-                  <h4>Areas of Expertise</h4>
-                  <div className="expertise-grid">
-                    <div className="expertise-item">
-                      <span>Multi-Industry Experience</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Local Network Development</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Cultural Integration</span>
-                    </div>
-                    <div className="expertise-item">
-                      <span>Strategic Partnerships</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-
-
       </div>
     </section>
   )

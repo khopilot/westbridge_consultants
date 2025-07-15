@@ -3,70 +3,73 @@ import './styles/ContactCTA.css'
 
 const ContactCTA: React.FC = () => {
   return (
-    <section id="contact" className="contact-cta py-3">
+    <section id="contact" className="contact-cta">
       <div className="container">
         <div className="contact-cta__content">
           <div className="contact-cta__header text-center">
-            <h2>Connect with Us</h2>
+            <img 
+              src="/visual/Logo_gouldingandco_white.png" 
+              alt="Goulding & Co" 
+              className="contact-cta__logo"
+            />
+            <h2>CONTACT</h2>
           </div>
 
-          <div className="contact-info">
-            <div className="contact-methods">
-              <a href="#" className="contact-method">
-                <div className="contact-method__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <div className="contact-grid">
+            {/* Social Links */}
+            <div className="contact-social">
+              <h3>Connect with Brett</h3>
+              <div className="social-links">
+                <a href="https://t.me/brettgoulding" target="_blank" rel="noopener noreferrer" className="social-link social-link--telegram">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.56c-.21 2.27-1.13 7.75-1.6 10.29-.2 1.08-.59 1.44-.97 1.47-.82.07-1.45-.54-2.24-.99-1.24-.71-1.94-1.16-3.14-1.86-1.39-.81-.49-1.26.3-1.99.21-.19 3.85-3.52 3.91-3.82.01-.04.02-.17-.07-.25s-.22-.05-.32-.03c-.14.03-2.3 1.46-6.5 4.29-.61.42-1.17.63-1.67.62-.55-.01-1.61-.31-2.4-.57-.97-.31-1.74-.48-1.67-1.01.04-.27.42-.55 1.14-.82 4.45-1.94 7.41-3.22 8.89-3.84 4.24-1.77 5.12-2.08 5.69-2.09.13 0 .41.03.59.18.15.12.19.29.21.43.02.1.04.26.02.4z"/>
                   </svg>
-                </div>
-                <div className="contact-method__content">
-                  <div className="contact-method__label">Telegram</div>
-                  <div className="contact-method__value">@westbridge_kh</div>
-                </div>
-              </a>
-              
-              <a href="https://wa.me/85512345678" target="_blank" rel="noopener noreferrer" className="contact-method">
-                <div className="contact-method__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="#ffffff"/>
-                    <path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" fill="#ffffff"/>
-                    <path d="M17 11C17 11.5523 16.5523 12 16 12C15.4477 12 15 11.5523 15 11C15 10.4477 15.4477 10 16 10C16.5523 10 17 10.4477 17 11Z" fill="#ffffff"/>
-                    <path d="M21 7.5C21 5.01472 18.9853 3 16.5 3C14.3631 3 12.5778 4.51734 12.1449 6.50274C12.0967 6.49921 12.0483 6.49734 12 6.49734C9.23858 6.49734 7 8.73592 7 11.4973C7 11.8096 7.0279 12.1158 7.08168 12.4136C5.88113 13.0636 5 14.2994 5 15.5C5 17.433 6.567 19 8.5 19H9.35418C10.0593 20.1954 11.4346 21 13 21C14.5654 21 15.9407 20.1954 16.6458 19H17.5C19.7091 19 21.5 17.2091 21.5 15C21.5 13.7044 20.9185 12.5493 20.0224 11.7963C20.6515 10.9962 21 10.0005 21 9C21 8.49731 20.9183 8.01433 20.7658 7.56152C20.9216 7.38665 21 7.18414 21 7.5Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  Telegram
+                </a>
+                <a href="https://wa.me/85512345678" target="_blank" rel="noopener noreferrer" className="social-link social-link--whatsapp">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                   </svg>
-                </div>
-                <div className="contact-method__content">
-                  <div className="contact-method__label">WhatsApp</div>
-                  <div className="contact-method__value">+855 12 345 678</div>
-                </div>
-              </a>
-              
-              <a href="tel:+85523123456" className="contact-method">
-                <div className="contact-method__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 16.92V19.92C22 20.52 21.39 21.07 20.8 20.99C19.27 20.83 17.77 20.39 16.4 19.68C13.55 18.18 11.18 15.82 9.68 12.98C8.96 11.6 8.52 10.1 8.37 8.57C8.29 7.98 8.84 7.37 9.44 7.37H12.44C12.89 7.37 13.27 7.69 13.32 8.14C13.41 9.03 13.63 9.89 13.96 10.71C14.08 10.98 14.01 11.3 13.8 11.51L12.63 12.68C13.84 14.82 15.18 16.16 17.32 17.37L18.49 16.2C18.7 15.99 19.02 15.92 19.29 16.04C20.11 16.37 20.97 16.59 21.86 16.68C22.31 16.73 22.63 17.11 22.63 17.56L22 16.92Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  WhatsApp
+                </a>
+                <a href="https://m.me/brettgoulding" target="_blank" rel="noopener noreferrer" className="social-link social-link--messenger">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.466 5.501 3.75 7.18V22l3.423-1.878c.914.253 1.88.389 2.877.389 5.523 0 10-4.145 10-9.268S17.523 2 12 2zm.994 12.486l-2.561-2.732-5 2.732 5.5-5.833 2.622 2.732 4.939-2.732-5.5 5.833z"/>
                   </svg>
-                </div>
-                <div className="contact-method__content">
-                  <div className="contact-method__label">Phone</div>
-                  <div className="contact-method__value">+855 23 123 456</div>
-                </div>
-              </a>
-              
-              <a href="mailto:hello@westbridge.com.kh" className="contact-method">
-                <div className="contact-method__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M22 6L12 13L2 6" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div className="contact-method__content">
-                  <div className="contact-method__label">Email</div>
-                  <div className="contact-method__value">hello@westbridge.com.kh</div>
-                </div>
+                  Messenger
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="contact-email">
+              <h3>Email</h3>
+              <a href="mailto:hello@gouldingco.com" className="email-link">
+                hello@gouldingco.com
               </a>
             </div>
+
+            {/* Map */}
+            <div className="contact-map">
+              <h3>Office Location</h3>
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.8813456789!2d104.92!3d11.5504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzAxLjQiTiAxMDTCsDU1JzEyLjAiRQ!5e0!3m2!1sen!2skh!4v1234567890"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Office Location"
+                ></iframe>
+                <p className="address">
+                  Phnom Penh, Cambodia<br />
+                  Business Hours: Mon-Fri 8:00 AM - 6:00 PM
+                </p>
+              </div>
+            </div>
           </div>
-
-
         </div>
       </div>
     </section>
