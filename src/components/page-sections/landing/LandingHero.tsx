@@ -116,7 +116,7 @@ const LandingHero: React.FC = () => {
               custom={1}
               variants={textAnimation}
             >
-              CAMBODIA MADE SIMPLE
+              CAMBODIA&nbsp;MADE&nbsp;SIMPLE
             </motion.h1>
             
             {/* Subheading */}
