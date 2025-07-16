@@ -127,7 +127,7 @@ const LandingHero: React.FC = () => {
               custom={2}
               variants={textAnimation}
             >
-              Cambodia rewards <span className="text-huge">bold</span> <span className="text-huge">investors</span>, but only if you master its rules. We shorten the learning curve, <span className="text-huge">cut the risk</span>, <span className="text-huge">and get you moving</span> fast.
+              <span className="text-huge">Cambodia</span> <span className="text-huge">rewards</span> bold <span className="text-huge">investors</span>, but only if you master its rules. <span className="text-huge">We</span> shorten the learning curve, <span className="text-huge">cut the risk</span>, <span className="text-huge">and get you moving</span> fast.
             </motion.h2>
             
             {/* Supporting Text */}
