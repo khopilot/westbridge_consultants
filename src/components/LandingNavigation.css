@@ -73,8 +73,8 @@
   }
   
   .landing-nav__logo-image {
-    height: 40px;
-    max-height: 40px;
+    height: 46px;
+    max-height: 46px;
   }
 }
 
@@ -109,11 +109,11 @@
 }
 
 .landing-nav__logo-image {
-  height: 48px;
+  height: 55px;
   width: auto;
   transition: all 0.25s ease-out;
   object-fit: contain;
-  max-height: 48px;
+  max-height: 55px;
 }
 
 .landing-nav__logo-link:hover .landing-nav__logo-image {
@@ -756,8 +756,8 @@
   }
   
   .landing-nav__logo-image {
-    height: 44px;
-    max-height: 44px;
+    height: 50px;
+    max-height: 50px;
   }
   
   .landing-nav__menu {
