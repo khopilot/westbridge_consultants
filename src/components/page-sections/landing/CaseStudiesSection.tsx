@@ -44,7 +44,6 @@ const CaseStudiesSection: React.FC = () => {
     <section id="success-stories" className="case-studies-section">
       <div className="container">
         <div className="case-studies-section__header text-center" data-aos="fade-up">
-          <h2 data-aos="fade-up" data-aos-delay="100">SUCCESS STORIES</h2>
         </div>
 
         <div className="success-stories-grid">

@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles/TeamSection.css'
 
 const TeamSection: React.FC = () => {
-  const [selectedMember, setSelectedMember] = useState(0)
-
   const teamMembers = [
     {
       name: 'Brett Goulding',
@@ -35,11 +33,11 @@ const TeamSection: React.FC = () => {
         'Social Impact Orientation'
       ],
       image: '/Our-team.jpg',
-      accentColor: '#a47864'
+      accentColor: '#112d4e'
     },
     {
       name: 'Hugues Morel',
-      role: 'Co-Founder & COO',
+      role: 'Senior Consultant',
       title: 'Rural & urban deal experience.',
       description: 'Hugues Morel is a results-driven entrepreneur and strategic operator who has led and launched high-impact ventures across Cambodia, combining sharp business acumen with relentless execution and creative problem-solving.',
       about: [
@@ -67,104 +65,64 @@ const TeamSection: React.FC = () => {
         'Creative Problem-Solving'
       ],
       image: '/hugo.brett.jpg',
-      accentColor: '#cc5500'
+      accentColor: '#6b7280'
     }
   ]
 
-  const currentMember = teamMembers[selectedMember]
-
   return (
-    <section id="team" className="team-section-revolutionary">
-
-      {/* Main Content */}
-      <div className="revolutionary-container">
+    <section id="team" className="team-section">
+      <div className="container">
         {/* Header */}
-        <div className="revolutionary-header">
-          <h2 className="revolutionary-title">MEET OUR LEADERSHIP</h2>
-          <p className="revolutionary-subtitle">
+        <div className="team-header">
+          <p className="team-subtitle">
             Building successful companies in Cambodia since 2015
           </p>
         </div>
 
-        {/* Navigation - Profile Selector */}
-        <div className="revolutionary-nav">
+        {/* Team Grid - 2 Cards */}
+        <div className="team-grid">
           {teamMembers.map((member, index) => (
-            <button
-              key={index}
-              className={`nav-card ${selectedMember === index ? 'nav-card-active' : ''}`}
-              onClick={() => setSelectedMember(index)}
-            >
-              <div className="nav-image">
-                <img src={member.image} alt={member.name} />
+            <div key={index} className="team-member-card">
+              {/* Member Header with Image */}
+              <div className="member-header">
+                <div className="member-image">
+                  <img src={member.image} alt={member.name} />
+                </div>
+                <div className="member-info">
+                  <h3 className="member-name">{member.name}</h3>
+                  <p className="member-role">{member.role}</p>
+                </div>
               </div>
-              <div className="nav-info">
-                <h5>{member.name}</h5>
-                <p>{member.role}</p>
-              </div>
-              {selectedMember === index && <div className="nav-indicator" />}
-            </button>
-          ))}
-        </div>
 
-        {/* Main Split Screen */}
-        <div className="revolutionary-split">
-          {/* Left Side - Image */}
-          <div className="split-image-side">
-            <div className="image-container-revolutionary">
-              <div className="image-frame">
-                <img 
-                  src={currentMember.image} 
-                  alt={currentMember.name}
-                  className="revolutionary-image"
-                />
-              </div>
-              
-              {/* Name Card */}
-              <div className="floating-name">
-                <span className="name-text">{currentMember.name}</span>
-                <span className="role-text">{currentMember.role}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Content */}
-          <div className="split-content-side">
-            <div className="content-revolutionary">
               {/* Title & Description */}
-              <div className="content-header">
-                <h3 className="member-title">{currentMember.title}</h3>
-                <p className="member-description">{currentMember.description}</p>
+              <div className="member-content">
+                <h4 className="member-title">{member.title}</h4>
+                <p className="member-description">{member.description}</p>
               </div>
 
-              {/* Scrollable Content Sections */}
-              <div className="content-sections">
-                {/* About Section */}
-                <div className="highlights-section">
-                  <h4 className="section-title">About</h4>
-                  <div className="highlights-revolutionary">
-                    {currentMember.about.map((highlight, index) => (
-                      <div key={index} className="highlight-item">
-                        <div className="highlight-marker" />
-                        <span className="highlight-text">{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* About Section */}
+              <div className="member-section">
+                <h5 className="section-title">About</h5>
+                <ul className="about-list">
+                  {member.about.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
 
-                {/* Skills Section */}
-                <div className="skills-section">
-                  <h4 className="section-title">Skill Set</h4>
-                  <div className="skills-revolutionary">
-                    {currentMember.skills.map((skill) => (
-                      <div key={skill} className="skill-card-revolutionary">
-                        <span className="skill-text">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
+              {/* Skills Section */}
+              <div className="member-section">
+                <h5 className="section-title">Skill Set</h5>
+                <div className="skills-grid">
+                  {member.skills.map((skill, idx) => (
+                    <span key={idx} className="skill-tag" style={{borderColor: member.accentColor}}>
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

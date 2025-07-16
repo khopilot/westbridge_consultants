@@ -74,12 +74,13 @@
 }
 
 .opportunities-content-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 2rem;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -88,23 +89,18 @@
   width: 100%;
 }
 
-.cambodia-map-container {
-  position: relative;
+.cambodia-line {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
-.cambodia-map {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
-}
-
-.cambodia-map:hover {
-  transform: scale(1.05);
+.cambodia-map-inline {
+  width: auto;
+  height: clamp(3rem, 8vw, 5rem);
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
 .map-glow-effect {
@@ -171,7 +167,9 @@
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   line-height: 1.6;
   opacity: 0.9;
+  margin-top: 2rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .text-emphasis {
@@ -206,6 +204,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  margin-top: 5rem;
   margin-bottom: 4rem;
   color: #ffffff;
   text-align: center;
@@ -234,7 +233,7 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
+  border-radius: 5px;
   padding: 3rem;
   max-width: 1000px;
   width: 100%;
@@ -263,7 +262,7 @@
 .slide-image {
   width: 400px;
   height: 300px;
-  border-radius: 1.5rem;
+  border-radius: 5px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.05);
   padding: 1rem;
@@ -301,7 +300,7 @@
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
+  border-radius: 5px;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -329,7 +328,7 @@
 .thumb-image {
   width: 60px;
   height: 60px;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.05);
   padding: 0.5rem;

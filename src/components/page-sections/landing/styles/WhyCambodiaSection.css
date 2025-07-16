@@ -140,7 +140,7 @@
 /* Market Insights */
 .market-insights {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 5px;
   padding: 2.5rem;
   margin-top: 2rem;
   backdrop-filter: blur(10px);
@@ -293,7 +293,7 @@
 
 .track-record-item {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 5px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -340,7 +340,7 @@
   background: var(--color-accent);
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 16px;
+  border-radius: 5px;
   font-size: 0.85rem;
   font-weight: 600;
 }
