@@ -53,7 +53,7 @@
 }
 
 .opportunities-header h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -121,14 +121,27 @@
 }
 
 .opportunities-highlight {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 300;
   margin-bottom: 2rem;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1rem;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.equals-sign {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin: 0.5rem 0;
+  margin-left: 2.2em;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 255, 255, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .text-huge {
@@ -159,12 +172,14 @@
 }
 
 .text-emphasis {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
-  color: var(--color-accent);
+  font-size: 1em;
+  font-weight: 400;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  display: inline-block;
 }
+
 
 /* Transition Image */
 .transition-image {
@@ -369,7 +384,7 @@
   }
 
   .opportunities-highlight {
-    justify-content: center;
+    align-items: center;
   }
 
   .cambodia-map-container {

@@ -22,25 +22,23 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme
-      if (savedTheme) return savedTheme
-      
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    }
-    return 'light'
-  })
+  // ALWAYS USE LIGHT THEME
+  const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
     const root = document.documentElement
-    root.setAttribute('data-theme', theme)
-    root.className = theme
-    localStorage.setItem('theme', theme)
-  }, [theme])
+    root.setAttribute('data-theme', 'light')
+    root.className = 'light'
+    localStorage.setItem('theme', 'light')
+    
+    // Force light theme on body as well
+    document.body.classList.add('light')
+    document.body.classList.remove('dark')
+  }, [])
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+    // Disable theme toggling - always stay light
+    return
   }
 
   const value = {

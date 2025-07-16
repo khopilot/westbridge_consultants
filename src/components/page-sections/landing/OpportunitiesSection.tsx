@@ -78,9 +78,11 @@ const OpportunitiesSection: React.FC = () => {
         >
           <div className="opportunities-content-wrapper">
             <div className="opportunities-text-content">
-              <p className="opportunities-highlight">
-                Cambodia = <span className="text-huge">massive potential</span>
-              </p>
+              <div className="opportunities-highlight">
+                <span className="text-huge">CAMBODIA</span>
+                <span className="equals-sign">=</span>
+                <span className="text-huge">MASSIVE POTENTIAL</span>
+              </div>
               <p className="opportunities-subtext">
                 but hidden rules, slow permits, failed deals are often creating <span className="text-emphasis">massive entry barriers</span> for outsiders. Cambodia rewards bold investors who understand unwritten rules.
               </p>
