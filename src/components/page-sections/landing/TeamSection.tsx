@@ -72,13 +72,6 @@ const TeamSection: React.FC = () => {
   return (
     <section id="team" className="team-section">
       <div className="container">
-        {/* Header */}
-        <div className="team-header">
-          <p className="team-subtitle">
-            Building successful companies in Cambodia since 2015
-          </p>
-        </div>
-
         {/* Team Grid - 2 Cards */}
         <div className="team-grid">
           {teamMembers.map((member, index) => (
