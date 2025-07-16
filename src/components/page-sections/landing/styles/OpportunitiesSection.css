@@ -383,8 +383,17 @@
     margin-bottom: 2rem;
   }
 
+  .opportunities-header h2 {
+    text-align: center;
+  }
+
   .opportunities-highlight {
     align-items: center;
+    text-align: center;
+  }
+
+  .equals-sign {
+    margin-left: 0;
   }
 
   .cambodia-map-container {
