@@ -62,14 +62,6 @@ const OpportunitiesSection: React.FC = () => {
 
       {/* Header Section */}
       <div className="opportunities-header">
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-        >
-          THE OPPORTUNITIES
-        </motion.h2>
-        
         <motion.div 
           className="opportunities-main-text"
           initial={{ opacity: 0, y: 30 }}
@@ -111,7 +103,11 @@ const OpportunitiesSection: React.FC = () => {
           animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
           transition={{ duration: 1, delay: 0.4, ease: [0.43, 0.13, 0.23, 0.96] }}
         >
-          <div className="transition-gradient"></div>
+          <img 
+            src="/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_0edfd203-0b26-4e43-bec4-9948aa3be606_1.png"
+            alt="Transition"
+            className="transition-image-content"
+          />
         </motion.div>
 
         {/* "We Understand the Struggles!" */}
