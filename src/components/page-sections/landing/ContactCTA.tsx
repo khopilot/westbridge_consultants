@@ -56,7 +56,7 @@ const ContactCTA: React.FC = () => {
         {/* Right side - Full screen Map */}
         <div className="map-container-fullscreen">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.983744505766!2d104.92084561531436!3d11.552703091790954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sBKK1%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1635842957849!5m2!1sen!2skh"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1954.4918722528883!2d104.92084561531436!3d11.552703091790954!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGoulding+%26+Co+Strategic+Advisory!5e0!3m2!1sen!2skh!4v1635842957849!5m2!1sen!2skh&ll=11.552703,104.920846&z=17&q=Goulding+%26+Co,+Le+Conde+Building,+Level+26,+Unit+32,+Street+352,+BKK1,+Phnom+Penh"
             width="100%"
             height="100%"
             style={{ border: 0 }}
