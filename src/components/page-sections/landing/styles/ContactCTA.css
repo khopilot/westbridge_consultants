@@ -28,12 +28,21 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
-  padding: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Left side - Contact Information */
+.contact-info-side {
+  flex: 0 0 40%;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   gap: 3rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 /* Logo Section */
@@ -65,7 +74,7 @@
 .icons-row {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -116,6 +125,7 @@
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #ffffff !important; /* Ensure white color */
 }
 
 .office-location p {
@@ -123,30 +133,45 @@
   line-height: 1.6;
   opacity: 0.9;
   margin: 0;
+  color: #ffffff;
 }
 
-/* Map Container */
-.map-container {
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  border-radius: 12px;
+/* Right side - Full screen Map */
+.map-container-fullscreen {
+  flex: 1;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.map-container iframe {
+.map-container-fullscreen iframe {
   width: 100%;
   height: 100%;
   filter: grayscale(20%) brightness(0.9);
+  border: 0;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-minimal-container {
+    flex-direction: column;
+  }
+
+  .contact-info-side {
+    flex: 0 0 auto;
+    padding: 3rem 2rem;
     gap: 2rem;
-    padding: 1.5rem;
+  }
+
+  .map-container-fullscreen {
+    height: 50vh;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-side {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
 
   .contact-logo {
@@ -184,15 +209,16 @@
     font-size: 0.95rem;
   }
 
-  .map-container {
-    height: 250px;
+  .map-container-fullscreen {
+    height: 40vh;
+    min-height: 300px;
   }
 }
 
 @media (max-width: 480px) {
-  .contact-minimal-container {
+  .contact-info-side {
+    padding: 1.5rem 1rem;
     gap: 1.5rem;
-    padding: 1rem;
   }
 
   .contact-logo {
@@ -206,16 +232,18 @@
   .icons-row {
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;
   }
 
   .contact-icon {
     flex-direction: row;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
   }
 
-  .map-container {
-    height: 200px;
+  .map-container-fullscreen {
+    height: 35vh;
+    min-height: 250px;
   }
 }
 
@@ -234,7 +262,7 @@
 .contact-logo-section,
 .contact-icons,
 .office-location,
-.map-container {
+.map-container-fullscreen {
   animation: fadeIn 0.8s ease-out;
   animation-fill-mode: backwards;
 }
@@ -247,6 +275,6 @@
   animation-delay: 0.4s;
 }
 
-.map-container {
+.map-container-fullscreen {
   animation-delay: 0.6s;
 }
