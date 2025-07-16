@@ -11,7 +11,7 @@ const ContactCTA: React.FC = () => {
           {/* Logo */}
           <div className="contact-logo-section">
             <img 
-              src="/visual/Logo_gouldingandco_white.png" 
+              src="/Logo_gouldingandco_white.png" 
               alt="Goulding & Co" 
               className="contact-logo"
             />

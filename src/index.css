@@ -119,7 +119,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   padding: 0;
-  padding-top: 6rem;
+  padding-top: 70px;
+  scroll-behavior: smooth;
 }
 
 /* Remove padding-top for landing pages */

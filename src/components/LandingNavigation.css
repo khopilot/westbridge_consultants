@@ -5,18 +5,15 @@
   left: 0;
   right: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   z-index: 1000;
   padding: 0.75rem 2rem;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border-radius: 0 0 15px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .dark .landing-nav {
@@ -30,13 +27,10 @@
 
 .landing-nav--scrolled {
   padding: 0.625rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.12),
-    0 4px 12px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .dark .landing-nav--scrolled {
@@ -66,7 +60,7 @@
     right: 0;
     width: 100%;
     padding: 0.625rem 1rem;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
   }
   
   .landing-nav__container {
@@ -711,7 +705,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .landing-nav {
     top: 0;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0;
     padding: 0.625rem 1.25rem;
   }
   

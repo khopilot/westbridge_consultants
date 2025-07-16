@@ -33,50 +33,57 @@
 
 .struggles-section__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
 .struggle-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  border: 1px solid rgba(164, 120, 100, 0.1);
 }
 
 .struggle-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-secondary);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-.struggle-card__icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  filter: grayscale(0.2);
+.struggle-card__content {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  max-width: 80%;
 }
 
 .struggle-card__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #112d4e;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
 
 .struggle-card__description {
   font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  opacity: 0.8;
+  line-height: 1.5;
+  color: #112d4e;
+  font-weight: 500;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .struggles-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .struggles-section {
     padding: 3rem 0;
@@ -92,10 +99,20 @@
   }
 
   .struggles-section__grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .struggle-card {
-    padding: 1.5rem;
+    height: 300px;
+  }
+  
+  .struggle-card__content {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  
+  .struggle-card__title {
+    font-size: 1.5rem;
   }
 }

@@ -41,11 +41,11 @@ const LandingNavigation: React.FC = () => {
           if (currentScrollY < 50) {
             // Always show at top
             setIsVisible(true)
-          } else if (scrollDelta > 10 && currentScrollY > 100) {
-            // Hide when scrolling down fast
+          } else if (scrollDelta > 15 && currentScrollY > 150) {
+            // Hide when scrolling down fast (increased threshold)
             setIsVisible(false)
-          } else if (scrollDelta < -5) {
-            // Show when scrolling up
+          } else if (scrollDelta < -8) {
+            // Show when scrolling up (increased threshold)
             setIsVisible(true)
           }
           
@@ -98,8 +98,8 @@ const LandingNavigation: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const navHeight = 80 // Height of floating navbar
-      const elementPosition = element.offsetTop - navHeight
+      const navHeight = 70 // Height of navbar
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight
       
       // Ensure navbar is visible when navigating
       setIsVisible(true)
@@ -108,6 +108,14 @@ const LandingNavigation: React.FC = () => {
         top: elementPosition,
         behavior: 'smooth'
       })
+      
+      // Update active section immediately
+      setActiveSection(sectionId)
+      
+      // Add to history for better navigation
+      if (history.pushState) {
+        history.pushState(null, '', `#${sectionId}`)
+      }
     }
     setIsMobileMenuOpen(false)
   }
@@ -161,7 +169,7 @@ const LandingNavigation: React.FC = () => {
           <div className="landing-nav__logo">
             <Link to="/" className="landing-nav__logo-link">
               <img 
-                src="/visual/Logo_gouldingandco_black.png" 
+                src="/Logo_gouldingandco_black.png" 
                 alt="Goulding & Co" 
                 className="landing-nav__logo-image"
               />
