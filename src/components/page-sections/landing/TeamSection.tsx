@@ -22,15 +22,15 @@ const TeamSection: React.FC = () => {
       ],
       skills: [
         'Entrepreneurship',
-        'Real Estate Development',
-        'Legal & Regulatory',
-        'Strategic Vision',
-        'Investment Structuring',
-        'Business Networking',
+        'Real Estate',
+        'Legal',
+        'Strategy',
+        'Investment',
+        'Networking',
         'Market Entry',
-        'Cross-Cultural Leadership',
-        'Operations Oversight',
-        'Social Impact Orientation'
+        'Leadership',
+        'Operations',
+        'Social Impact'
       ],
       image: '/Our-team.jpg',
       accentColor: '#112d4e'
@@ -53,16 +53,16 @@ const TeamSection: React.FC = () => {
         'Adaptable, structured, and resilient in fast-changing environments'
       ],
       skills: [
-        'Strategic Planning',
-        'Project Management',
-        'Business Development',
-        'Financial Modeling & Forecasting',
+        'Strategy',
+        'Project Mgmt',
+        'Biz Dev',
+        'Financial Modeling',
         'Leadership',
         'Entrepreneurship',
-        'Construction & Engineering',
-        'Cross-Cultural Communication',
-        'Operations Management',
-        'Creative Problem-Solving'
+        'Construction',
+        'Communication',
+        'Operations',
+        'Problem Solving'
       ],
       image: '/hugo.brett.jpg',
       accentColor: '#6b7280'
@@ -80,10 +80,10 @@ const TeamSection: React.FC = () => {
               <div className="member-header">
                 <div className="member-image">
                   <img src={member.image} alt={member.name} />
-                </div>
-                <div className="member-info">
-                  <h3 className="member-name">{member.name}</h3>
-                  <p className="member-role">{member.role}</p>
+                  <div className="member-image-overlay">
+                    <h3 className="member-name">{member.name}</h3>
+                    <p className="member-role">{member.role}</p>
+                  </div>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ const TeamSection: React.FC = () => {
                 <h5 className="section-title">Skill Set</h5>
                 <div className="skills-grid">
                   {member.skills.map((skill, idx) => (
-                    <span key={idx} className="skill-tag" style={{borderColor: member.accentColor}}>
+                    <span key={idx} className="skill-tag">
                       {skill}
                     </span>
                   ))}
