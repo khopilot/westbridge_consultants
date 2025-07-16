@@ -46,10 +46,10 @@
 .opportunities-header {
   position: relative;
   z-index: 10;
-  padding: 8rem 2rem 3rem;
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .opportunities-header h2 {
@@ -63,19 +63,29 @@
 }
 
 .opportunities-main-text {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
 }
 
 .opportunities-content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
 }
 
 .opportunities-text-content {
-  text-align: left;
+  text-align: center;
+  width: 100%;
 }
 
 .cambodia-map-container {
@@ -424,8 +434,16 @@
   }
 
   .transition-image {
-    height: 60px;
+    height: 50vh;
     margin: 2rem 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  
+  .transition-image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
