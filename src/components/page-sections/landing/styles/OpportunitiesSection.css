@@ -647,8 +647,8 @@
   .transition-image {
     height: 30vh;
     margin: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
+    margin-left: 0;
   }
   
   .transition-image-content {
@@ -676,6 +676,8 @@
   .transition-image {
     height: 25vh;
     margin: 0;
+    width: 100%;
+    margin-left: 0;
   }
   
   .opportunities-main-text {
