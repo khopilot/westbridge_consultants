@@ -110,14 +110,15 @@ const Navigation: React.FC = () => {
             {/* Refined Logo */}
             <Link to="/" className="nav__logo" onClick={closeMobileMenu}>
               <div className="nav__logo-icon">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 8H28C29.1 8 30 8.9 30 10V14L16 22L2 14V10C2 8.9 2.9 8 4 8Z" fill="var(--color-primary)"/>
-                  <path d="M2 16L16 24L30 16V26C30 27.1 29.1 28 28 28H4C2.9 28 2 27.1 2 26V16Z" fill="var(--color-accent)" fillOpacity="0.7"/>
-                </svg>
-              </div>
-              <div className="nav__logo-text">
-                <span className="nav__logo-main">Goulding & Co</span>
-                <span className="nav__logo-sub">Strategic Advisory</span>
+                <img 
+                  src="/visual/Logo_gouldingandco_black.png" 
+                  alt="Goulding & Co Strategic Advisory"
+                  style={{ 
+                    width: '140px', 
+                    height: 'auto',
+                    filter: 'var(--logo-filter, none)'
+                  }}
+                />
               </div>
             </Link>
             
@@ -167,14 +168,15 @@ const Navigation: React.FC = () => {
           <div className="nav__mobile-logo">
             <Link to="/" onClick={closeMobileMenu}>
               <div className="nav__mobile-logo-icon">
-                <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 8H28C29.1 8 30 8.9 30 10V14L16 22L2 14V10C2 8.9 2.9 8 4 8Z" fill="var(--color-primary)"/>
-                  <path d="M2 16L16 24L30 16V26C30 27.1 29.1 28 28 28H4C2.9 28 2 27.1 2 26V16Z" fill="var(--color-accent)" fillOpacity="0.7"/>
-                </svg>
-              </div>
-              <div className="nav__mobile-logo-text">
-                <span className="nav__mobile-logo-main">Goulding & Co</span>
-                <span className="nav__mobile-logo-sub">Strategic Advisory</span>
+                <img 
+                  src="/visual/Logo_gouldingandco_black.png" 
+                  alt="Goulding & Co Strategic Advisory"
+                  style={{ 
+                    width: '120px', 
+                    height: 'auto',
+                    filter: 'var(--logo-filter, none)'
+                  }}
+                />
               </div>
             </Link>
           </div>

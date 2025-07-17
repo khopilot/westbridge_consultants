@@ -234,14 +234,15 @@ const LandingNavigation: React.FC = () => {
           <div className="landing-nav__mobile-logo">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="landing-nav__mobile-logo-icon">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 8H28C29.1 8 30 8.9 30 10V14L16 22L2 14V10C2 8.9 2.9 8 4 8Z" fill="currentColor"/>
-                  <path d="M2 16L16 24L30 16V26C30 27.1 29.1 28 28 28H4C2.9 28 2 27.1 2 26V16Z" fill="currentColor" fillOpacity="0.7"/>
-                </svg>
-              </div>
-              <div className="landing-nav__mobile-logo-text">
-                <span className="landing-nav__mobile-logo-main">Goulding & Co</span>
-                <span className="landing-nav__mobile-logo-sub">Strategic Advisory</span>
+                <img 
+                  src="/Logo_gouldingandco_black.png" 
+                  alt="Goulding & Co Strategic Advisory"
+                  style={{ 
+                    width: '120px', 
+                    height: 'auto',
+                    filter: 'var(--logo-filter, none)'
+                  }}
+                />
               </div>
             </Link>
           </div>
