@@ -1,7 +1,9 @@
 /* Solutions Section - Grid Design */
 .solutions-section {
   min-height: 100vh;
-  padding: 4rem 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background: #fafafa;
   position: relative;
   overflow: hidden;
@@ -12,9 +14,15 @@
 
 .solutions-section > .container {
   width: 100%;
-  max-width: 1400px;
-  padding: 0 2rem;
-  margin: 0 auto;
+  max-width: none !important; /* Override global container max-width */
+  padding: 0 80px; /* ~2cm margin on each side */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Subtitle */
@@ -40,14 +48,16 @@
 /* Grid Layout */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-bottom: 3rem;
+  width: 100%;
+  /* No max-width - cards will expand to fill available space */
+  margin: 0;
 }
 
 /* Fixed Solution Cards */
 .solution-card-fixed {
-  height: 400px;
+  height: 380px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,7 +122,14 @@
   max-width: 900px;
   margin: 0 auto 3rem;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 0;
+}
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablet Responsive */
@@ -137,7 +154,14 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .solutions-section {
-    padding: 3rem 0;
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .solutions-section > .container {
+    max-width: none !important; /* Override global container max-width */
+    padding: 0 20px; /* Smaller margin on mobile */
+    min-height: auto;
   }
   
   .solutions-section__subtitle {
@@ -158,7 +182,7 @@
   }
   
   .solution-card-fixed {
-    height: 300px;
+    height: 320px;
   }
   
   .solution-card-overlay {

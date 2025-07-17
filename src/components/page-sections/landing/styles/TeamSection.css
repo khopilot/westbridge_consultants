@@ -1,5 +1,6 @@
 /* Team Section - 2 Cards Layout */
 .team-section {
+  width: 100%;
   padding: 5rem 0;
   background: #f8f9fa;
   position: relative;
@@ -7,9 +8,11 @@
 }
 
 .team-section .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
+  max-width: none !important; /* Override global container max-width */
+  margin: 0;
+  padding: 0 80px; /* ~2cm margin on each side */
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -202,6 +205,11 @@
 @media (max-width: 768px) {
   .team-section {
     padding: 3rem 0;
+  }
+  
+  .team-section .container {
+    max-width: none !important; /* Override global container max-width */
+    padding: 0 20px; /* Smaller margin on mobile */
   }
   
   .team-header {

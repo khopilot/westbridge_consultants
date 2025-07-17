@@ -3,8 +3,9 @@
   background: #112d4e;
   position: relative;
   min-height: 100vh;
-  padding: 6rem 0;
+  padding: 0;
   width: 100%;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,11 +29,12 @@
 
 .case-studies-section > .container {
   width: 100%;
-  max-width: 1400px;
-  padding: 0 2rem;
-  margin: 0 auto;
+  max-width: none !important; /* Override global container max-width */
+  padding: 0 80px; /* ~2cm margin on each side */
+  margin: 0;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /* Header Styling */
@@ -71,8 +73,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  /* No max-width - cards will expand to fill available space */
+  margin: 0;
 }
 
 /* Tilt Wrapper for 3D effect */
@@ -533,10 +536,12 @@
 @media (max-width: 768px) {
   .case-studies-section {
     padding: 4rem 0;
+    min-height: auto;
   }
   
   .case-studies-section > .container {
-    padding: 0 1rem;
+    max-width: none !important; /* Override global container max-width */
+    padding: 0 20px; /* Smaller margin on mobile */
   }
   
   .case-studies-section__header {

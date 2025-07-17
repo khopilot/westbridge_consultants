@@ -17,6 +17,11 @@ const SolutionsSection: React.FC = () => {
       image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_8138b50b-eafd-4626-b3e7-bb37b53fd71b_0.png',
       title: 'Execute',
       description: 'On-ground team, bilingual, results-focused'
+    },
+    {
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_5739ee9c-fe68-4dc9-929e-2d83799a8049_1.png',
+      title: 'Protect',
+      description: 'Your capital, your timeline, your reputation'
     }
   ]
 

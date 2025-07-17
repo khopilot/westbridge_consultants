@@ -23,6 +23,7 @@
   padding: 2rem;
   z-index: 10;
   position: relative;
+  width: 100%;
 }
 
 /* Hero Title - Large, prominent text */
@@ -52,6 +53,8 @@
   color: #ffffff;
   opacity: 0.9;
   letter-spacing: 0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Hero Supporting Text */
@@ -63,6 +66,8 @@
   color: #ffffff;
   opacity: 0.9;
   letter-spacing: 0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Text huge styling (matches opportunities section) */
@@ -77,6 +82,9 @@
   line-height: inherit;
   display: inline;
   position: relative;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @keyframes navy-glow {
@@ -626,14 +634,14 @@
   }
   
   .landing-hero__content {
-    padding: 3.5rem 1.5rem 2.5rem; /* Add padding to prevent content cutoff */
+    padding: 2rem 1.5rem; /* Reduced padding for more content space */
     max-width: 100%;
-    min-height: calc(100vh - 70px); /* Account for mobile navigation */
-    /* Remove margin-top to prevent excess spacing */
+    min-height: 100vh;
     margin-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     animation: none; /* Disable floating animation on mobile */
   }
   
@@ -641,6 +649,51 @@
     font-size: clamp(1.8rem, 6.5vw, 2.8rem);
     margin-bottom: 1.2rem; /* Reduced margin */
     line-height: 1.15; /* Tighter line height */
+  }
+  
+  /* Fix hero title text wrapping on mobile */
+  .hero-title {
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    text-align: center;
+    word-spacing: 0.1em;
+    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content-center {
+    padding: 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+  }
+  
+  .hero-subheading {
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-supporting-text {
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+    line-height: 1.6;
+  }
+  
+  /* Make text-huge stand out on mobile */
+  .hero-subheading .text-huge,
+  .hero-supporting-text .text-huge {
+    font-size: 1.2em !important;
+    font-weight: 800 !important;
+    color: #ffffff;
+    display: inline;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
   
   .landing-hero h2 {
@@ -737,9 +790,56 @@
   }
   
   .landing-hero__content {
-    padding: 3rem 1.25rem 2.5rem; /* Adjusted padding for smaller screens */
-    min-height: calc(100vh - 60px); /* Account for navigation height */
-    margin-top: 0; /* Remove margin-top to prevent excess spacing */
+    padding: 2rem 20px; /* Reduced padding for more content space */
+    min-height: 100vh;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Fix hero title text wrapping on small mobile */
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3rem) !important;
+    white-space: normal !important;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    word-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content-center {
+    padding: 1rem 20px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-subheading,
+  .hero-supporting-text {
+    font-size: clamp(1rem, 4.5vw, 1.3rem) !important;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero-subheading .text-huge,
+  .hero-supporting-text .text-huge {
+    font-size: 1.3em !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: inline;
   }
   
   .landing-hero h1 {

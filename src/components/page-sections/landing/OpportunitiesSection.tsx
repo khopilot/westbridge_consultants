@@ -1,10 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion'
 import './styles/OpportunitiesSection.css'
 
 const OpportunitiesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [activeSlide, setActiveSlide] = useState(0)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -12,15 +11,6 @@ const OpportunitiesSection: React.FC = () => {
   
   const waveTransform = useTransform(scrollYProgress, [0, 1], [0, 100])
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
-
-  // Auto-advance slides every 6 seconds
-  useEffect(() => {
-    if (!isInView) return
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % 3)
-    }, 6000)
-    return () => clearInterval(timer)
-  }, [isInView])
 
   const slides = [
     {
@@ -41,7 +31,7 @@ const OpportunitiesSection: React.FC = () => {
       id: 2,
       title: 'Legal Gaps',
       description: 'International protection requires local expertise',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_8a257859-b817-4d3a-a4ff-da9d167b4273_0 (1).png',
+      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_n_2a906879-821b-43fa-8caa-44a15544c9d8.png',
       color: 'rgba(17, 45, 78, 0.9)' // Navy
     }
   ]
@@ -72,12 +62,12 @@ const OpportunitiesSection: React.FC = () => {
             <div className="opportunities-text-content">
               <div className="opportunities-highlight">
                 <div className="cambodia-line">
-                  <span className="text-huge">CAMBODIA</span>
                   <img 
                     src="/157f5e02-2c3f-4d42-8f11-a7a9a2aabda1.png" 
                     alt="Cambodia Map" 
                     className="cambodia-map-inline"
                   />
+                  <span className="text-huge">CAMBODIA</span>
                 </div>
                 <span className="equals-sign">=</span>
                 <span className="text-huge">MASSIVE POTENTIAL</span>
@@ -103,6 +93,10 @@ const OpportunitiesSection: React.FC = () => {
           />
         </motion.div>
 
+      </div>
+
+      {/* Struggles Cards Grid */}
+      <div className="struggles-grid-container">
         {/* "We Understand the Struggles!" */}
         <motion.h3 
           className="struggles-title"
@@ -112,61 +106,23 @@ const OpportunitiesSection: React.FC = () => {
         >
           We Understand the Struggles!
         </motion.h3>
-      </div>
-
-      {/* Full-Screen Slideshow */}
-      <div className="slideshow-container">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlide}
-            className="slide-active"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-          >
-            <div className="slide-main-card">
-              <div className="slide-image-container">
-                <img 
-                  src={slides[activeSlide].image}
-                  alt={slides[activeSlide].title}
-                  className="slide-image"
-                />
-              </div>
-              <div className="slide-content">
-                <h3 className="slide-title">{slides[activeSlide].title}</h3>
-                <p className="slide-description">{slides[activeSlide].description}</p>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Slide Navigation Thumbnails */}
-        <div className="slide-thumbnails">
+        <div className="struggles-cards-grid">
           {slides.map((slide, index) => (
-            <motion.button
+            <motion.div
               key={slide.id}
-              className={`slide-thumb ${activeSlide === index ? 'slide-thumb--active' : ''}`}
-              onClick={() => setActiveSlide(index)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className={`struggle-card ${index === 2 ? 'struggle-card--light-overlay' : ''}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.8 + index * 0.1, ease: [0.43, 0.13, 0.23, 0.96] }}
+              whileHover={{ y: -8 }}
+              style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <img 
-                src={slide.image}
-                alt={slide.title}
-                className="thumb-image"
-              />
-              <div className="thumb-content">
-                <h4 className="thumb-title">{slide.title}</h4>
-                <p className="thumb-description">{slide.description}</p>
+              <div className="struggle-card__overlay" />
+              <div className="struggle-card__content">
+                <h3 className="struggle-card__title">{slide.title}</h3>
+                <p className="struggle-card__description">{slide.description}</p>
               </div>
-              <motion.div 
-                className="thumb-progress"
-                initial={{ width: 0 }}
-                animate={{ width: activeSlide === index ? "100%" : "0%" }}
-                transition={{ duration: 6, ease: "linear" }}
-              />
-            </motion.button>
+            </motion.div>
           ))}
         </div>
       </div>

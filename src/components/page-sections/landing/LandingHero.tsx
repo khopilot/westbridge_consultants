@@ -116,7 +116,7 @@ const LandingHero: React.FC = () => {
               custom={1}
               variants={textAnimation}
             >
-              CAMBODIA&nbsp;MADE&nbsp;SIMPLE
+              CAMBODIA MADE SIMPLE
             </motion.h1>
             
             {/* Subheading */}
@@ -127,7 +127,7 @@ const LandingHero: React.FC = () => {
               custom={2}
               variants={textAnimation}
             >
-              <span className="text-huge">Cambodia</span> <span className="text-huge">rewards</span> bold <span className="text-huge">investors</span>, but only if you master its rules. <span className="text-huge">We</span> shorten the learning curve, <span className="text-huge">cut the risk</span>, <span className="text-huge">and get you moving</span> fast.
+              <span className="text-huge">Cambodia rewards bold investors</span>, but only if you master its rules. <span className="text-huge">We</span> shorten the learning curve, <span className="text-huge">cut the risk, and get you moving</span> fast.
             </motion.h2>
             
             {/* Supporting Text */}
@@ -138,7 +138,7 @@ const LandingHero: React.FC = () => {
               custom={3}
               variants={textAnimation}
             >
-              <span className="text-huge">We have spent</span> ten <span className="text-huge">years</span> in Cambodia <span className="text-huge">learning the hard way</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with</span> that <span className="text-huge">decade of knowledge</span> in your pocket.
+              <span className="text-huge">We have spent ten years</span> in Cambodia <span className="text-huge">learning the hard way</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with that decade of knowledge</span> in your pocket.
             </motion.p>
           </div>
 
