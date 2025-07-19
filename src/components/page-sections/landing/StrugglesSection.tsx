@@ -11,21 +11,21 @@ const StrugglesSection: React.FC = () => {
       id: 0,
       title: 'Regulatory Maze',
       description: 'Permits that seem simple aren\'t. Sub-decrees that have never been issued. Middle-bureaucrats.',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_d25a0fb6-9421-4dd5-b22b-a2f4cf092dc8_2.png',
+      image: '/visual/c43c10f6-1b3a-402a-9244-e5f7a234bcbe.png',
       color: 'rgba(204, 85, 0, 0.9)' // Terracotta
     },
     {
       id: 1,
       title: 'Hidden Networks',
       description: 'The real decision-makers stay invisible',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_195d9c8e-7b48-42fe-8f22-3df9810f3a25_3.png',
+      image: '/visual/ChatGPT Image Jul 19, 2025, 09_21_26 AM.png',
       color: 'rgba(164, 120, 100, 0.9)' // Mocha Mousse
     },
     {
       id: 2,
       title: 'Legal Gaps',
       description: 'International protection requires local expertise',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_n_2a906879-821b-43fa-8caa-44a15544c9d8.png',
+      image: '/visual/ChatGPT Image Jul 19, 2025, 09_21_30 AM.png',
       color: 'rgba(17, 45, 78, 0.9)' // Navy
     }
   ]

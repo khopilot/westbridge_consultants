@@ -9,7 +9,7 @@ const SolutionsSection: React.FC = () => {
       description: 'Every permit, every process, every gatekeeper'
     },
     {
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_51f32a45-bc82-4fd3-a57f-49a45165d9bf_3.png',
+      image: '/visual/ChatGPT Image Jul 19, 2025, 09_39_03 AM.png',
       title: 'Structure',
       description: 'International-grade legal protection'
     },
