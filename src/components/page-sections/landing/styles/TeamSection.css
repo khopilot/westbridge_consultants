@@ -50,6 +50,9 @@
 }
 
 .team-member-card:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
@@ -62,7 +65,9 @@
 
 .member-image {
   width: 100%;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
+  aspect-ratio: 3/4;
   border-radius: 0;
   overflow: hidden;
   margin-bottom: 0;
@@ -185,6 +190,9 @@
 
 .skill-tag:hover {
   background: #112d4e;
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(17, 45, 78, 0.2);
 }
@@ -225,7 +233,7 @@
   }
   
   .member-image {
-    height: 300px;
+    min-height: 300px;
   }
   
   .member-image-overlay {
@@ -267,7 +275,7 @@
   }
   
   .member-image {
-    height: 250px;
+    min-height: 250px;
   }
   
   .member-image-overlay {

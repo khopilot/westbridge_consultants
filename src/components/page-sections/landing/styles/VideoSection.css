@@ -2,6 +2,8 @@
 .video-section {
   width: 100%;
   height: 100vh;
+  height: 100svh; /* Use small viewport height for mobile */
+  min-height: -webkit-fill-available; /* iOS Safari fix */
   position: relative;
   overflow: hidden;
   background: #000;
@@ -28,6 +30,8 @@
 .video-container--mobile {
   width: 100%;
   height: 100vh;
+  height: 100svh; /* Use small viewport height for mobile */
+  min-height: -webkit-fill-available; /* iOS Safari fix */
   position: relative;
   display: flex;
   align-items: center;
@@ -73,7 +77,13 @@
   .video-container:not(.video-container--mobile) #video-youtube-player {
     width: 100%;
     height: 100%;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
     transform-origin: center center;
   }
   
@@ -82,7 +92,13 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
     transform-origin: center center;
   }
 }
@@ -91,22 +107,33 @@
 @media (max-width: 768px) {
   .video-section {
     height: 100vh;
+    height: 100svh;
+    min-height: -webkit-fill-available;
   }
   
   .video-container {
     height: 100vh;
+    height: 100svh;
+    min-height: -webkit-fill-available;
   }
   
   .video-container--mobile .video-youtube-iframe {
     width: 100vw;
     height: 100vh;
+    height: 100svh;
     object-fit: cover;
     object-position: center center;
   }
   
   /* Ensure portrait video fills the screen properly */
   .video-container--mobile #video-youtube-player {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
     transform: scale(1.2);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
     transform-origin: center center;
   }
 }
@@ -127,8 +154,12 @@
   position: absolute;
   top: 3rem;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 4;
+  -webkit-animation: fadeInDown 1s ease-out;
   animation: fadeInDown 1s ease-out;
 }
 
@@ -142,6 +173,9 @@
 
 .video-logo-image:hover {
   opacity: 1;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
@@ -164,13 +198,32 @@
 }
 
 /* Animation for logo */
-@keyframes fadeInDown {
+@-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-30px);
     transform: translateX(-50%) translateY(-30px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-30px);
+    -moz-transform: translateX(-50%) translateY(-30px);
+    -ms-transform: translateX(-50%) translateY(-30px);
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(0);
+    -moz-transform: translateX(-50%) translateY(0);
+    -ms-transform: translateX(-50%) translateY(0);
     transform: translateX(-50%) translateY(0);
   }
 }

@@ -57,6 +57,7 @@
 
 /* Fixed Solution Cards */
 .solution-card-fixed {
+  min-height: 380px;
   height: 380px;
   background-size: cover;
   background-position: center;
@@ -72,6 +73,9 @@
 }
 
 .solution-card-fixed:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
@@ -139,6 +143,7 @@
   }
   
   .solution-card-fixed {
+    min-height: 350px;
     height: 350px;
   }
   
@@ -182,7 +187,8 @@
   }
   
   .solution-card-fixed {
-    height: 320px;
+    min-height: 280px;
+    height: 280px;
   }
   
   .solution-card-overlay {
@@ -212,6 +218,7 @@
   }
   
   .solution-card-fixed {
+    min-height: 250px;
     height: 250px;
   }
   

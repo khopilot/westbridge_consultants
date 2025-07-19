@@ -1,58 +1,68 @@
-/* Struggles Section */
+/* Struggles Section Styles */
 .struggles-section {
-  min-height: 100vh;
-  padding: 5rem 0;
-  background: var(--color-bg-light);
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #112d4e;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.struggles-section > .container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-  margin: 0 auto;
-}
-
-.struggles-section__header {
-  margin-bottom: 3rem;
-}
-
-.struggles-section__header h2 {
-  font-size: 2.5rem;
+/* Struggles Title */
+.struggles-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  position: relative;
 }
 
-.struggles-section__grid {
+/* Struggles Cards Grid */
+.struggles-grid-container {
+  width: 100%;
+  padding: 0 80px; /* ~2cm margin on each side */
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 4rem; /* More space between title and cards for better centering */
+}
+
+.struggles-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 0 auto;
+  width: 100%;
+  /* No max-width - cards will expand to fill available space */
 }
 
 .struggle-card {
   position: relative;
-  height: 400px;
+  height: 450px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-/* Elegant navy blue overlay with gradient */
-.struggle-card::before {
-  content: '';
+.struggle-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Elegant navy blue overlay */
+.struggle-card__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -60,25 +70,39 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(26, 46, 78, 0.95) 0%,
-    rgba(26, 46, 78, 0.85) 40%,
-    rgba(26, 46, 78, 0.6) 100%
+    rgba(26, 46, 78, 0.7) 0%,
+    rgba(26, 46, 78, 0.6) 40%,
+    rgba(26, 46, 78, 0.4) 100%
   );
   z-index: 1;
   transition: all 0.4s ease;
 }
 
-.struggle-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(26, 46, 78, 0.3);
-}
-
-.struggle-card:hover::before {
+.struggle-card:hover .struggle-card__overlay {
   background: linear-gradient(
     135deg,
-    rgba(26, 46, 78, 0.98) 0%,
-    rgba(26, 46, 78, 0.9) 40%,
-    rgba(26, 46, 78, 0.7) 100%
+    rgba(26, 46, 78, 0.8) 0%,
+    rgba(26, 46, 78, 0.7) 40%,
+    rgba(26, 46, 78, 0.5) 100%
+  );
+}
+
+/* Light overlay for the last card to show image better */
+.struggle-card--light-overlay .struggle-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.5) 0%,
+    rgba(26, 46, 78, 0.4) 40%,
+    rgba(26, 46, 78, 0.3) 100%
+  );
+}
+
+.struggle-card--light-overlay:hover .struggle-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.6) 0%,
+    rgba(26, 46, 78, 0.5) 40%,
+    rgba(26, 46, 78, 0.4) 100%
   );
 }
 
@@ -86,6 +110,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 85%;
   text-align: center;
@@ -130,7 +157,13 @@
     rgba(255, 255, 255, 0.4) 50%,
     transparent 100%
   );
+  -webkit-animation: shine 3s infinite;
   animation: shine 3s infinite;
+}
+
+@-webkit-keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 @keyframes shine {
@@ -149,42 +182,54 @@
   opacity: 0.95;
 }
 
-/* Responsive */
+/* Responsive Styles for Struggles Grid */
 @media (max-width: 1024px) {
-  .struggles-section__grid {
+  .struggles-grid-container {
+    padding: 0 40px;
+  }
+  
+  .struggles-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .struggle-card {
+    height: 400px;
+  }
+  
+  .struggle-card__title {
+    font-size: 1.8rem;
+  }
+  
+  .struggle-card__description {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .struggles-section {
-    padding: 3rem 0;
+  .struggles-grid-container {
+    padding: 0 20px;
     min-height: auto;
   }
-
-  .struggles-section > .container {
-    padding: 0 1rem;
-  }
-
-  .struggles-section__header h2 {
-    font-size: 2rem;
-  }
-
-  .struggles-section__grid {
+  
+  .struggles-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  .struggle-card {
-    height: 300px;
-  }
   
-  .struggle-card__content {
-    top: 1.5rem;
-    left: 1.5rem;
+  .struggle-card {
+    height: 350px;
   }
   
   .struggle-card__title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .struggle-card__description {
+    font-size: 1rem;
+  }
+  
+  .struggles-title {
+    font-size: 2rem;
   }
 }

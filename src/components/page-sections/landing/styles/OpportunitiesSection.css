@@ -4,8 +4,10 @@
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Background Effects */
@@ -29,17 +31,34 @@
 
 .wave-1 {
   top: 0;
+  -webkit-animation: wave-flow 20s ease-in-out infinite;
   animation: wave-flow 20s ease-in-out infinite;
 }
 
 .wave-2 {
   top: 30%;
+  -webkit-animation: wave-flow 25s ease-in-out infinite reverse;
   animation: wave-flow 25s ease-in-out infinite reverse;
 }
 
+@-webkit-keyframes wave-flow {
+  0%, 100% { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+  50% { -webkit-transform: translateX(0%); transform: translateX(0%); }
+}
+
 @keyframes wave-flow {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(0%); }
+  0%, 100% { 
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  50% { 
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
 }
 
 /* Header Section */
@@ -50,6 +69,9 @@
   text-align: center;
   width: 100%;
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .opportunities-header h2 {
@@ -63,13 +85,12 @@
 }
 
 .opportunities-main-text {
-  width: 100vw;
-  height: 66vh;
+  width: 100%;
+  height: 66%;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: calc(-50vw + 50%);
   position: relative;
 }
 
@@ -82,6 +103,7 @@
   padding: 2rem;
   max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .opportunities-text-content {
@@ -111,17 +133,40 @@
   width: 120%;
   height: 120%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0.6;
+  -webkit-animation: pulse-glow 3s ease-in-out infinite alternate;
   animation: pulse-glow 3s ease-in-out infinite alternate;
 }
 
-@keyframes pulse-glow {
+@-webkit-keyframes pulse-glow {
   from {
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.4;
   }
   to {
+    -webkit-transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
+    -moz-transform: translate(-50%, -50%) scale(0.9);
+    -ms-transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1.1);
+    -moz-transform: translate(-50%, -50%) scale(1.1);
+    -ms-transform: translate(-50%, -50%) scale(1.1);
     transform: translate(-50%, -50%) scale(1.1);
     opacity: 0.8;
   }
@@ -182,14 +227,15 @@
   display: inline-block;
 }
 
-
 /* Transition Image */
 .transition-image {
-  width: 100vw;
-  height: 33vh;
+  width: 100%;
+  height: 34%;
   margin: 0;
-  margin-left: calc(-50vw + 50%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .transition-image-content {
@@ -197,223 +243,6 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.9;
-}
-
-/* Struggles Title */
-.struggles-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin: 0;
-  padding-bottom: 1rem;
-  color: #ffffff;
-  text-align: center;
-  width: 100%;
-}
-
-/* Struggles Cards Grid */
-.struggles-grid-container {
-  width: 100%;
-  padding: 0 80px; /* ~2cm margin on each side */
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  gap: 1rem; /* Tighter space between title and cards */
-}
-
-.struggles-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
-  /* No max-width - cards will expand to fill available space */
-}
-
-.struggle-card {
-  position: relative;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-
-.struggle-card:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-/* Elegant navy blue overlay */
-.struggle-card__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.7) 0%,
-    rgba(26, 46, 78, 0.6) 40%,
-    rgba(26, 46, 78, 0.4) 100%
-  );
-  z-index: 1;
-  transition: all 0.4s ease;
-}
-
-.struggle-card:hover .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.8) 0%,
-    rgba(26, 46, 78, 0.7) 40%,
-    rgba(26, 46, 78, 0.5) 100%
-  );
-}
-
-/* Light overlay for the last card to show image better */
-.struggle-card--light-overlay .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.5) 0%,
-    rgba(26, 46, 78, 0.4) 40%,
-    rgba(26, 46, 78, 0.3) 100%
-  );
-}
-
-.struggle-card--light-overlay:hover .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.6) 0%,
-    rgba(26, 46, 78, 0.5) 40%,
-    rgba(26, 46, 78, 0.4) 100%
-  );
-}
-
-.struggle-card__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  text-align: center;
-  z-index: 2;
-}
-
-.struggle-card__title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  /* Elegant shiny effect */
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.2),
-    0 0 40px rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f0f0f0 50%,
-    #e0e0e0 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-/* Subtle shine animation */
-.struggle-card__title::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-.struggle-card__description {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #ffffff;
-  font-weight: 400;
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 10px rgba(255, 255, 255, 0.1);
-  opacity: 0.95;
-}
-
-/* Responsive Styles for Struggles Grid */
-@media (max-width: 1024px) {
-  .struggles-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .struggle-card {
-    height: 400px;
-  }
-  
-  .struggle-card__title {
-    font-size: 1.8rem;
-  }
-  
-  .struggle-card__description {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .struggles-grid-container {
-    padding: 0 20px; /* Smaller margin on mobile */
-    min-height: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
-  .struggles-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .struggle-card {
-    height: 350px;
-  }
-  
-  .struggle-card__title {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-  }
-  
-  .struggle-card__description {
-    font-size: 1rem;
-  }
-  
-  .struggles-title {
-    margin: 0;
-    padding-bottom: 1.5rem;
-    font-size: clamp(1.8rem, 5vw, 2rem);
-  }
 }
 
 /* Full-Screen Slideshow Container */
@@ -437,6 +266,7 @@
 
 .slide-main-card {
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
@@ -466,8 +296,11 @@
 }
 
 .slide-image {
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3;
+  height: auto;
+  max-height: 300px;
   border-radius: 5px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.05);
@@ -504,6 +337,7 @@
 
 .slide-thumb {
   background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -522,6 +356,9 @@
 .slide-thumb:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.2);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 
@@ -533,7 +370,8 @@
 
 .thumb-image {
   width: 60px;
-  height: 60px;
+  aspect-ratio: 1;
+  height: auto;
   border-radius: 5px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.05);
@@ -571,8 +409,13 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .opportunities-section {
+    height: 100vh;
+  }
+  
   .opportunities-header {
-    padding: 2rem 20px;
+    padding: 0;
+    height: 100%;
   }
   
   .opportunities-content-wrapper {
@@ -582,8 +425,7 @@
   }
   
   .opportunities-main-text {
-    height: auto;
-    min-height: 60vh;
+    height: 66%;
   }
 
   .opportunities-text-content {
@@ -631,7 +473,9 @@
 
   .slide-image {
     width: 100%;
-    height: 200px;
+    max-width: none;
+    height: auto;
+    max-height: 200px;
   }
 
   .slide-thumbnails {
@@ -643,18 +487,9 @@
     min-width: auto;
     max-width: none;
   }
-
-  .transition-image {
-    height: 30vh;
-    margin: 0;
-    width: 100%;
-    margin-left: 0;
-  }
   
-  .transition-image-content {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .transition-image {
+    height: 34%;
   }
 }
 
@@ -664,24 +499,16 @@
   }
 
   .slide-image {
-    height: 150px;
+    max-height: 150px;
   }
 
   .thumb-image {
     width: 50px;
-    height: 50px;
     padding: 0.4rem;
   }
   
-  .transition-image {
-    height: 25vh;
-    margin: 0;
-    width: 100%;
-    margin-left: 0;
-  }
-  
   .opportunities-main-text {
-    min-height: 50vh;
+    height: 66%;
     padding: 1rem;
   }
 }
