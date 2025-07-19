@@ -32,7 +32,7 @@ const TeamSection: React.FC = () => {
         'Operations',
         'Social Impact'
       ],
-      image: '/Our-team.jpg',
+      image: '/brett2.jpg',
       accentColor: '#112d4e'
     },
     {
@@ -78,7 +78,7 @@ const TeamSection: React.FC = () => {
             <div key={index} className="team-member-card">
               {/* Member Header with Image */}
               <div className="member-header">
-                <div className="member-image">
+                <div className={`member-image member-image--${index}`}>
                   <img src={member.image} alt={member.name} />
                   <div className="member-image-overlay">
                     <h3 className="member-name">{member.name}</h3>

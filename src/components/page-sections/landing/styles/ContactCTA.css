@@ -2,7 +2,14 @@
 .contact-minimal {
   position: relative;
   background: linear-gradient(135deg, #112d4e 0%, #1a3a5c 100%);
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height */
+  height: auto;
+  width: 100vw;
+  margin: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +38,8 @@
   height: 100%;
   display: flex;
   align-items: stretch;
+  margin: 0;
+  padding: 0;
 }
 
 /* Left side - Contact Information */
@@ -44,6 +53,8 @@
   background: rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  min-height: 100vh;
+  margin: 0;
 }
 
 /* Logo Section */
@@ -146,6 +157,9 @@
   flex: 1;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .map-container-fullscreen iframe {
@@ -168,7 +182,8 @@
   }
 
   .map-container-fullscreen {
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     min-height: 400px;
   }
 }
@@ -215,7 +230,8 @@
   }
 
   .map-container-fullscreen {
-    height: 40vh;
+    min-height: 40vh;
+    height: auto;
     min-height: 300px;
   }
 }
@@ -247,7 +263,8 @@
   }
 
   .map-container-fullscreen {
-    height: 35vh;
+    min-height: 35vh;
+    height: auto;
     min-height: 250px;
   }
 }
