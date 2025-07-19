@@ -108,6 +108,8 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  /* Prevent layout shift on Windows by reserving scrollbar space */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -141,6 +143,40 @@ body.landing-body {
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+/* Windows scrollbar fixes - prevent horizontal scroll and content cutoff */
+main,
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent any element from causing horizontal scroll */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for full-width sections on Windows */
+.landing-page > * {
+  max-width: 100%;
+}
+
+/* Windows-specific fixes for scrollbar issues */
+@supports (-ms-ime-align: auto) {
+  /* Edge and IE specific fixes */
+  body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+/* Prevent content from being hidden under scrollbar */
+@media screen and (min-width: 768px) {
+  .container,
+  .content-wrapper {
+    padding-right: 20px; /* Account for potential scrollbar */
+  }
 }
 
 /* Landing page specific styles */
