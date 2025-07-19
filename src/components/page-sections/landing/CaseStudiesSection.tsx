@@ -18,7 +18,7 @@ const CaseStudiesSection: React.FC = () => {
     {
       title: '$500M Infrastructure Project',
       subtitle: 'Saved from stakeholder crisis',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_0edfd203-0b26-4e43-bec4-9948aa3be606_1.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2010_06_10%20AM.png',
       challenge: 'We consulted on a major infrastructure project located in a particularly sensitive zone with many uncoordinated stakeholders who threatened to block the project as they saw it as a threat to their livelihood.',
       solution: 'We integrated the stakeholders into the infrastructure project and offered financial help and a value proposition (i.e. a former informer vendor gets a stall)',
       outcome: 'The project was able to continue.'
@@ -26,7 +26,7 @@ const CaseStudiesSection: React.FC = () => {
     {
       title: 'Market Entry Strategy',
       subtitle: 'From zero to operational in 90 days',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_8c312f53-0225-412e-9fc2-f5c7ed76dd93_3.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2010_07_36%20AM.png',
       challenge: 'A European medium enterprise wanted to explore the Cambodian market but had no idea how to start. They contacted us expressing interest, but apprehension.',
       solution: 'We facilitated a local trip and contacts at the ministerial level and in the industry.',
       outcome: 'Client established a Cambodian branch of his business months later.'
@@ -34,7 +34,7 @@ const CaseStudiesSection: React.FC = () => {
     {
       title: 'Financial Restructuring',
       subtitle: '50% cost reduction, solvency restored',
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_bdbbe087-9cc4-4f88-8e0e-f765b564c2c2_0.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2010_09_09%20AM.png',
       challenge: 'A fast-growing local conglomerate was hit hard by the fall in real estate land-values. They asked us to restructure their assets and company to prevent bankruptcy and reestablish positive cash flow.',
       solution: 'A quick financial audit revealed very poor internal controls and runaway spending in many departments. OPEX was cut by 50% in less than one month.',
       outcome: 'Client was able to avoid bankruptcy and continue servicing the loans'
