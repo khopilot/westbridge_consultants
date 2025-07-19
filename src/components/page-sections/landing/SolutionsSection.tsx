@@ -4,22 +4,22 @@ import './styles/SolutionsSection.css'
 const SolutionsSection: React.FC = () => {
   const solutions = [
     {
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_d9d800fe-9077-4ded-ab19-19c498b40e0f_0.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_21_35%20AM.png',
       title: 'Navigate',
       description: 'Every permit, every process, every gatekeeper'
     },
     {
-      image: '/visual/ChatGPT Image Jul 19, 2025, 09_39_03 AM.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_39_03%20AM.png',
       title: 'Structure',
       description: 'International-grade legal protection'
     },
     {
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_8138b50b-eafd-4626-b3e7-bb37b53fd71b_0.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_59_48%20AM.png',
       title: 'Execute',
       description: 'On-ground team, bilingual, results-focused'
     },
     {
-      image: '/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_5739ee9c-fe68-4dc9-929e-2d83799a8049_1.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2010_02_10%20AM.png',
       title: 'Protect',
       description: 'Your capital, your timeline, your reputation'
     }

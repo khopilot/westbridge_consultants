@@ -18,14 +18,14 @@ const StrugglesSection: React.FC = () => {
       id: 1,
       title: 'Hidden Networks',
       description: 'The real decision-makers stay invisible',
-      image: '/visual/ChatGPT Image Jul 19, 2025, 09_21_26 AM.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_21_26%20AM.png',
       color: 'rgba(164, 120, 100, 0.9)' // Mocha Mousse
     },
     {
       id: 2,
       title: 'Legal Gaps',
       description: 'International protection requires local expertise',
-      image: '/visual/ChatGPT Image Jul 19, 2025, 09_21_30 AM.png',
+      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_55_00%20AM.png',
       color: 'rgba(17, 45, 78, 0.9)' // Navy
     }
   ]
