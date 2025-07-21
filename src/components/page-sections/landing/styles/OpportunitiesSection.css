@@ -4,11 +4,10 @@
   color: #ffffff;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  flex-direction: column;
+  padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll from full-width image */
 }
 
 /* Container */
@@ -18,12 +17,19 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  flex: 1;
+  padding: 2rem;
+  padding-bottom: 0;
 }
 
 /* Content Section */
 .opportunities-content {
   text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Equation Layout */
@@ -78,12 +84,18 @@
   letter-spacing: 0.02em;
 }
 
-/* Image Section */
+/* Full Width Image Section */
 .opportunities-image {
   width: 100vw;
   height: 300px;
-  margin-left: calc(-50vw + 50%);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow: hidden;
+  margin-top: auto; /* Push to bottom */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .opportunities-image img {
@@ -95,8 +107,9 @@
 
 /* Tablet Styles */
 @media (max-width: 1024px) {
-  .opportunities-section {
-    padding: 1.5rem;
+  .opportunities-container {
+    padding: 2rem 1.5rem;
+    padding-bottom: 0;
   }
   
   .equation-text {
@@ -116,24 +129,26 @@
 @media (max-width: 768px) {
   .opportunities-section {
     min-height: 100vh;
-    padding: 1rem;
   }
   
   .opportunities-container {
-    gap: 2rem;
+    padding: 3rem 1.5rem;
+    padding-bottom: 0;
   }
   
   .opportunities-equation {
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
   
   .equation-text {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
   }
   
   .equation-equals {
     font-size: 2rem;
+    margin: 0.5rem 0;
   }
   
   .cambodia-map {
@@ -142,26 +157,38 @@
   
   .opportunities-description {
     font-size: 1.1rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    padding: 0 1rem;
+    max-width: 600px;
   }
   
   .opportunities-image {
-    height: 250px;
+    height: 40vh;
+    min-height: 250px;
   }
 }
 
 /* Small Mobile Styles */
 @media (max-width: 480px) {
-  .opportunities-section {
-    padding: 1rem 0.5rem;
+  .opportunities-container {
+    padding: 2rem 1rem;
+    padding-bottom: 0;
+  }
+  
+  .opportunities-equation {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
   
   .equation-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
   
   .equation-equals {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+    margin: 0.4rem 0;
   }
   
   .cambodia-map {
@@ -171,32 +198,46 @@
   .opportunities-description {
     font-size: 1rem;
     padding: 0 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .highlight {
+    display: block;
+    margin-top: 0.25rem;
   }
   
   .opportunities-image {
-    height: 200px;
+    height: 35vh;
+    min-height: 200px;
   }
 }
 
 /* Extra Small Devices */
 @media (max-width: 375px) {
+  .opportunities-container {
+    padding: 1.5rem 0.75rem;
+    padding-bottom: 0;
+  }
+  
   .equation-text {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   
   .equation-equals {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .cambodia-map {
-    height: 2rem;
+    height: 2.2rem;
   }
   
   .opportunities-description {
     font-size: 0.95rem;
+    line-height: 1.5;
   }
   
   .opportunities-image {
-    height: 180px;
+    height: 30vh;
+    min-height: 180px;
   }
 }
