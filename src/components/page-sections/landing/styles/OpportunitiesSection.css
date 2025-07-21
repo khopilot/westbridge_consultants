@@ -1,672 +1,202 @@
-/* THE OPPORTUNITIES Section - Full Screen Slideshow */
+/* Opportunities Section - Clean Implementation */
 .opportunities-section {
   background: linear-gradient(135deg, var(--color-primary) 0%, #1a2e4e 100%);
   color: #ffffff;
-  position: relative;
-  overflow: hidden;
   min-height: 100vh;
-  height: 100vh;
-  width: 100%;
-  max-width: 100vw; /* Prevent horizontal overflow */
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-/* Fallback for browsers that support dvh */
-@supports (height: 100dvh) {
-  .opportunities-section {
-    min-height: 100dvh;
-    height: 100dvh;
-  }
-}
-
-/* Background Effects */
-.opportunities-bg-effects {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
-  opacity: 0.5;
-}
-
-.wave-1 {
-  top: 0;
-  -webkit-animation: wave-flow 20s ease-in-out infinite;
-  animation: wave-flow 20s ease-in-out infinite;
-}
-
-.wave-2 {
-  top: 30%;
-  -webkit-animation: wave-flow 25s ease-in-out infinite reverse;
-  animation: wave-flow 25s ease-in-out infinite reverse;
-}
-
-@-webkit-keyframes wave-flow {
-  0%, 100% { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
-  50% { -webkit-transform: translateX(0%); transform: translateX(0%); }
-}
-
-@keyframes wave-flow {
-  0%, 100% { 
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  50% { 
-    -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-}
-
-/* Header Section */
-.opportunities-header {
-  position: relative;
-  z-index: 10;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.opportunities-header h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin-bottom: 3rem;
-  color: #ffffff;
-  text-align: left;
-}
-
-.opportunities-main-text {
-  width: 100%;
-  flex: 1 1 auto;
-  min-height: 0;
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
-  padding: 2rem 0;
 }
 
-.opportunities-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem 2rem;
+/* Container */
+.opportunities-container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.opportunities-text-content {
+/* Content Section */
+.opportunities-content {
   text-align: center;
-  width: 100%;
+}
+
+/* Equation Layout */
+.opportunities-equation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.cambodia-line {
+.equation-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
-.cambodia-map-inline {
+.cambodia-map {
+  height: 4rem;
   width: auto;
-  height: clamp(2.5rem, 6vw, 4rem);
   object-fit: contain;
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
-.map-glow-effect {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0.6;
-  -webkit-animation: pulse-glow 3s ease-in-out infinite alternate;
-  animation: pulse-glow 3s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes pulse-glow {
-  from {
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0.4;
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) scale(1.1);
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes pulse-glow {
-  from {
-    -webkit-transform: translate(-50%, -50%) scale(0.9);
-    -moz-transform: translate(-50%, -50%) scale(0.9);
-    -ms-transform: translate(-50%, -50%) scale(0.9);
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0.4;
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) scale(1.1);
-    -moz-transform: translate(-50%, -50%) scale(1.1);
-    -ms-transform: translate(-50%, -50%) scale(1.1);
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-.opportunities-highlight {
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.25rem;
-}
-
-.equals-sign {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+.equation-text {
+  font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
-  line-height: 1;
-  margin: 0.25rem 0;
-}
-
-.text-huge {
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
-  font-weight: 700;
-  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1;
-  display: inline-block;
 }
 
-@keyframes text-glow {
-  from {
-    text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3);
-  }
-  to {
-    text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.5);
-  }
+.equation-equals {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.opportunities-subtext {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.5;
-  opacity: 0.9;
-  margin: 1.5rem auto 1rem;
-  text-align: center;
+/* Description */
+.opportunities-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
   max-width: 800px;
-  width: 90%;
-  display: block;
+  margin: 0 auto;
+  opacity: 0.9;
 }
 
-.text-emphasis {
-  font-size: 1.05em;
+.highlight {
   font-weight: 600;
-  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  display: inline-block;
 }
 
-/* Transition Image */
-.transition-image {
-  width: 100%;
-  flex: 0 0 auto;
-  height: 35%;
-  max-height: 300px;
-  min-height: 150px;
-  margin: 0;
+/* Image Section */
+.opportunities-image {
+  width: 100vw;
+  height: 300px;
+  margin-left: calc(-50vw + 50%);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-.transition-image-content {
+.opportunities-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  transform: scale(1.5);
-  opacity: 0.9;
+  object-position: center;
 }
 
-/* Full-Screen Slideshow Container */
-.slideshow-container {
-  position: relative;
-  z-index: 10;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem 5rem;
-}
-
-/* Main Active Slide */
-.slide-active {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.slide-main-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  padding: 3rem;
-  max-width: 1000px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Add backdrop filter with fallback */
-@supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
-  .slide-main-card {
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-  }
-}
-
-.slide-main-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-}
-
-.slide-image-container {
-  flex-shrink: 0;
-}
-
-.slide-image {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 4/3;
-  height: auto;
-  max-height: 300px;
-  border-radius: 5px;
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-}
-
-.slide-content {
-  flex: 1;
-  text-align: left;
-}
-
-.slide-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.slide-description {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-}
-
-/* Thumbnail Navigation */
-.slide-thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.slide-thumb {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 300px;
-  min-width: 250px;
-}
-
-/* Add backdrop filter with fallback */
-@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
-  .slide-thumb {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-}
-
-.slide-thumb:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
-  -webkit-transform: translateY(-2px);
-  -moz-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-}
-
-.slide-thumb--active {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--color-secondary);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.thumb-image {
-  width: 60px;
-  aspect-ratio: 1;
-  height: auto;
-  border-radius: 5px;
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.5rem;
-  flex-shrink: 0;
-}
-
-.thumb-content {
-  flex: 1;
-  text-align: left;
-}
-
-.thumb-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 0.25rem;
-}
-
-.thumb-description {
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-
-.thumb-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-secondary);
-  border-radius: 0 0 1rem 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Tablet Styles */
+@media (max-width: 1024px) {
   .opportunities-section {
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  @supports (height: 100dvh) {
-    .opportunities-section {
-      height: 100dvh;
-      min-height: 100dvh;
-    }
-  }
-  
-  .text-huge {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-  }
-  
-  .equals-sign {
-    font-size: clamp(2rem, 6vw, 3rem);
-  }
-  
-  .cambodia-map-inline {
-    height: clamp(2.5rem, 7vw, 3.5rem);
-  }
-  
-  .opportunities-subtext {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    line-height: 1.5;
-    width: 95%;
-  }
-  
-  .opportunities-header {
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .opportunities-content-wrapper {
-    padding: 0.5rem 1rem;
-    display: block;
-  }
-  
-  .opportunities-main-text {
-    flex: 1 1 auto;
-    min-height: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 1rem 0;
-  }
-
-  .opportunities-text-content {
-    text-align: center;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .opportunities-header h2 {
-    text-align: center;
-  }
-
-  .opportunities-highlight {
-    align-items: center;
-    text-align: center;
-  }
-
-  .equals-sign {
-    margin-left: 0;
-  }
-
-  .cambodia-map-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 200px;
-    height: auto;
-  }
-
-  .cambodia-map {
-    max-width: 180px;
-  }
-
-  .slideshow-container {
-    padding: 0 1rem 3rem;
-  }
-
-  .slide-main-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .slide-image {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    max-height: 200px;
-  }
-
-  .slide-thumbnails {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .slide-thumb {
-    min-width: auto;
-    max-width: none;
-  }
-  
-  .transition-image {
-    flex: 0 0 auto;
-    height: 30%;
-    max-height: 200px;
-    min-height: 120px;
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .transition-image-content {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide-main-card {
     padding: 1.5rem;
   }
-
-  .slide-image {
-    max-height: 150px;
-  }
-
-  .thumb-image {
-    width: 50px;
-    padding: 0.4rem;
+  
+  .equation-text {
+    font-size: 3rem;
   }
   
-  .text-huge {
-    font-size: clamp(2rem, 10vw, 3rem);
-    letter-spacing: -0.01em;
+  .equation-equals {
+    font-size: 2.5rem;
   }
   
-  .equals-sign {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
-    margin: 0.3rem 0;
-  }
-  
-  .cambodia-map-inline {
-    height: clamp(2.25rem, 8vw, 3rem);
-  }
-  
-  .opportunities-subtext {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    line-height: 1.45;
-    margin: 1rem auto 0.5rem;
-    font-weight: 400;
-  }
-  
-  .opportunities-highlight {
-    margin-bottom: 1rem;
-    gap: 0.3rem;
-  }
-  
-  .opportunities-main-text {
-    flex: 1 1 auto;
-    min-height: 0;
-    padding: 0.5rem;
-    overflow: hidden;
-  }
-  
-  .transition-image {
-    flex: 0 0 auto;
-    height: 25%;
-    min-height: 100px;
-    max-height: 150px;
+  .cambodia-map {
+    height: 3.5rem;
   }
 }
 
-/* Extra small devices */
-@media (max-width: 375px) {
-  .text-huge {
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .opportunities-section {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .opportunities-container {
+    gap: 2rem;
+  }
+  
+  .opportunities-equation {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .equation-text {
+    font-size: 2.5rem;
+  }
+  
+  .equation-equals {
+    font-size: 2rem;
+  }
+  
+  .cambodia-map {
+    height: 3rem;
+  }
+  
+  .opportunities-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .opportunities-image {
+    height: 250px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .opportunities-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .equation-text {
+    font-size: 2rem;
+  }
+  
+  .equation-equals {
     font-size: 1.75rem;
   }
   
-  .equals-sign {
+  .cambodia-map {
+    height: 2.5rem;
+  }
+  
+  .opportunities-description {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .opportunities-image {
+    height: 200px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+  .equation-text {
+    font-size: 1.75rem;
+  }
+  
+  .equation-equals {
     font-size: 1.5rem;
   }
   
-  .cambodia-map-inline {
+  .cambodia-map {
     height: 2rem;
   }
   
-  .opportunities-subtext {
+  .opportunities-description {
     font-size: 0.95rem;
-    line-height: 1.4;
   }
   
-  .opportunities-content-wrapper {
-    padding: 0.5rem;
+  .opportunities-image {
+    height: 180px;
   }
 }
