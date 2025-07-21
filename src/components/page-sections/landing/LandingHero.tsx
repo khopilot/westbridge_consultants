@@ -138,7 +138,7 @@ const LandingHero: React.FC = () => {
               custom={3}
               variants={textAnimation}
             >
-              <span className="text-huge">We have spent ten years</span> in Cambodia <span className="text-huge">learning the hard way</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with that decade of knowledge</span> in your pocket.
+              <span className="text-huge">We have spent years</span> in Cambodia <span className="text-huge">learning the hard way</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with that knowledge</span> in your pocket.
             </motion.p>
           </div>
 

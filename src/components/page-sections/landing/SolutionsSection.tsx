@@ -28,12 +28,12 @@ const SolutionsSection: React.FC = () => {
   return (
     <section id="solutions" className="solutions-section">
       <div className="container">
-        <h2 className="solutions-section__subtitle">Operate with Confidence in Cambodia's Complex Market</h2>
+        <h2 className="solutions-section__subtitle">Operate with Confidence in Cambodia</h2>
         <p className="solutions-section__intro">
-          Tackling a complicated business environment isn't difficult when you have the right guide.
+          Tackling Cambodia isn't difficult when you have the right help.
         </p>
         <p className="solutions-section__bold-statement">
-          We've spent a decade mapping what works. Now we make it work for you.
+          We've done the hard yard . Now we make it work for you.
         </p>
 
         <div className="solutions-grid">
