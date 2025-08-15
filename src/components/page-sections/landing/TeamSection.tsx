@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './styles/TeamSection.css'
 
 interface TeamMember {
@@ -16,13 +16,6 @@ interface TeamMember {
 const TeamSection: React.FC = () => {
   const [expandedAbout, setExpandedAbout] = useState<number | null>(null)
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
   
   const teamMembers: TeamMember[] = [
     {
@@ -92,7 +85,7 @@ const TeamSection: React.FC = () => {
   ]
 
   return (
-    <section ref={sectionRef} id="team" className="team-section">
+    <section id="team" className="team-section">
       {/* Section Header */}
       <motion.div 
         className="team-header-main"
