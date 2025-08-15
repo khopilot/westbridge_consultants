@@ -58,19 +58,35 @@ const StrugglesSection: React.FC = () => {
 
   return (
     <section className="risk-section">
-      {/* Main Title */}
-      <motion.div 
-        className="risk-section-header"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={textAnimation}
-      >
-        <h2 className="risk-section-title">We Understand the Risk</h2>
-        <p className="risk-section-subtitle">
-          Cambodia's business landscape is complex. We navigate the challenges so you don't have to.
-        </p>
-      </motion.div>
+      {/* Hero Section with Square Image */}
+      <div className="risk-hero-section">
+        <motion.div 
+          className="risk-hero-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={textAnimation}
+        >
+          <h2 className="risk-section-title">We Understand the Risk</h2>
+          <p className="risk-section-subtitle">
+            Cambodia's business landscape is complex. We navigate the challenges so you don't have to.
+          </p>
+        </motion.div>
+        
+        <motion.div 
+          className="risk-hero-image"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <img 
+            src="/visual/u7965223339_Business_illustration_broken_piggy_bank_reassembl_913d0328-9266-4925-b4dc-2225abda9862_3.png"
+            alt="Risk Management"
+            className="risk-hero-img"
+          />
+        </motion.div>
+      </div>
 
       {/* Risk Items with Side Images */}
       {riskItems.map((item, index) => (
