@@ -48,7 +48,7 @@ const TeamSection: React.FC = () => {
         'Operations',
         'Social Impact'
       ],
-      image: '/brett2.jpg'
+      image: '/visual/photo_2025-08-15_19-45-33.jpg'
     },
     {
       name: 'Hugues Morel',

@@ -171,13 +171,14 @@
 /* Full Width Solution Items - ZERO GAPS */
 .solution-item-fullwidth {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: block;
   margin: 0 !important;
   padding: 0 !important;
   line-height: 0;
   font-size: 0;
+  overflow: hidden;
 }
 
 /* Specific sections to ensure no gaps */
@@ -204,9 +205,11 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* Full Width Image */
@@ -608,79 +611,86 @@
   }
   
   .solution-item-fullwidth {
-    height: 80vh;
-    min-height: 600px;
+    height: 100vh;
+    min-height: auto;
+    width: 100%;
+    position: relative;
+    margin: 0;
   }
   
   .solution-fullwidth-img {
-    height: 80vh;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
   }
   
   .solution-content-wrapper {
-    top: 40px;
-    left: 30px;
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: auto;
   }
   
   .solution-content-wrapper.bottom-left,
   .solution-content-wrapper.bottom-right {
-    justify-content: flex-start;
-    left: 30px;
+    justify-content: flex-end;
+    left: 20px;
+    right: 20px;
   }
   
   .solution-content-bottom {
-    max-width: calc(100% - 60px);
-    padding: 35px;
+    max-width: 100%;
+    padding: 20px;
+    background: rgba(17, 45, 78, 0.98);
   }
   
   .solution-number-accent {
-    font-size: 70px;
-    top: 35px;
-    right: 35px;
+    font-size: 50px;
+    top: 20px;
+    right: 20px;
   }
   
   .solution-main-title {
-    font-size: clamp(32px, 4vw, 42px);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.1;
+    margin-bottom: 12px;
   }
   
   .solution-separator {
-    margin: 24px 0;
+    margin: 12px 0;
+    width: 30px;
   }
   
   .solution-title-dark {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-  }
-  
-  .solution-main-title {
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
   }
   
   .solution-description-dark {
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.35;
   }
   
-  /* Stack image card below content on mobile */
+  .corner-accent-bottom {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Hide image card on mobile */
   .solution-image-card-wrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: calc(100% - 60px);
-    margin: 30px 30px 0;
-  }
-  
-  .solution-image-card {
-    padding: 25px;
+    display: none;
   }
   
   .navigate-section {
-    height: auto;
-    min-height: 80vh;
+    height: 100vh;
+    min-height: auto;
   }
   
   .navigate-section .solution-static-wrapper {
     position: relative;
-    height: 80vh;
+    height: 100vh;
   }
 }
 
@@ -728,48 +738,60 @@
   }
   
   .solution-item-fullwidth {
-    height: 70vh;
-    min-height: 500px;
+    height: 100vh;
+    min-height: auto;
   }
   
   .solution-fullwidth-img {
-    height: 70vh;
+    height: 100vh;
+    width: 100%;
   }
   
   .solution-content-wrapper {
-    top: 30px;
-    left: 20px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
   }
   
   .solution-content-bottom {
-    padding: 30px;
-    max-width: calc(100% - 40px);
+    padding: 16px;
+    max-width: 100%;
   }
   
   .solution-number-accent {
-    font-size: 60px;
-    top: 30px;
-    right: 30px;
+    font-size: 35px;
+    top: 12px;
+    right: 12px;
+    opacity: 0.1;
   }
   
   .solution-title-dark {
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    margin-bottom: 2px;
   }
   
   .solution-main-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 18px;
+    margin-bottom: 6px;
+    line-height: 1.05;
   }
   
   .solution-separator {
-    margin: 20px 0;
-    width: 30px;
+    margin: 6px 0;
+    width: 20px;
+    height: 1px;
   }
   
   .solution-description-dark {
-    font-size: 14px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  
+  .corner-accent-bottom {
+    width: 15px;
+    height: 15px;
+    border-width: 1px;
   }
 }
 
