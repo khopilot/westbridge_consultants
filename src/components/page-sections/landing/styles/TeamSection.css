@@ -54,6 +54,12 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .team-member-section {
+    min-height: auto;
+  }
+}
+
 .team-member-section.layout-reverse {
   grid-template-columns: 50% 50%;
   direction: rtl;
@@ -534,7 +540,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .team-header-main {
-    padding: 60px 20px 40px;
+    padding: 50px 20px 30px;
   }
   
   .team-main-title {
@@ -550,9 +556,10 @@
   }
   
   .member-content-section {
-    padding: 30px 20px;
+    padding: 25px 20px;
     height: auto;
     overflow: visible;
+    max-height: none;
   }
   
   .member-content-header {
@@ -581,8 +588,8 @@
   
   .member-description-text {
     font-size: 13px;
-    line-height: 1.4;
-    margin-bottom: 12px;
+    line-height: 1.35;
+    margin-bottom: 10px;
   }
   
   .member-quote {
@@ -626,8 +633,8 @@
   }
   
   .experience-item {
-    padding: 6px 8px;
-    gap: 8px;
+    padding: 5px 6px;
+    gap: 6px;
   }
   
   .item-indicator {
@@ -637,8 +644,8 @@
   }
   
   .item-text {
-    font-size: 12px;
-    line-height: 1.3;
+    font-size: 11px;
+    line-height: 1.25;
   }
   
   .member-skills {
@@ -661,7 +668,7 @@
   }
 }
 
-/* Small Mobile */
+/* Small Mobile - Extra Compact */
 @media (max-width: 480px) {
   .team-header-main {
     padding: 50px 15px 30px;
