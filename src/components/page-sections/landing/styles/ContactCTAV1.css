@@ -1,0 +1,324 @@
+/* Contact Section - Ultra Minimalist Design */
+.contact-minimal {
+  position: relative;
+  background: linear-gradient(135deg, #112d4e 0%, #1a3a5c 100%);
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height */
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background with subtle image */
+.contact-minimal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/visual/u7965223339_Minimal_business_illustration_exact_colors_051e2e_n_2a906879-821b-43fa-8caa-44a15544c9d8.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.contact-minimal-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+/* Left side - Contact Information */
+.contact-info-side {
+  flex: 0 0 40%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Logo Section */
+.contact-logo-section {
+  text-align: center;
+}
+
+.contact-logo {
+  width: 200px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Contact Icons Section */
+.contact-icons {
+  text-align: center;
+  width: 100%;
+}
+
+.contact-icons h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  min-width: 100px;
+}
+
+.contact-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+
+.contact-icon span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Office Location */
+.office-location {
+  text-align: center;
+  color: #ffffff;
+}
+
+.office-location h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff !important; /* Ensure white color */
+}
+
+.office-location p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Right side - Full screen Map */
+.map-container-fullscreen {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.map-container-fullscreen iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(20%) brightness(0.9);
+  border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-minimal-container {
+    flex-direction: column;
+  }
+
+  .contact-info-side {
+    flex: 0 0 auto;
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+
+  .map-container-fullscreen {
+    min-height: 50vh;
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-side {
+    padding: 3rem 20px;
+    gap: 1.5rem;
+  }
+
+  .contact-logo {
+    width: 150px;
+  }
+
+  .contact-icons h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .icons-row {
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    min-width: 80px;
+    padding: 0.75rem;
+  }
+
+  .contact-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-icon span {
+    font-size: 0.75rem;
+  }
+
+  .office-location h3 {
+    font-size: 1.125rem;
+  }
+
+  .office-location p {
+    font-size: 0.95rem;
+  }
+
+  .map-container-fullscreen {
+    min-height: 40vh;
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-side {
+    padding: 2rem 20px;
+    gap: 1.5rem;
+  }
+
+  .contact-logo {
+    width: 120px;
+  }
+
+  .contact-icons h2 {
+    font-size: 1.125rem;
+  }
+
+  .icons-row {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .contact-icon {
+    flex-direction: row;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .map-container-fullscreen {
+    min-height: 35vh;
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+/* Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.contact-logo-section,
+.contact-icons,
+.office-location,
+.map-container-fullscreen {
+  -webkit-animation: fadeIn 0.8s ease-out;
+  animation: fadeIn 0.8s ease-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
+.contact-icons {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.office-location {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.map-container-fullscreen {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}

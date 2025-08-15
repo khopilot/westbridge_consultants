@@ -1,16 +1,39 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import './styles/TeamSection.css'
 
+interface TeamMember {
+  name: string
+  role: string
+  title: string
+  description: string
+  about: string[]
+  skills: string[]
+  image: string
+  quote?: string
+}
+
 const TeamSection: React.FC = () => {
-  const teamMembers = [
+  const [expandedAbout, setExpandedAbout] = useState<number | null>(null)
+  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  })
+  
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
+  
+  const teamMembers: TeamMember[] = [
     {
       name: 'Brett Goulding',
       role: 'Founder & CEO',
-      title: 'Building successful companies in Cambodia since 2015.',
+      title: 'Building successful companies in Cambodia since 2020.',
       description: 'Brett Goulding is a dynamic entrepreneur and regional connector who has built successful ventures across Southeast Asia, driven by deep cultural insight and strategic vision.',
+      quote: "Success in Cambodia requires more than capital—it demands cultural fluency, strategic patience, and genuine partnership.",
       about: [
         'Deep knowledge of Cambodian social, political, and religious context',
-        '5+ years of on-the-ground experience in Southeast Asia',
+        'On-the-ground experience in Cambodia since 2020',
         'Founder of multiple companies in real estate, finance, investment, and consulting',
         'Strong regional business network',
         'Strategic thinker with a long-term development vision',
@@ -32,14 +55,14 @@ const TeamSection: React.FC = () => {
         'Operations',
         'Social Impact'
       ],
-      image: '/brett2.jpg',
-      accentColor: '#112d4e'
+      image: '/brett2.jpg'
     },
     {
       name: 'Hugues Morel',
       role: 'Senior Consultant',
       title: 'Rural & urban deal experience.',
       description: 'Hugues Morel is a results-driven entrepreneur and strategic operator who has led and launched high-impact ventures across Cambodia, combining sharp business acumen with relentless execution and creative problem-solving.',
+      quote: "In Cambodia's dynamic market, execution excellence and local relationships are the foundations of sustainable success.",
       about: [
         'In-depth understanding of Cambodian business, legal, and social environment',
         '10+ years of experience in real estate, construction, media, and consumer products',
@@ -64,60 +87,189 @@ const TeamSection: React.FC = () => {
         'Operations',
         'Problem Solving'
       ],
-      image: '/hugo.brett.jpg',
-      accentColor: '#6b7280'
+      image: '/hugo.brett.jpg'
     }
   ]
 
   return (
-    <section id="team" className="team-section">
-      <div className="container">
-        {/* Team Grid - 2 Cards */}
-        <div className="team-grid">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-member-card">
-              {/* Member Header with Image */}
-              <div className="member-header">
-                <div className={`member-image member-image--${index}`}>
-                  <img src={member.image} alt={member.name} />
-                  <div className="member-image-overlay">
-                    <h3 className="member-name">{member.name}</h3>
-                    <p className="member-role">{member.role}</p>
-                  </div>
-                </div>
-              </div>
+    <section ref={sectionRef} id="team" className="team-section">
+      {/* Section Header */}
+      <motion.div 
+        className="team-header-main"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="team-main-title">Leadership</h2>
+        <div className="team-main-divider"></div>
+        <p className="team-main-subtitle">
+          Decades of combined experience. Deep local knowledge. Global perspective.
+        </p>
+      </motion.div>
 
-              {/* Title & Description */}
-              <div className="member-content">
-                <h4 className="member-title">{member.title}</h4>
-                <p className="member-description">{member.description}</p>
-              </div>
-
-              {/* About Section */}
-              <div className="member-section">
-                <h5 className="section-title">About</h5>
-                <ul className="about-list">
-                  {member.about.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Skills Section */}
-              <div className="member-section">
-                <h5 className="section-title">Skill Set</h5>
-                <div className="skills-grid">
-                  {member.skills.map((skill, idx) => (
-                    <span key={idx} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+      {/* Team Members - Individual Full Sections */}
+      {teamMembers.map((member, memberIndex) => (
+        <div key={memberIndex} className={`team-member-section ${memberIndex % 2 === 0 ? 'layout-normal' : 'layout-reverse'}`}>
+          
+          {/* Left Side - Image */}
+          <div 
+            className="member-image-section"
+          >
+            <div className="member-image-wrapper">
+              <img src={member.image} alt={member.name} />
+              <div className="member-image-overlay">
+                <motion.div 
+                  className="overlay-number"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                >
+                  0{memberIndex + 1}
+                </motion.div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Right Side - Content */}
+          <div className="member-content-section">
+            {/* Header */}
+            <motion.div 
+              className="member-content-header"
+              initial={{ opacity: 0, x: memberIndex % 2 === 0 ? 50 : -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="member-role-label">{member.role}</span>
+              <h3 className="member-name-large">{member.name}</h3>
+              <div className="member-accent-line"></div>
+              <p className="member-title-text">{member.title}</p>
+              <p className="member-description-text">{member.description}</p>
+              
+              {member.quote && (
+                <blockquote className="member-quote">
+                  <span className="quote-mark">"</span>
+                  {member.quote}
+                </blockquote>
+              )}
+            </motion.div>
+
+            {/* Experience Grid - Collapsible */}
+            <motion.div 
+              className="member-experience"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="section-header">
+                <h4 className="section-title">Experience & Expertise</h4>
+                <button 
+                  className="expand-btn"
+                  onClick={() => setExpandedAbout(expandedAbout === memberIndex ? null : memberIndex)}
+                >
+                  <span>{expandedAbout === memberIndex ? 'Show Less' : `View All ${member.about.length} Points`}</span>
+                  <svg 
+                    className={expandedAbout === memberIndex ? 'rotated' : ''}
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M5 7L10 12L15 7" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+              
+              <div className={`experience-grid ${expandedAbout === memberIndex ? 'expanded' : ''}`}>
+                {member.about.slice(0, expandedAbout === memberIndex ? undefined : 3).map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="experience-item"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <span className="item-indicator"></span>
+                    <span className="item-text">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <AnimatePresence>
+                {expandedAbout === memberIndex && (
+                  <motion.div
+                    className="experience-grid-extra"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.about.slice(3).map((item, idx) => (
+                      <motion.div
+                        key={idx + 3}
+                        className="experience-item"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.05 }}
+                        whileHover={{ x: 10 }}
+                      >
+                        <span className="item-indicator"></span>
+                        <span className="item-text">{item}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+
+            {/* Skills Matrix */}
+            <motion.div 
+              className="member-skills"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h4 className="section-title">Core Competencies</h4>
+              <div className="skills-matrix">
+                {member.skills.map((skill, idx) => (
+                  <motion.div
+                    key={idx}
+                    className={`skill-card ${hoveredSkill === idx + memberIndex * 100 ? 'hovered' : ''}`}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.03 }}
+                    onMouseEnter={() => setHoveredSkill(idx + memberIndex * 100)}
+                    onMouseLeave={() => setHoveredSkill(null)}
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <span className="skill-number">{String(idx + 1).padStart(2, '0')}</span>
+                    <span className="skill-name">{skill}</span>
+                    <div className="skill-progress">
+                      <motion.div 
+                        className="skill-progress-bar"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '100%' }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 + idx * 0.05, duration: 0.8 }}
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
         </div>
-      </div>
+      ))}
     </section>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import './LandingNavigation.css'
 
 const LandingNavigation: React.FC = () => {
@@ -9,7 +8,7 @@ const LandingNavigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero')
   
   const lastScrollY = useRef(0)
-  const scrollTimeout = useRef<number | null>(null)
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   
   // Handle body overflow when mobile menu is open
   useEffect(() => {
@@ -62,7 +61,7 @@ const LandingNavigation: React.FC = () => {
           lastScrollY.current = currentScrollY
 
           // Update active section
-          const sections = ['hero', 'opportunities', 'solutions', 'success-stories', 'team', 'contact']
+          const sections = ['hero', 'opportunities', 'solutions', 'team', 'contact']
           const viewportHeight = window.innerHeight
           const scrollCenter = currentScrollY + viewportHeight / 2
           
@@ -122,13 +121,7 @@ const LandingNavigation: React.FC = () => {
 
   const navigationItems = {
     left: [
-      { id: 'hero', label: 'Home', icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M9 22V12H15V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )},
-      { id: 'opportunities', label: 'Opportunities', icon: (
+      { id: 'opportunities', label: 'Why Cambodia', icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2"/>
           <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
@@ -142,12 +135,7 @@ const LandingNavigation: React.FC = () => {
       )},
     ],
     right: [
-      { id: 'success-stories', label: 'Success Stories', icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )},
-      { id: 'team', label: 'Team', icon: (
+      { id: 'team', label: 'Leadership', icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
@@ -184,15 +172,19 @@ const LandingNavigation: React.FC = () => {
             ))}
           </ul>
 
-          {/* Center Logo */}
+          {/* Center Logo - Clickable to scroll to top */}
           <div className="landing-nav__logo">
-            <Link to="/" className="landing-nav__logo-link">
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="landing-nav__logo-link"
+              aria-label="Scroll to top"
+            >
               <img 
                 src="/Logo_gouldingandco_black.png" 
                 alt="Goulding & Co" 
                 className="landing-nav__logo-image"
               />
-            </Link>
+            </button>
           </div>
 
           {/* Right Navigation */}
@@ -232,7 +224,7 @@ const LandingNavigation: React.FC = () => {
       <div className={`landing-nav__mobile ${isMobileMenuOpen ? 'landing-nav__mobile--active' : ''}`}>
         <div className="landing-nav__mobile-header">
           <div className="landing-nav__mobile-logo">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <button onClick={() => { scrollToSection('hero'); setIsMobileMenuOpen(false); }}>
               <div className="landing-nav__mobile-logo-icon">
                 <img 
                   src="/Logo_gouldingandco_black.png" 
@@ -244,7 +236,7 @@ const LandingNavigation: React.FC = () => {
                   }}
                 />
               </div>
-            </Link>
+            </button>
           </div>
           <button
             className="landing-nav__mobile-close"

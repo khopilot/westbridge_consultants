@@ -1,235 +1,280 @@
-/* Struggles Section Styles */
-.struggles-section {
+/* Risk Section Styles */
+.risk-section {
   width: 100%;
-  padding: 4rem 0;
-  background-color: #112d4e;
   position: relative;
+  background-color: #ffffff;
   overflow: hidden;
 }
 
-/* Struggles Title */
-.struggles-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin: 0;
-  padding: 0;
-  color: #ffffff;
+/* Section Header */
+.risk-section-header {
   text-align: center;
+  padding: 100px 20px 80px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+.risk-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #112d4e;
+  margin-bottom: 24px;
+}
+
+.risk-section-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Risk Item Container */
+.risk-item-container {
   width: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 120px 0;
   position: relative;
 }
 
-/* Struggles Cards Grid */
-.struggles-grid-container {
-  width: 100%;
-  padding: 0 80px; /* ~2cm margin on each side */
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  gap: 4rem; /* More space between title and cards for better centering */
+.risk-item-container:nth-child(odd) {
+  background: #ffffff;
 }
 
-.struggles-cards-grid {
+.risk-item-container:nth-child(even) {
+  background: linear-gradient(135deg, #f0f4f8 0%, #fafbfc 100%);
+}
+
+/* Grid Layout */
+.risk-item-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
-  /* No max-width - cards will expand to fill available space */
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.struggle-card {
+.grid-reverse {
+  direction: rtl;
+}
+
+.grid-reverse > * {
+  direction: ltr;
+}
+
+/* Text Content */
+.risk-item-text {
+  padding: 40px;
+}
+
+/* Accent Line - Sophisticated Law Firm Style */
+.risk-item-accent-line {
+  width: 80px;
+  height: 3px;
+  background: #112d4e;
+  margin-bottom: 32px;
   position: relative;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  cursor: pointer;
+  opacity: 0.9;
 }
 
-.struggle-card:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-/* Elegant navy blue overlay */
-.struggle-card__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.7) 0%,
-    rgba(26, 46, 78, 0.6) 40%,
-    rgba(26, 46, 78, 0.4) 100%
-  );
-  z-index: 1;
-  transition: all 0.4s ease;
-}
-
-.struggle-card:hover .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.8) 0%,
-    rgba(26, 46, 78, 0.7) 40%,
-    rgba(26, 46, 78, 0.5) 100%
-  );
-}
-
-/* Light overlay for the last card to show image better */
-.struggle-card--light-overlay .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.5) 0%,
-    rgba(26, 46, 78, 0.4) 40%,
-    rgba(26, 46, 78, 0.3) 100%
-  );
-}
-
-.struggle-card--light-overlay:hover .struggle-card__overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 46, 78, 0.6) 0%,
-    rgba(26, 46, 78, 0.5) 40%,
-    rgba(26, 46, 78, 0.4) 100%
-  );
-}
-
-.struggle-card__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 85%;
-  text-align: center;
-  z-index: 2;
-}
-
-.struggle-card__title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  /* Elegant shiny effect */
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.2),
-    0 0 40px rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f0f0f0 50%,
-    #e0e0e0 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-/* Subtle shine animation */
-.struggle-card__title::after {
+.risk-item-accent-line::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: rgba(17, 45, 78, 0.3);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+
+/* Title */
+.risk-item-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(36px, 3vw, 48px);
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #112d4e;
+  letter-spacing: 0.02em;
+}
+
+/* Description */
+.risk-item-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(18px, 1.5vw, 20px);
+  line-height: 1.8;
+  color: #6b7280;
+  font-weight: 300;
+}
+
+/* Image Wrapper */
+.risk-item-image-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  -webkit-animation: shine 3s infinite;
-  animation: shine 3s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  will-change: transform;
 }
 
-@-webkit-keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+/* Image */
+.risk-item-image {
+  width: 100%;
+  max-width: 600px;  /* Increased by 20% from 500px */
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(17, 45, 78, 0.1);
+  transition: transform 0.3s ease;
 }
 
-@keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+.risk-item-image:hover {
+  transform: scale(1.05);
 }
 
-.struggle-card__description {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #ffffff;
-  font-weight: 400;
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 10px rgba(255, 255, 255, 0.1);
-  opacity: 0.95;
-}
-
-/* Responsive Styles for Struggles Grid */
+/* Tablet Responsive */
 @media (max-width: 1024px) {
-  .struggles-grid-container {
+  .risk-item-container {
+    padding: 80px 0;
+  }
+  
+  .risk-item-grid {
     padding: 0 40px;
+    gap: 60px;
   }
   
-  .struggles-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .risk-item-text {
+    padding: 30px;
   }
   
-  .struggle-card {
-    height: 400px;
+  .risk-item-title {
+    font-size: 36px;
   }
   
-  .struggle-card__title {
-    font-size: 1.8rem;
+  .risk-item-description {
+    font-size: 18px;
   }
   
-  .struggle-card__description {
-    font-size: 1.1rem;
+  .risk-item-image {
+    max-width: 480px;  /* Increased by 20% from 400px */
   }
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .struggles-grid-container {
-    padding: 0 20px;
-    min-height: auto;
+  .risk-section-header {
+    padding: 80px 20px 60px;
   }
   
-  .struggles-cards-grid {
+  .risk-section-title {
+    font-size: 36px;
+  }
+  
+  .risk-section-subtitle {
+    font-size: 16px;
+  }
+  
+  .risk-item-container {
+    padding: 60px 0;
+  }
+  
+  .risk-item-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 40px;
+    padding: 0 30px;
   }
   
-  .struggle-card {
-    height: 350px;
+  .grid-reverse {
+    direction: ltr;
   }
   
-  .struggle-card__title {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+  .risk-item-text {
+    padding: 20px;
+    text-align: center;
   }
   
-  .struggle-card__description {
-    font-size: 1rem;
+  .risk-item-accent-line {
+    margin: 0 auto 24px;
+    width: 60px;
   }
   
-  .struggles-title {
-    font-size: 2rem;
+  .risk-item-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .risk-item-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  .risk-item-image-wrapper {
+    padding: 10px;
+  }
+  
+  .risk-item-image {
+    max-width: 420px;  /* Increased by 20% from 350px */
+    box-shadow: 0 10px 30px rgba(17, 45, 78, 0.1);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .risk-section-title {
+    font-size: 28px;
+  }
+  
+  .risk-section-subtitle {
+    font-size: 14px;
+  }
+  
+  .risk-item-container {
+    padding: 40px 0;
+  }
+  
+  .risk-item-grid {
+    padding: 0 20px;
+  }
+  
+  .risk-item-text {
+    padding: 10px;
+  }
+  
+  .risk-item-accent-line {
+    width: 50px;
+    height: 2px;
+  }
+  
+  .risk-item-title {
+    font-size: 26px;
+  }
+  
+  .risk-item-description {
+    font-size: 14px;
+  }
+  
+  .risk-item-image {
+    max-width: 336px;  /* Increased by 20% from 280px */
+  }
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  .risk-item-image-wrapper {
+    transition: transform 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 }

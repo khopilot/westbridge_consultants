@@ -1,66 +1,112 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import './styles/StrugglesSection.css'
 
 const StrugglesSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+  const { scrollYProgress } = useScroll()
+  
+  // Parallax transforms for each section
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -75])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100])
+  
+  // Text animation variants
+  const textAnimation = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number]
+      }
+    }
+  }
 
-  const slides = [
+  const imageAnimation = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number]
+      }
+    }
+  }
+
+  const riskItems = [
     {
-      id: 0,
       title: 'Regulatory Maze',
       description: 'Permits that seem simple aren\'t. Sub-decrees that have never been issued. Middle-bureaucrats.',
-      image: '/visual/c43c10f6-1b3a-402a-9244-e5f7a234bcbe.png',
-      color: 'rgba(204, 85, 0, 0.9)' // Terracotta
+      image: '/visual/u7965223339_Professional_business_illustration_tangled_rope_f_dd5a68d6-0e82-414b-98b8-2858d39a0e9e_3.png',
+      parallaxY: y1
     },
     {
-      id: 1,
       title: 'Hidden Networks',
       description: 'The real decision-makers stay invisible',
-      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_21_26%20AM.png',
-      color: 'rgba(164, 120, 100, 0.9)' // Mocha Mousse
+      image: '/visual/u7965223339_Business_illustration_iceberg_showing_visible_and_ab08b6b4-b30c-4007-b514-a6d88dd263bc_2.png',
+      parallaxY: y2
     },
     {
-      id: 2,
       title: 'Legal Gaps',
       description: 'International protection requires local expertise',
-      image: '/visual/ChatGPT%20Image%20Jul%2019,%202025,%2009_55_00%20AM.png',
-      color: 'rgba(17, 45, 78, 0.9)' // Navy
+      image: '/visual/u7965223339_Professional_illustration_stylized_compass_with_d_b264353c-033e-4f71-b5a4-45e0a630bee1_1.png',
+      parallaxY: y3
     }
   ]
 
   return (
-    <section ref={sectionRef} className="struggles-section">
-      <div className="struggles-grid-container">
-        <motion.h3 
-          className="struggles-title"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.43, 0.13, 0.23, 0.96] }}
-        >
-          We Understand the Struggles!
-        </motion.h3>
-        <div className="struggles-cards-grid">
-          {slides.map((slide, index) => (
-            <motion.div
-              key={slide.id}
-              className={`struggle-card ${index === 2 ? 'struggle-card--light-overlay' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 + index * 0.1, ease: [0.43, 0.13, 0.23, 0.96] }}
-              whileHover={{ y: -8 }}
-              style={{ backgroundImage: `url(${slide.image})` }}
+    <section className="risk-section">
+      {/* Main Title */}
+      <motion.div 
+        className="risk-section-header"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={textAnimation}
+      >
+        <h2 className="risk-section-title">We Understand the Risk</h2>
+        <p className="risk-section-subtitle">
+          Cambodia's business landscape is complex. We navigate the challenges so you don't have to.
+        </p>
+      </motion.div>
+
+      {/* Risk Items with Side Images */}
+      {riskItems.map((item, index) => (
+        <div key={index} className="risk-item-container">
+          <div className={`risk-item-grid ${index % 2 === 0 ? 'grid-normal' : 'grid-reverse'}`}>
+            {/* Text Content */}
+            <motion.div 
+              className="risk-item-text"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={textAnimation}
             >
-              <div className="struggle-card__overlay" />
-              <div className="struggle-card__content">
-                <h3 className="struggle-card__title">{slide.title}</h3>
-                <p className="struggle-card__description">{slide.description}</p>
-              </div>
+              <div className="risk-item-accent-line"></div>
+              <h3 className="risk-item-title">{item.title}</h3>
+              <p className="risk-item-description">{item.description}</p>
             </motion.div>
-          ))}
+            
+            {/* Image */}
+            <motion.div 
+              className="risk-item-image-wrapper"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={imageAnimation}
+              style={{ y: item.parallaxY }}
+            >
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="risk-item-image"
+              />
+            </motion.div>
+          </div>
         </div>
-      </div>
+      ))}
     </section>
   )
 }

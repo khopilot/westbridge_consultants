@@ -1,0 +1,235 @@
+/* Struggles Section Styles */
+.struggles-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #112d4e;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Struggles Title */
+.struggles-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Struggles Cards Grid */
+.struggles-grid-container {
+  width: 100%;
+  padding: 0 80px; /* ~2cm margin on each side */
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 4rem; /* More space between title and cards for better centering */
+}
+
+.struggles-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  /* No max-width - cards will expand to fill available space */
+}
+
+.struggle-card {
+  position: relative;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.struggle-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Elegant navy blue overlay */
+.struggle-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.7) 0%,
+    rgba(26, 46, 78, 0.6) 40%,
+    rgba(26, 46, 78, 0.4) 100%
+  );
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.struggle-card:hover .struggle-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.8) 0%,
+    rgba(26, 46, 78, 0.7) 40%,
+    rgba(26, 46, 78, 0.5) 100%
+  );
+}
+
+/* Light overlay for the last card to show image better */
+.struggle-card--light-overlay .struggle-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.5) 0%,
+    rgba(26, 46, 78, 0.4) 40%,
+    rgba(26, 46, 78, 0.3) 100%
+  );
+}
+
+.struggle-card--light-overlay:hover .struggle-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 46, 78, 0.6) 0%,
+    rgba(26, 46, 78, 0.5) 40%,
+    rgba(26, 46, 78, 0.4) 100%
+  );
+}
+
+.struggle-card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 85%;
+  text-align: center;
+  z-index: 2;
+}
+
+.struggle-card__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  /* Elegant shiny effect */
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f0f0f0 50%,
+    #e0e0e0 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+/* Subtle shine animation */
+.struggle-card__title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  -webkit-animation: shine 3s infinite;
+  animation: shine 3s infinite;
+}
+
+@-webkit-keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.struggle-card__description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #ffffff;
+  font-weight: 400;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(255, 255, 255, 0.1);
+  opacity: 0.95;
+}
+
+/* Responsive Styles for Struggles Grid */
+@media (max-width: 1024px) {
+  .struggles-grid-container {
+    padding: 0 40px;
+  }
+  
+  .struggles-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .struggle-card {
+    height: 400px;
+  }
+  
+  .struggle-card__title {
+    font-size: 1.8rem;
+  }
+  
+  .struggle-card__description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .struggles-grid-container {
+    padding: 0 20px;
+    min-height: auto;
+  }
+  
+  .struggles-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .struggle-card {
+    height: 350px;
+  }
+  
+  .struggle-card__title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .struggle-card__description {
+    font-size: 1rem;
+  }
+  
+  .struggles-title {
+    font-size: 2rem;
+  }
+}
