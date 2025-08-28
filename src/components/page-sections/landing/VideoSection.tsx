@@ -70,9 +70,7 @@ const VideoSection: React.FC = () => {
           showinfo: 0,
           mute: 1,
           loop: 0, // We'll handle loop manually
-          origin: window.location.origin,
-          vq: 'hd2160', // Request 4K quality
-          quality: 'highres' // Highest available quality
+          origin: window.location.origin
         },
         events: {
           onReady: (event: YT.PlayerEvent) => {
@@ -98,7 +96,7 @@ const VideoSection: React.FC = () => {
               // Set timeout to restart video 4 seconds before end
               ;(window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout = setTimeout(() => {
                 if (playerRef.current && playerRef.current.seekTo) {
-                  playerRef.current.seekTo(0)
+                  playerRef.current.seekTo(0, true)
                   playerRef.current.playVideo()
                 }
               }, restartTime)
