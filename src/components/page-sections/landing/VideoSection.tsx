@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './styles/VideoSection.css'
 
 const VideoSection: React.FC = () => {
-  const playerRef = useRef<any>(null)
+  const playerRef = useRef<YT.Player | null>(null)
   const [isPlayerReady, setIsPlayerReady] = useState(false)
   const [isMobilePortrait, setIsMobilePortrait] = useState(false)
   const playerContainerRef = useRef<HTMLDivElement>(null)
@@ -30,7 +30,7 @@ const VideoSection: React.FC = () => {
     // Small delay to ensure DOM is ready
     const initTimeout = setTimeout(() => {
       // Check if API is already loaded
-      if ((window as any).YT && (window as any).YT.Player) {
+      if ((window as Window & { YT?: typeof YT }).YT && (window as Window & { YT?: typeof YT }).YT?.Player) {
         initializePlayer()
       } else {
         // Load YouTube IFrame API
@@ -40,7 +40,7 @@ const VideoSection: React.FC = () => {
         firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag)
 
         // YouTube API callback
-        ;(window as any).onYouTubeIframeAPIReady = () => {
+        ;(window as Window & { onYouTubeIframeAPIReady?: () => void }).onYouTubeIframeAPIReady = () => {
           initializePlayer()
         }
       }
@@ -56,7 +56,7 @@ const VideoSection: React.FC = () => {
       const videoId = isMobilePortrait ? 'aHvFHRzfT9I' : 'lm5-iFxneBQ'
       
       try {
-        playerRef.current = new (window as any).YT.Player('video-youtube-player', {
+        playerRef.current = new (window as Window & { YT?: typeof YT }).YT!.Player('video-youtube-player', {
         videoId: videoId,
         playerVars: {
           autoplay: 1,
@@ -75,7 +75,7 @@ const VideoSection: React.FC = () => {
           quality: 'highres' // Highest available quality
         },
         events: {
-          onReady: (event: any) => {
+          onReady: (event: YT.PlayerEvent) => {
             setIsPlayerReady(true)
             event.target.mute()
             // Set to highest quality
@@ -85,18 +85,18 @@ const VideoSection: React.FC = () => {
             }
             event.target.playVideo()
           },
-          onStateChange: (event: any) => {
-            if (event.data === (window as any).YT.PlayerState.PLAYING) {
+          onStateChange: (event: YT.OnStateChangeEvent) => {
+            if (event.data === (window as Window & { YT?: typeof YT }).YT!.PlayerState.PLAYING) {
               const duration = event.target.getDuration()
               const restartTime = (duration - 4) * 1000 // Convert to milliseconds
               
               // Clear any existing timeout
-              if ((window as any).videoLoopTimeout) {
-                clearTimeout((window as any).videoLoopTimeout)
+              if ((window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout) {
+                clearTimeout((window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout!)
               }
               
               // Set timeout to restart video 4 seconds before end
-              ;(window as any).videoLoopTimeout = setTimeout(() => {
+              ;(window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout = setTimeout(() => {
                 if (playerRef.current && playerRef.current.seekTo) {
                   playerRef.current.seekTo(0)
                   playerRef.current.playVideo()
@@ -113,8 +113,8 @@ const VideoSection: React.FC = () => {
 
     return () => {
       clearTimeout(initTimeout)
-      if ((window as any).videoLoopTimeout) {
-        clearTimeout((window as any).videoLoopTimeout)
+      if ((window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout) {
+        clearTimeout((window as Window & { videoLoopTimeout?: ReturnType<typeof setTimeout> }).videoLoopTimeout!)
       }
       if (playerRef.current && typeof playerRef.current.destroy === 'function') {
         try {

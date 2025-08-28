@@ -27,7 +27,7 @@ const TeamSection: React.FC = () => {
       about: [
         'Deep knowledge of Cambodian social, political, and religious context',
         'On-the-ground experience in Cambodia since 2020',
-        'Founder of multiple companies in real estate, finance, investment, and consulting',
+        'Founder of multiple companies in real estate, finance, media, investment, and consulting',
         'Strong regional business network',
         'Strategic thinker with a long-term development vision',
         'Entrepreneurial and opportunity-driven',
@@ -46,7 +46,7 @@ const TeamSection: React.FC = () => {
         'Market Entry',
         'Leadership',
         'Operations',
-        'Social Impact'
+        'Sales'
       ],
       image: '/visual/photo_2025-08-15_19-45-33.jpg'
     },
@@ -176,7 +176,7 @@ const TeamSection: React.FC = () => {
               </div>
               
               <div className={`experience-grid ${expandedAbout === memberIndex ? 'expanded' : ''}`}>
-                {member.about.slice(0, expandedAbout === memberIndex ? undefined : 3).map((item, idx) => (
+                {member.about.slice(0, 3).map((item, idx) => (
                   <motion.div
                     key={idx}
                     className="experience-item"

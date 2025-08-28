@@ -27,11 +27,8 @@ const SolutionsSection: React.FC = () => {
         variants={textAnimation}
       >
         <h2 className="solutions-section-title">Operate with Confidence in Cambodia</h2>
-        <p className="solutions-section-subtitle">
-          Tackling Cambodia isn't difficult when you have the right help.
-        </p>
         <p className="solutions-section-statement">
-          We've done the hard yard. Now we make it work for you.
+          We've done the hard yards. Now we make it work for you.
         </p>
       </motion.div>
 

@@ -52,7 +52,7 @@ const LandingHero: React.FC = () => {
               custom={2}
               variants={textAnimation}
             >
-              <span className="text-huge">Cambodia rewards bold investors</span>, but only if you master its rules. <span className="text-huge">We</span> shorten the learning curve, <span className="text-huge">cut the risk, and get you moving</span> fast.
+              <span className="text-huge">Cambodia rewards bold investors</span>, but only those who master its rules. <span className="text-huge">We</span> shorten the learning curve, <span className="text-huge">cut the risk, and get things moving</span> fast.
             </motion.h2>
             
             {/* Supporting Text */}
@@ -63,7 +63,7 @@ const LandingHero: React.FC = () => {
               custom={3}
               variants={textAnimation}
             >
-              <span className="text-huge">We have spent years</span> in Cambodia <span className="text-huge">learning the hard way</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with that knowledge</span> in your pocket.
+              <span className="text-huge">We have spent years</span> in Cambodia <span className="text-huge">learning the system</span>. With us, you <span className="text-huge">start</span> on day one <span className="text-huge">with that knowledge</span> in your pocket.
             </motion.p>
           </motion.div>
         </div>
