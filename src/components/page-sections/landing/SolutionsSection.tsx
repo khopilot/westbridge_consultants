@@ -50,7 +50,6 @@ const SolutionsSection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={textAnimation}
           >
-            <span className="solution-number-accent">01</span>
             <h3 className="solution-title-dark">Navigate</h3>
             <h2 className="solution-main-title">Complete<br/>Market Entry</h2>
             <div className="solution-separator"></div>
@@ -95,7 +94,6 @@ const SolutionsSection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={textAnimation}
           >
-            <span className="solution-number-accent">02</span>
             <h3 className="solution-title-dark">Structure</h3>
             <h2 className="solution-main-title">Legal<br/>Excellence</h2>
             <div className="solution-separator"></div>
@@ -123,7 +121,6 @@ const SolutionsSection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={textAnimation}
           >
-            <span className="solution-number-accent">03</span>
             <h3 className="solution-title-dark">Execute</h3>
             <h2 className="solution-main-title">Flawless<br/>Execution</h2>
             <div className="solution-separator"></div>
@@ -151,7 +148,6 @@ const SolutionsSection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={textAnimation}
           >
-            <span className="solution-number-accent">04</span>
             <h3 className="solution-title-dark">Protect</h3>
             <h2 className="solution-main-title">Total<br/>Protection</h2>
             <div className="solution-separator"></div>

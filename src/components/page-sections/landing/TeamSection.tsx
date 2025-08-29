@@ -80,7 +80,7 @@ const TeamSection: React.FC = () => {
         'Operations',
         'Problem Solving'
       ],
-      image: '/hugo.brett.jpg'
+      image: '/Hugo pic 1.jpg'
     }
   ]
 
