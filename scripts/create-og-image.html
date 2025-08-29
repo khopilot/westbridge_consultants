@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 630px;
+            background: #112d4e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo {
+            width: 360px;
+            height: auto;
+            margin-bottom: 50px;
+        }
+        .tagline {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .divider {
+            width: 120px;
+            height: 3px;
+            background: #a47864;
+            margin: 30px auto;
+        }
+        .subtitle {
+            color: #a47864;
+            font-size: 28px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 1.5px;
+        }
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.05;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(255,255,255,.1) 35px,
+                rgba(255,255,255,.1) 70px
+            );
+            pointer-events: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="container">
+        <img src="../public/Logo_gouldingandco_white.png" alt="Goulding & Co" class="logo">
+        <div class="divider"></div>
+        <div class="tagline">STRATEGIC ADVISORY</div>
+        <div class="subtitle">Cambodia Market Entry Experts</div>
+    </div>
+</body>
+</html>
+<!-- 
+To create the image:
+1. Open this HTML file in a browser
+2. Set browser window to exactly 1200x630px
+3. Take a screenshot
+4. Save as og-image.png in the public folder
+-->

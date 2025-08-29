@@ -1,0 +1,17 @@
+{
+  "name": "Goulding & Co Strategic Advisory",
+  "short_name": "Goulding & Co",
+  "description": "Premier business consulting for companies entering the Cambodian market",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#112d4e",
+  "background_color": "#112d4e",
+  "icons": [
+    {
+      "src": "/Logo_gouldingandco_white.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
